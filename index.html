@@ -137,4 +137,210 @@
     }
 
     .card h3 {
-      color
+      color: var(--gold);
+      margin-top: 0;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+    }
+
+    .status {
+      display: grid;
+      gap: .75rem;
+      margin-top: 1.5rem;
+    }
+
+    .status div {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid rgba(216,180,106,.18);
+      padding-bottom: .5rem;
+    }
+
+    .active {
+      color: var(--resonance);
+    }
+
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .timeline li {
+      padding: .8rem 0 .8rem 1.5rem;
+      border-left: 1px solid var(--border);
+      position: relative;
+      color: var(--muted);
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 1.15rem;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    footer {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .disclaimer {
+      margin-top: 1.5rem;
+      font-size: .78rem;
+      color: #95876a;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="hero">
+      <div class="sigil">ARCHIVE STATUS: ACTIVE</div>
+      <h1>THE OBSCYRAN ARCHIVES</h1>
+      <p class="subtitle">
+        A living record of Obscyra, the Aetherra Region, and the continuing development of PokéCyrus Online.
+      </p>
+      <p class="quote">
+        “Knowledge survives only because someone chose to preserve it.”
+      </p>
+      <a class="button" href="#current-chronicle">Enter The Archives</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="current-chronicle">
+      <div class="wrap">
+        <h2 class="section-title">Current Chronicle</h2>
+        <p class="section-intro">
+          The Archives are now open. This hall will preserve development milestones, world records, dispatches, and the evolving history of Obscyra.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>World</h3>
+            <p>Obscyra</p>
+          </div>
+          <div class="card">
+            <h3>Active Region</h3>
+            <p>Aetherra</p>
+          </div>
+          <div class="card">
+            <h3>Current Milestone</h3>
+            <p>The First Chronicle</p>
+          </div>
+          <div class="card">
+            <h3>Development State</h3>
+            <p>Alpha Development</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Current Expedition</h2>
+        <p class="section-intro">
+          The public record of where the project stands today.
+        </p>
+
+        <div class="card">
+          <div class="status">
+            <div><span>World of Obscyra Established</span><strong>Complete</strong></div>
+            <div><span>Aetherra Region Defined</span><strong>Complete</strong></div>
+            <div><span>Origin Framework Foundation</span><strong>Complete</strong></div>
+            <div><span>The Archives Founded</span><strong>Complete</strong></div>
+            <div><span>First Chronicle</span><strong class="active">In Progress</strong></div>
+            <div><span>Vertical Slice</span><strong>Pending</strong></div>
+            <div><span>Closed Alpha</span><strong>Pending</strong></div>
+            <div><span>Open Alpha</span><strong>Pending</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Archive Dispatch 001</h2>
+        <p class="section-intro">
+          <strong>The Archives Open.</strong>
+        </p>
+
+        <div class="card">
+          <p>
+            Today marks the opening of The Obscyran Archives, the official public record for the world of Obscyra and the continuing development of PokéCyrus Online.
+          </p>
+          <p>
+            The first known region of Obscyra is Aetherra, a land shaped by forgotten histories, hidden relics, and mysteries that reward exploration, memory, and community discovery.
+          </p>
+          <p>
+            The Archives will preserve development updates, lore records, milestone reports, and future dispatches as the world continues to take form.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Explore The Archives</h2>
+        <p class="section-intro">
+          These halls will expand as Obscyra grows.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>The World of Obscyra</h3>
+            <p>The larger world where all regions, histories, and future chronicles unfold.</p>
+          </div>
+          <div class="card">
+            <h3>The Aetherra Region</h3>
+            <p>The first playable region, currently being shaped through the First Chronicle.</p>
+          </div>
+          <div class="card">
+            <h3>The Origin Framework</h3>
+            <p>A progression foundation built around discovery, memory, resonance, and meaningful transformation.</p>
+          </div>
+          <div class="card">
+            <h3>Development Chronicle</h3>
+            <p>The preserved record of how PokéCyrus Online grows from prototype to living MMO.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Development Chronicle</h2>
+        <ul class="timeline">
+          <li><strong>The Archives Established</strong> — the public home of Obscyra is opened.</li>
+          <li><strong>Origin Framework Foundation</strong> — the first major progression architecture is formed.</li>
+          <li><strong>Aetherra Region Defined</strong> — the first region of Obscyra becomes the active development focus.</li>
+          <li><strong>The First Chronicle Begins</strong> — development turns toward the first playable vertical slice.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <strong>The Obscyran Archives</strong>
+      <p>A living record of Obscyra and the development of PokéCyrus Online.</p>
+
+      <p class="disclaimer">
+        PokéCyrus Online is a free, non-commercial fan-made MMO inspired by the Pokémon franchise.
+        Pokémon and related names, characters, creatures, and trademarks are owned by Nintendo, Game Freak, and The Pokémon Company.
+        The Obscyran Archives and PokéCyrus Online are not affiliated with or endorsed by Nintendo, Game Freak, or The Pokémon Company.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
