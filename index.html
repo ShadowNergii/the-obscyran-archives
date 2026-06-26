@@ -6,33 +6,132 @@
   <title>The Obscyran Archives</title>
   <style>
     :root {
-      --bg: #07080b;
-      --panel: rgba(17, 19, 27, 0.82);
+      --bg: #05060a;
+      --bg2: #0a0d15;
+      --panel: rgba(16, 18, 27, 0.78);
+      --panel2: rgba(9, 12, 20, 0.9);
       --gold: #d8b46a;
+      --gold2: #ffe0a1;
       --parchment: #f4e7c2;
       --muted: #b8a982;
+      --dim: #82765d;
       --resonance: #57b8ff;
       --border: rgba(216, 180, 106, 0.28);
+      --blueborder: rgba(87, 184, 255, 0.22);
+      --shadow: rgba(0, 0, 0, 0.55);
     }
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      background:
-        radial-gradient(circle at top, rgba(87,184,255,0.16), transparent 34rem),
-        radial-gradient(circle at bottom right, rgba(216,180,106,0.12), transparent 30rem),
-        var(--bg);
       color: var(--parchment);
       font-family: Georgia, "Times New Roman", serif;
       line-height: 1.6;
+      background:
+        radial-gradient(circle at 50% -10%, rgba(87,184,255,0.18), transparent 32rem),
+        radial-gradient(circle at 85% 18%, rgba(216,180,106,0.10), transparent 25rem),
+        linear-gradient(180deg, var(--bg), var(--bg2) 42%, var(--bg));
+      overflow-x: hidden;
     }
 
-    a { color: var(--gold); text-decoration: none; }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(circle at center, black, transparent 72%);
+      opacity: .42;
+      z-index: 0;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle, rgba(244,231,194,.32) 0 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(87,184,255,.18) 0 1px, transparent 1.8px);
+      background-size: 120px 120px, 190px 190px;
+      animation: drift 28s linear infinite;
+      opacity: .18;
+      z-index: 0;
+    }
+
+    @keyframes drift {
+      from { transform: translate3d(0,0,0); }
+      to { transform: translate3d(-80px,120px,0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 20px rgba(87,184,255,.25), inset 0 0 18px rgba(216,180,106,.10); }
+      50% { box-shadow: 0 0 44px rgba(87,184,255,.45), inset 0 0 26px rgba(216,180,106,.18); }
+    }
+
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    a { color: var(--gold2); text-decoration: none; }
 
     .wrap {
-      width: min(1100px, 92%);
+      width: min(1120px, 92%);
       margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      background: rgba(5, 6, 10, .72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(216,180,106,.16);
+    }
+
+    .nav {
+      width: min(1120px, 92%);
+      margin: auto;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      color: var(--gold);
+      letter-spacing: .14em;
+      font-size: .82rem;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .links {
+      display: flex;
+      gap: 1rem;
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .links a {
+      color: var(--muted);
+    }
+
+    .links a:hover {
+      color: var(--gold2);
     }
 
     header {
@@ -40,86 +139,119 @@
       display: grid;
       place-items: center;
       text-align: center;
-      padding: 4rem 1rem;
+      padding: 7rem 1rem 4rem;
       position: relative;
       overflow: hidden;
     }
 
-    header::before {
-      content: "";
+    .light-beam {
       position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: radial-gradient(circle, black, transparent 72%);
+      top: -18%;
+      left: 50%;
+      width: 42rem;
+      height: 120%;
+      transform: translateX(-50%) rotate(8deg);
+      background: linear-gradient(90deg, transparent, rgba(244,231,194,.08), transparent);
+      filter: blur(1px);
+      opacity: .7;
+      z-index: 0;
     }
 
     .hero {
       position: relative;
+      z-index: 1;
+      width: min(920px, 100%);
       border: 1px solid var(--border);
-      background: rgba(7,8,11,0.72);
-      padding: 3rem 2rem;
-      border-radius: 24px;
-      box-shadow: 0 0 80px rgba(87,184,255,0.09);
+      background:
+        linear-gradient(180deg, rgba(13,16,25,.86), rgba(5,6,10,.78)),
+        radial-gradient(circle at top, rgba(87,184,255,.14), transparent 36rem);
+      padding: clamp(2rem, 5vw, 4.2rem);
+      border-radius: 30px;
+      box-shadow: 0 30px 100px var(--shadow), 0 0 90px rgba(87,184,255,.08);
+      animation: reveal 900ms ease-out both;
+    }
+
+    .seal {
+      width: 86px;
+      height: 86px;
+      margin: 0 auto 1.4rem;
+      border: 1px solid var(--blueborder);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--resonance);
+      background: radial-gradient(circle, rgba(87,184,255,.12), rgba(216,180,106,.06));
+      animation: pulse 4s ease-in-out infinite;
+      font-size: 2rem;
     }
 
     .sigil {
       color: var(--resonance);
       letter-spacing: .35rem;
-      font-size: .8rem;
+      font-size: .75rem;
       margin-bottom: 1rem;
+      text-transform: uppercase;
     }
 
     h1 {
-      font-size: clamp(2.6rem, 7vw, 5.8rem);
-      line-height: 1;
+      font-size: clamp(2.45rem, 7vw, 6.2rem);
+      line-height: .95;
       margin: 0;
-      letter-spacing: .08em;
+      letter-spacing: .075em;
       color: var(--gold);
+      text-shadow: 0 0 26px rgba(216,180,106,.22);
     }
 
     .subtitle {
       font-size: clamp(1.05rem, 2.2vw, 1.45rem);
       color: var(--muted);
       margin: 1.5rem auto 0;
-      max-width: 720px;
+      max-width: 760px;
     }
 
     .quote {
-      margin-top: 2rem;
+      margin: 2rem auto 0;
       font-style: italic;
       color: var(--parchment);
+      max-width: 620px;
     }
 
     .button {
       display: inline-block;
-      margin-top: 2rem;
-      padding: .9rem 1.35rem;
+      margin-top: 2.2rem;
+      padding: .95rem 1.45rem;
       border: 1px solid var(--gold);
       border-radius: 999px;
       color: var(--parchment);
-      background: rgba(216,180,106,0.1);
-      letter-spacing: .08em;
+      background: linear-gradient(180deg, rgba(216,180,106,0.16), rgba(216,180,106,0.06));
+      letter-spacing: .1em;
       text-transform: uppercase;
       font-size: .78rem;
+      box-shadow: 0 0 30px rgba(216,180,106,.10);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 40px rgba(216,180,106,.22);
     }
 
     section {
-      padding: 5rem 0;
+      padding: 5.5rem 0;
+      position: relative;
     }
 
     .section-title {
       color: var(--gold);
-      font-size: 2rem;
-      margin-bottom: .5rem;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 0 0 .6rem;
+      letter-spacing: .04em;
     }
 
     .section-intro {
       color: var(--muted);
-      max-width: 760px;
-      margin-bottom: 2rem;
+      max-width: 780px;
+      margin: 0 0 2rem;
     }
 
     .grid {
@@ -130,37 +262,95 @@
 
     .card {
       border: 1px solid var(--border);
-      background: var(--panel);
-      border-radius: 18px;
-      padding: 1.35rem;
+      background:
+        linear-gradient(180deg, rgba(18,22,34,.78), rgba(7,9,15,.78));
+      border-radius: 20px;
+      padding: 1.45rem;
       min-height: 170px;
+      box-shadow: 0 20px 55px rgba(0,0,0,.28);
+      transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(87,184,255,.10), transparent 18rem);
+      opacity: 0;
+      transition: opacity .22s ease;
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(216,180,106,.45);
+      box-shadow: 0 28px 70px rgba(0,0,0,.36);
+    }
+
+    .card:hover::before {
+      opacity: 1;
     }
 
     .card h3 {
-      color: var(--gold);
-      margin-top: 0;
+      color: var(--gold2);
+      margin: 0 0 .7rem;
+      font-size: 1.25rem;
     }
 
     .card p, .card li {
       color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .label {
+      color: var(--dim);
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      margin-bottom: .4rem;
+    }
+
+    .big {
+      font-size: 1.4rem;
+      color: var(--parchment);
     }
 
     .status {
       display: grid;
-      gap: .75rem;
-      margin-top: 1.5rem;
+      gap: .8rem;
+      margin-top: .5rem;
     }
 
     .status div {
       display: flex;
       justify-content: space-between;
       gap: 1rem;
-      border-bottom: 1px solid rgba(216,180,106,.18);
-      padding-bottom: .5rem;
+      border-bottom: 1px solid rgba(216,180,106,.16);
+      padding-bottom: .65rem;
+      color: var(--muted);
+    }
+
+    .status strong {
+      color: var(--gold2);
+      white-space: nowrap;
     }
 
     .active {
-      color: var(--resonance);
+      color: var(--resonance) !important;
+      text-shadow: 0 0 18px rgba(87,184,255,.28);
+    }
+
+    .dispatch {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .dispatch .card:first-child {
+      min-height: 280px;
     }
 
     .timeline {
@@ -170,7 +360,7 @@
     }
 
     .timeline li {
-      padding: .8rem 0 .8rem 1.5rem;
+      padding: .9rem 0 .9rem 1.7rem;
       border-left: 1px solid var(--border);
       position: relative;
       color: var(--muted);
@@ -180,32 +370,90 @@
       content: "";
       position: absolute;
       left: -6px;
-      top: 1.15rem;
+      top: 1.28rem;
       width: 11px;
       height: 11px;
       border-radius: 50%;
       background: var(--gold);
+      box-shadow: 0 0 18px rgba(216,180,106,.35);
+    }
+
+    .archive-record {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
 
     footer {
-      padding: 3rem 0;
+      padding: 3.5rem 0;
       border-top: 1px solid var(--border);
       color: var(--muted);
-      font-size: .9rem;
+      font-size: .92rem;
+      position: relative;
+      z-index: 1;
+      background: rgba(5,6,10,.55);
     }
 
     .disclaimer {
       margin-top: 1.5rem;
       font-size: .78rem;
       color: #95876a;
+      max-width: 980px;
+    }
+
+    @media (max-width: 760px) {
+      .links {
+        display: none;
+      }
+
+      .brand {
+        font-size: .72rem;
+      }
+
+      .hero {
+        border-radius: 22px;
+      }
+
+      .sigil {
+        letter-spacing: .2rem;
+      }
+
+      .dispatch {
+        grid-template-columns: 1fr;
+      }
+
+      .archive-record {
+        grid-template-columns: 1fr;
+      }
+
+      .status div {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .15rem;
+      }
     }
   </style>
 </head>
 
 <body>
+  <nav class="topbar">
+    <div class="nav">
+      <div class="brand">The Obscyran Archives</div>
+      <div class="links">
+        <a href="#current-chronicle">Chronicle</a>
+        <a href="#expedition">Expedition</a>
+        <a href="#dispatch">Dispatch</a>
+        <a href="#explore">Explore</a>
+      </div>
+    </div>
+  </nav>
+
   <header>
+    <div class="light-beam"></div>
     <div class="hero">
-      <div class="sigil">ARCHIVE STATUS: ACTIVE</div>
+      <div class="seal">◇</div>
+      <div class="sigil">Archive Status: Active</div>
       <h1>THE OBSCYRAN ARCHIVES</h1>
       <p class="subtitle">
         A living record of Obscyra, the Aetherra Region, and the continuing development of PokéCyrus Online.
@@ -222,35 +470,39 @@
       <div class="wrap">
         <h2 class="section-title">Current Chronicle</h2>
         <p class="section-intro">
-          The Archives are now open. This hall will preserve development milestones, world records, dispatches, and the evolving history of Obscyra.
+          The Archives are now open. This hall preserves development milestones, world records, dispatches, and the evolving history of Obscyra.
         </p>
 
         <div class="grid">
           <div class="card">
-            <h3>World</h3>
-            <p>Obscyra</p>
+            <div class="label">World</div>
+            <div class="big">Obscyra</div>
+            <p>The wider world where all regions and chronicles unfold.</p>
           </div>
           <div class="card">
-            <h3>Active Region</h3>
-            <p>Aetherra</p>
+            <div class="label">Active Region</div>
+            <div class="big">Aetherra</div>
+            <p>The first playable region currently under development.</p>
           </div>
           <div class="card">
-            <h3>Current Milestone</h3>
-            <p>The First Chronicle</p>
+            <div class="label">Current Milestone</div>
+            <div class="big">The First Chronicle</div>
+            <p>The first major playable experience being shaped for testing.</p>
           </div>
           <div class="card">
-            <h3>Development State</h3>
-            <p>Alpha Development</p>
+            <div class="label">Development State</div>
+            <div class="big">Alpha Development</div>
+            <p>Core systems, lore, and the first vertical slice are being built.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="expedition">
       <div class="wrap">
         <h2 class="section-title">Current Expedition</h2>
         <p class="section-intro">
-          The public record of where the project stands today.
+          A public record of where the project stands today.
         </p>
 
         <div class="card">
@@ -260,7 +512,7 @@
             <div><span>Origin Framework Foundation</span><strong>Complete</strong></div>
             <div><span>The Archives Founded</span><strong>Complete</strong></div>
             <div><span>First Chronicle</span><strong class="active">In Progress</strong></div>
-            <div><span>Vertical Slice</span><strong>Pending</strong></div>
+            <div><span>Vertical Slice</span><strong>Pending Human Playtest</strong></div>
             <div><span>Closed Alpha</span><strong>Pending</strong></div>
             <div><span>Open Alpha</span><strong>Pending</strong></div>
           </div>
@@ -268,28 +520,43 @@
       </div>
     </section>
 
-    <section>
+    <section id="dispatch">
       <div class="wrap">
-        <h2 class="section-title">Archive Dispatch 001</h2>
+        <h2 class="section-title">Latest Dispatch</h2>
         <p class="section-intro">
-          <strong>The Archives Open.</strong>
+          Preserved by The Archives for those following the creation of Obscyra.
         </p>
 
-        <div class="card">
-          <p>
-            Today marks the opening of The Obscyran Archives, the official public record for the world of Obscyra and the continuing development of PokéCyrus Online.
-          </p>
-          <p>
-            The first known region of Obscyra is Aetherra, a land shaped by forgotten histories, hidden relics, and mysteries that reward exploration, memory, and community discovery.
-          </p>
-          <p>
-            The Archives will preserve development updates, lore records, milestone reports, and future dispatches as the world continues to take form.
-          </p>
+        <div class="dispatch">
+          <div class="card">
+            <div class="label">Archive Dispatch 001</div>
+            <h3>The Archives Open</h3>
+            <p>
+              Today marks the opening of The Obscyran Archives, the official public record for the world of Obscyra and the continuing development of PokéCyrus Online.
+            </p>
+            <p>
+              The first known region of Obscyra is Aetherra, a land shaped by forgotten histories, hidden relics, and mysteries that reward exploration, memory, and community discovery.
+            </p>
+            <p>
+              The Archives will preserve development updates, lore records, milestone reports, and future dispatches as the world continues to take form.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="label">Archivist Notes</div>
+            <h3>Current Focus</h3>
+            <p>
+              The project is moving from foundation work into the First Chronicle: the first playable slice of the Aetherra Region.
+            </p>
+            <p>
+              The next major verification gate is a human playtest of the vertical slice.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="explore">
       <div class="wrap">
         <h2 class="section-title">Explore The Archives</h2>
         <p class="section-intro">
@@ -326,6 +593,25 @@
           <li><strong>Aetherra Region Defined</strong> — the first region of Obscyra becomes the active development focus.</li>
           <li><strong>The First Chronicle Begins</strong> — development turns toward the first playable vertical slice.</li>
         </ul>
+
+        <div class="archive-record">
+          <div class="card">
+            <div class="label">Repository</div>
+            <div class="big">Active</div>
+          </div>
+          <div class="card">
+            <div class="label">Chronicle</div>
+            <div class="big">First</div>
+          </div>
+          <div class="card">
+            <div class="label">Region</div>
+            <div class="big">Aetherra</div>
+          </div>
+          <div class="card">
+            <div class="label">Status</div>
+            <div class="big">Alpha</div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
