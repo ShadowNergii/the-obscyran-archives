@@ -643,12 +643,20 @@
   </footer>
 
   <script>
+    /* ===== ALPHA RELEASE — MANUAL TRIGGER =====
+       PCO_LIVE is the single switch for going live. It stays false until the Alpha
+       is confirmed fun & playable; set it to true and redeploy to release. When
+       true it enables every Play/download button AND flips the countdown to "LIVE".
+       The countdown below is only a soft "launching soon" indicator — its reaching
+       zero does NOT release the Alpha. */
+    window.PCO_LIVE = false;
+  </script>
+
+  <script>
     (function () {
-      /* ===== ALPHA LAUNCH COUNTDOWN =====
-         PLACEHOLDER TARGET — replace the value below with the exact launch instant.
-         Use ISO 8601 with a timezone offset, e.g. "2026-07-27T18:00:00-04:00" (6pm EDT)
-         or a UTC time like "2026-07-27T22:00:00Z". Currently set to ~48h from build time. */
-      var LAUNCH = new Date("2026-07-27T03:00:00Z");
+      /* Countdown target — a soft "launching soon" indicator, adjustable freely.
+         The real go-live is the manual PCO_LIVE trigger above, not this timer. */
+      var LAUNCH = new Date("2026-07-26T15:00:00Z");
 
       var byId = function (id) { return document.getElementById(id); };
       var elDays = byId("cd-days"), elHours = byId("cd-hours"),
@@ -657,15 +665,26 @@
 
       function pad(n) { return (n < 10 ? "0" : "") + n; }
 
+      function showMsg(html) {
+        if (wrap) { wrap.style.display = "none"; }
+        if (live) { live.style.display = "block"; live.innerHTML = html; }
+      }
+
       function tick() {
-        var diff = LAUNCH.getTime() - Date.now();
-        if (isNaN(diff)) { return; }
-        if (diff <= 0) {
-          if (wrap) { wrap.style.display = "none"; }
-          if (live) { live.style.display = "block"; }
+        if (window.PCO_LIVE) {
+          showMsg('The Alpha is <strong>LIVE</strong> — choose how to play below.');
           clearInterval(timer);
           return;
         }
+        var diff = LAUNCH.getTime() - Date.now();
+        if (isNaN(diff)) { return; }
+        if (diff <= 0) {
+          /* countdown elapsed but not released yet — stay honest, keep watching */
+          showMsg('Launching soon — final checks underway.');
+          return;
+        }
+        if (wrap) { wrap.style.display = ""; }
+        if (live) { live.style.display = "none"; }
         var s = Math.floor(diff / 1000);
         var d = Math.floor(s / 86400); s -= d * 86400;
         var h = Math.floor(s / 3600); s -= h * 3600;
@@ -686,8 +705,9 @@
       /* ===== PLAY / DOWNLOAD BUTTONS =====
          ALPHA GATE: all download and browser buttons must stay DISABLED until
          Alpha launch. While `enabled` is false, no live links are placed in the
-         page — only disabled "Available at Launch" placeholders. At launch, set
-         `enabled` to true (one change) to activate every button.
+         page — only disabled "Available at Launch" placeholders. Enabling is
+         driven by the PCO_LIVE manual trigger above — flip that to true (and
+         redeploy) to activate every button at Alpha release.
 
          Download URLs come from the launcher manifest (v0.3.0):
          https://play.theobscyranarchives.net/client/latest.json
@@ -695,7 +715,7 @@
          served with an Access-Control-Allow-Origin header, this page could fetch
          it live so the links always track the latest build). */
       var PLAY = {
-        enabled: false,
+        enabled: !!window.PCO_LIVE,
         browser: "https://play.theobscyranarchives.net/",
         downloads: [
           { label: "Windows",             sub: "Installer (.exe)", url: "https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.0_x64-setup.exe" },
