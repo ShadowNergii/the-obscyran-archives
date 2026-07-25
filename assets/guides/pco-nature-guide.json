@@ -1,0 +1,1769 @@
+{
+  "schemaVersion": 1,
+  "guideId": "pco-nature-guide",
+  "title": "PokeCyrus Online Nature Guide",
+  "growthModel": "pco-resonance-hybrid-v1",
+  "growthSchemaVersion": 2,
+  "generatedFrom": [
+    "server/data/pokemonGrowth.js"
+  ],
+  "mechanics": {
+    "milestoneLevels": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70,
+      80,
+      90,
+      100
+    ],
+    "rule": "Each Nature grants its listed bonuses once every 10 levels, through level 100.",
+    "level100Rule": "The level 100 total is exactly ten times the per-10-level value.",
+    "hpRule": "HP entries already use PCO final HP points; no additional conversion is needed.",
+    "zeroRule": "A zero means that Nature provides no bonus to that stat."
+  },
+  "stats": [
+    {
+      "key": "hp",
+      "label": "HP"
+    },
+    {
+      "key": "attack",
+      "label": "Attack"
+    },
+    {
+      "key": "defense",
+      "label": "Defense"
+    },
+    {
+      "key": "specialAttack",
+      "label": "Sp. Atk"
+    },
+    {
+      "key": "specialDefense",
+      "label": "Sp. Def"
+    },
+    {
+      "key": "speed",
+      "label": "Speed"
+    }
+  ],
+  "summary": {
+    "natureCount": 90
+  },
+  "natures": [
+    {
+      "name": "Aggressive",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 20,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Ambitious",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 2,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 20,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Angry",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "specialAttack": 1,
+        "specialDefense": 0,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 10,
+        "defense": 0,
+        "specialAttack": 10,
+        "specialDefense": 0,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Armored",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 3,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 30,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Astute",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 2,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 20,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Audacious",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "specialAttack": 0,
+        "specialDefense": 2,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 10,
+        "specialAttack": 0,
+        "specialDefense": 20,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Balanced",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 1,
+        "specialAttack": 0,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 10,
+        "specialAttack": 0,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Bashful",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Bizarre",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 1,
+        "specialDefense": 0,
+        "speed": 2
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 10,
+        "specialDefense": 0,
+        "speed": 20
+      }
+    },
+    {
+      "name": "Bold",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 1,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 10,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Bored",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "specialAttack": 0,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 20,
+        "specialAttack": 0,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Brave",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 1,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 10,
+        "defense": 10,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Calm",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "specialAttack": 0,
+        "specialDefense": 1,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 10,
+        "specialAttack": 0,
+        "specialDefense": 10,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Careful",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 1,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 10,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Childish",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Clever",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 3,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 30,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Clumsy",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 1,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 10,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Colossal",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 4,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 40,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Committed",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 1,
+        "defense": 0,
+        "specialAttack": 1,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 10,
+        "defense": 0,
+        "specialAttack": 10,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Competitive",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 1,
+        "specialAttack": 0,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 10,
+        "defense": 10,
+        "specialAttack": 0,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Confident",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 2
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 10,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 20
+      }
+    },
+    {
+      "name": "Confused",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 2,
+        "specialDefense": 0,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 20,
+        "specialDefense": 0,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Daring",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 1,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 20,
+        "defense": 10,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Deceitful",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "specialAttack": 1,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 20,
+        "defense": 0,
+        "specialAttack": 10,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Dedicated",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 1,
+        "speed": 2
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 10,
+        "speed": 20
+      }
+    },
+    {
+      "name": "Defensive",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 2,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 20,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Devious",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 1,
+        "specialDefense": 2,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 10,
+        "specialDefense": 20,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Devout",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 2,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 20,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Docile",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Eager",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 10,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Fearless",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 1,
+        "specialDefense": 1,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 10,
+        "specialDefense": 10,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Focused",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 2,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 20,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Gentle",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 10,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Happy",
+      "perTenLevels": {
+        "hp": 4,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 1,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 40,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 10,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Hardcore",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 3,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 30,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Hardy",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 1,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 10,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Healthy",
+      "perTenLevels": {
+        "hp": 6,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 60,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Helpful",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 10,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Hollow",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Holy",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 2,
+        "specialAttack": 0,
+        "specialDefense": 2,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 20,
+        "specialAttack": 0,
+        "specialDefense": 20,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Impassive",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 2,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 10,
+        "defense": 20,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Impervious",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 1,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 10,
+        "defense": 10,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Impish",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "specialAttack": 0,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 10,
+        "specialAttack": 0,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Jolly",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 2
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 20
+      }
+    },
+    {
+      "name": "Kind",
+      "perTenLevels": {
+        "hp": 4,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 40,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Lax",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 2,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 20,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Lazy",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 1,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 10,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Lonely",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 1,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 10,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Loved",
+      "perTenLevels": {
+        "hp": 4,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 40,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Loyal",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "specialAttack": 1,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 20,
+        "specialAttack": 10,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Lucky",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "specialAttack": 0,
+        "specialDefense": 2,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 20,
+        "specialAttack": 0,
+        "specialDefense": 20,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Mellow",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "specialAttack": 1,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 10,
+        "specialAttack": 10,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Messy",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 1,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 10,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Mild",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 2,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 20,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Modest",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 3,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 30,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Mystic",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 4,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 40,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Natural",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Passionate",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 1,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 10,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Perky",
+      "perTenLevels": {
+        "hp": 4,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 40,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Persistent",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 20,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Picky",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "specialAttack": 1,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 10,
+        "defense": 0,
+        "specialAttack": 10,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Polite",
+      "perTenLevels": {
+        "hp": 8,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 80,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Quick",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 3
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 30
+      }
+    },
+    {
+      "name": "Quiet",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 10,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Racing",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 2
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 10,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 20
+      }
+    },
+    {
+      "name": "Rash",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 10,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Relaxed",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 2,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 20,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Reliable",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "specialAttack": 1,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 10,
+        "defense": 0,
+        "specialAttack": 10,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Resolute",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 1,
+        "specialDefense": 0,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 10,
+        "specialDefense": 0,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Ruthless",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 1,
+        "specialAttack": 1,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 10,
+        "defense": 10,
+        "specialAttack": 10,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Sad",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "specialAttack": 1,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 10,
+        "specialAttack": 10,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Scary",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 20,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Serious",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 10,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Sleepy",
+      "perTenLevels": {
+        "hp": 4,
+        "attack": 0,
+        "defense": 1,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 40,
+        "attack": 0,
+        "defense": 10,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Slow",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Sly",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "specialAttack": 2,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 10,
+        "defense": 0,
+        "specialAttack": 20,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Spicy",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "specialAttack": 1,
+        "specialDefense": 0,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 10,
+        "specialAttack": 10,
+        "specialDefense": 0,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Spirited",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 1,
+        "specialAttack": 1,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 10,
+        "specialAttack": 10,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Steadfast",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 2,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 20,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Strong",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 1,
+        "defense": 1,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 10,
+        "defense": 10,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Timid",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 2
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 20
+      }
+    },
+    {
+      "name": "Traveling",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Trickster",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 2,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 20,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Trusting",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 1,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 2,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 10,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 20,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Unlucky",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Upset",
+      "perTenLevels": {
+        "hp": 4,
+        "attack": 1,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 40,
+        "attack": 10,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Venturous",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 1,
+        "specialAttack": 2,
+        "specialDefense": 0,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 10,
+        "specialAttack": 20,
+        "specialDefense": 0,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Vivid",
+      "perTenLevels": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 1,
+        "specialDefense": 0,
+        "speed": 1
+      },
+      "level100Total": {
+        "hp": 0,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 10,
+        "specialDefense": 0,
+        "speed": 10
+      }
+    },
+    {
+      "name": "Weird",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 1,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 10,
+        "defense": 0,
+        "specialAttack": 0,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    },
+    {
+      "name": "Witty",
+      "perTenLevels": {
+        "hp": 2,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 1,
+        "specialDefense": 1,
+        "speed": 0
+      },
+      "level100Total": {
+        "hp": 20,
+        "attack": 0,
+        "defense": 0,
+        "specialAttack": 10,
+        "specialDefense": 10,
+        "speed": 0
+      }
+    }
+  ]
+}

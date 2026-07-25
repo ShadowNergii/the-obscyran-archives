@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alpha Spawn Guide — PokéCyrus Online</title>
+  <meta name="description" content="PokéCyrus Online Alpha Spawn Guide — where to catch every Pokémon across Karel: 56 species over 15 habitats, with encounter rates, level ranges, and Honey spawns." />
+  <meta name="theme-color" content="#0c0a0b" />
+  <link rel="canonical" href="https://theobscyranarchives.net/guides/spawns" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23e11d2a'/%3E%3Cpath d='M1 16a15 15 0 0 0 30 0z' fill='%23f2f3f5'/%3E%3Crect x='1' y='14.5' width='30' height='3' fill='%23111111'/%3E%3Ccircle cx='16' cy='16' r='4.6' fill='%23ffffff' stroke='%23111111' stroke-width='1.6'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/assets/site.css" />
+  <style>
+    .habitat { margin-bottom: 1.2rem; }
+    .hab-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+    .hab-top h3 { margin: 0; }
+    .hab-meta { color: var(--dim); font-size: .82rem; margin: .25rem 0 1rem; }
+    .hab-meta .hub { color: var(--gold); }
+    td.loc { white-space: normal; min-width: 260px; }
+    td.loc .l { display: block; color: var(--muted); font-size: .84rem; }
+    td.loc .l b { color: var(--text); font-weight: 600; }
+    .method-honey { color: var(--gold); }
+  </style>
+</head>
+<body>
+  <nav class="topbar">
+    <div class="nav">
+      <a class="brand" href="/"><span class="pc">PokéCyrus</span> <span class="on">Online</span></a>
+      <div class="links">
+        <a href="/#karel">Karel</a>
+        <a href="/guides" class="active">Guides</a>
+        <a href="/market">Market</a>
+        <a href="/#dispatch">Dispatches</a>
+        <a href="/#faq">FAQ</a>
+        <a class="btn btn-red" href="/#play">Play Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <div class="wrap">
+      <div class="crumb"><a href="/guides">Game Guides</a> &nbsp;/&nbsp; Alpha Spawn Guide</div>
+      <div class="eyebrow">Alpha · Karel</div>
+      <h1 class="title">Alpha Spawn Guide</h1>
+      <p class="lede" id="lede">Where to catch what across Karel during the Alpha.</p>
+      <div class="notice" id="rules"></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="controls">
+        <div class="tabs" id="viewtabs">
+          <button class="tab active" data-view="habitat">By Habitat</button>
+          <button class="tab" data-view="species">By Species</button>
+        </div>
+        <input class="search" id="search" type="search" placeholder="Search a species…" aria-label="Search species" style="display:none;" />
+      </div>
+      <div class="meta-row" style="color:var(--dim); font-size:.82rem; margin-bottom:1rem;" id="count"></div>
+
+      <div id="habitat-view"></div>
+      <div id="species-view" style="display:none;"></div>
+      <div id="empty" style="display:none; text-align:center; color:var(--muted); padding:2.5rem;"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="brand"><span class="pc">PokéCyrus</span> <span class="on">Online</span></div>
+      <p>Alpha Spawn Guide · <a href="/guides">All Guides</a> · <a href="/">Home</a></p>
+      <p class="disclaimer">
+        PokéCyrus Online is a free, non-commercial fan-made MMORPG inspired by the Pokémon franchise.
+        Pokémon and related trademarks are owned by Nintendo, Game Freak, and The Pokémon Company;
+        PokéCyrus Online is not affiliated with or endorsed by them.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var FEED = "/assets/guides/alpha-spawn-guide.json";
+      var habitats = [], species = [], view = "habitat", q = "";
+
+      var habEl = document.getElementById("habitat-view");
+      var spEl = document.getElementById("species-view");
+      var countEl = document.getElementById("count");
+      var emptyEl = document.getElementById("empty");
+      var searchEl = document.getElementById("search");
+
+      function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
+      function titleCase(s){ return String(s||"").replace(/_/g," ").replace(/\b\w/g,function(c){return c.toUpperCase();}); }
+      function lv(a, b){ return a === b ? ("Lv " + a) : ("Lv " + a + "–" + b); }
+      function types(arr){ return (arr||[]).map(function(t){ return '<span class="chip">' + esc(t) + '</span>'; }).join(""); }
+      function rarity(r){ return '<span class="rt rt-' + esc(String(r||"common").toLowerCase()) + '">' + esc(r||"—") + '</span>'; }
+
+      function spawnRows(list, honey) {
+        return (list||[]).map(function (s) {
+          return '<tr>' +
+            '<td class="name">' + esc(s.name) + '</td>' +
+            '<td>' + types(s.types) + '</td>' +
+            '<td>' + lv(s.minimumLevel, s.maximumLevel) + '</td>' +
+            '<td>' + rarity(s.rarityTier) + '</td>' +
+            '<td class="num">' + (s.encounterSharePercent != null ? s.encounterSharePercent + "%" : "—") + '</td>' +
+            '<td' + (honey ? ' class="method-honey"' : '') + '>' + (honey ? "Honey" : "Normal") + '</td>' +
+          '</tr>';
+        }).join("");
+      }
+
+      function renderHabitats() {
+        habEl.innerHTML = habitats.map(function (h) {
+          var maps = (h.mapNames || []).join(", ");
+          var hub = h.grindingHub ? ' · <span class="hub">Grinding hub — favors ' + esc((h.grindingHub.favoredTrainerTypes||[]).join("/")) + '</span>' : '';
+          var rows = spawnRows(h.normalSpawns, false) + spawnRows(h.honeySpawns, true);
+          return '<div class="card habitat">' +
+            '<div class="hab-top"><h3>' + esc(h.title) + '</h3>' +
+              '<span class="chip">' + (h.stepEncounterRatePercent != null ? h.stepEncounterRatePercent + "% / step" : "") + '</span></div>' +
+            '<div class="hab-meta">' + (maps ? "Maps: " + esc(maps) : "") +
+              (h.habitatRole ? " · " + esc(titleCase(h.habitatRole)) : "") + hub + '</div>' +
+            '<div class="tablewrap"><table class="gtable">' +
+              '<thead><tr><th>Species</th><th>Types</th><th>Level</th><th>Rarity</th>' +
+              '<th class="num" style="text-align:right;">Share</th><th>Method</th></tr></thead>' +
+              '<tbody>' + rows + '</tbody></table></div>' +
+          '</div>';
+        }).join("");
+      }
+
+      function renderSpecies() {
+        var rows = species.filter(function (s) {
+          if (!q) { return true; }
+          var hay = (s.name + " " + (s.types||[]).join(" ")).toLowerCase();
+          return hay.indexOf(q) !== -1;
+        }).sort(function (a, b) { return a.name < b.name ? -1 : 1; });
+
+        spEl.innerHTML =
+          '<div class="tablewrap"><table class="gtable">' +
+            '<thead><tr><th>Species</th><th>Types</th><th>Where to Find</th></tr></thead><tbody>' +
+            rows.map(function (s) {
+              var locs = (s.locations || []).map(function (l) {
+                var honey = /honey/i.test(l.method || "");
+                return '<span class="l"><b>' + esc(l.area) + '</b> — ' +
+                  (honey ? '<span class="method-honey">Honey</span>' : 'Normal') + ', ' +
+                  esc(lv(l.minimumLevel, l.maximumLevel)) + ' · ' + esc(l.rarityTier) + '</span>';
+              }).join("");
+              return '<tr><td class="name">' + esc(s.name) + '</td><td>' + types(s.types) + '</td>' +
+                '<td class="loc">' + locs + '</td></tr>';
+            }).join("") +
+          '</tbody></table></div>';
+        emptyEl.style.display = rows.length ? "none" : "block";
+        if (!rows.length) { emptyEl.textContent = "No species matches your search."; }
+        countEl.textContent = "Showing " + rows.length + " of " + species.length + " species";
+      }
+
+      function render() {
+        if (view === "habitat") {
+          habEl.style.display = ""; spEl.style.display = "none"; searchEl.style.display = "none";
+          emptyEl.style.display = "none";
+          countEl.textContent = habitats.length + " habitats · " + species.length + " catchable species";
+          renderHabitats();
+        } else {
+          habEl.style.display = "none"; spEl.style.display = ""; searchEl.style.display = "";
+          renderSpecies();
+        }
+      }
+
+      document.getElementById("viewtabs").addEventListener("click", function (e) {
+        var b = e.target.closest(".tab"); if (!b) { return; }
+        [].forEach.call(this.querySelectorAll(".tab"), function (t){ t.classList.remove("active"); });
+        b.classList.add("active"); view = b.getAttribute("data-view"); render();
+      });
+      searchEl.addEventListener("input", function () { q = searchEl.value.toLowerCase().trim(); renderSpecies(); });
+
+      fetch(FEED, { cache: "no-store" })
+        .then(function (r) { if (!r.ok) { throw new Error(r.status); } return r.json(); })
+        .then(function (d) {
+          habitats = d.habitats || [];
+          species = d.species || [];
+          var m = d.mechanics || {};
+          document.getElementById("rules").innerHTML =
+            "<strong>How to read this.</strong> " +
+            esc(m.normalEncounterPercentMeaning || "") +
+            (m.honeyRule ? " " + esc(m.honeyRule) : "") +
+            (m.shinyRule ? " " + esc(m.shinyRule) : "");
+          render();
+        })
+        .catch(function () {
+          countEl.textContent = "";
+          emptyEl.textContent = "Couldn't load the Spawn Guide right now. Please try again shortly.";
+          emptyEl.style.display = "block";
+        });
+    })();
+  </script>
+</body>
+</html>

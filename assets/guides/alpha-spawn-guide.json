@@ -1,0 +1,4249 @@
+{
+  "schemaVersion": 1,
+  "guideId": "pco-public-alpha-spawn-guide",
+  "title": "PokeCyrus Online Alpha Spawn Guide",
+  "scope": {
+    "id": "karel-power-plant-celebration-alpha",
+    "label": "Karel Alpha — Power Plant Expedition",
+    "endpointMapIds": [
+      "legacy.pco.map0200",
+      "legacy.pco.map0201",
+      "legacy.pco.map0202",
+      "legacy.pco.map0203"
+    ],
+    "celebrationMode": "staff-scheduled-route-swarms"
+  },
+  "generatedFrom": [
+    "server/data/alpha/liveMapRegistry.json",
+    "server/game/maps.js",
+    "server/game/encounters.js",
+    "server/data/species.js"
+  ],
+  "mechanics": {
+    "normalEncounterPercentMeaning": "Share of successful unboosted encounters in this habitat.",
+    "futureTeamLevelOneRatePercent": 5,
+    "futureTeamLevelOneRule": "A normal spawn whose listed minimum level is above 1 has this independent chance to appear at level 1.",
+    "honeyRule": "Honey replaces the normal pool with the two rarest distinct species in that habitat.",
+    "honeyPoolShares": {
+      "megaPercent": 75,
+      "ultraPercent": 25,
+      "note": "Unboosted shares from the server honey weights. Active world boosts may alter unlikely encounter odds."
+    },
+    "shinyRule": "Shiny odds and active server boosts are intentionally displayed live in game rather than frozen into this guide.",
+    "celebrationRule": "Staff-scheduled Alpha Celebration swarms are dynamic and appear in game while active; they are not fixed route spawns."
+  },
+  "summary": {
+    "encounterMaps": 42,
+    "encounterHabitats": 15,
+    "uniqueCatchableSpecies": 56
+  },
+  "habitats": [
+    {
+      "tableId": "sevillaTownGrass",
+      "title": "Sevilla Town",
+      "mapNames": [
+        "Sevilla Town"
+      ],
+      "maps": [
+        {
+          "mapId": "sevillaTown",
+          "mapNumber": null,
+          "name": "Sevilla Town",
+          "encounterTerrain": "Marked encounter terrain"
+        }
+      ],
+      "stepEncounterRatePercent": 8,
+      "encounterProfile": "sevilla_beginner_grass",
+      "habitatRole": "first_partner_training_grass",
+      "grindingHub": null,
+      "normalSpawns": [
+        {
+          "speciesId": 16,
+          "name": "Pidgey",
+          "types": [
+            "Normal",
+            "Flying"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 2,
+          "maximumLevel": 3,
+          "relativeWeight": 32,
+          "encounterSharePercent": 32,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 19,
+          "name": "Rattata",
+          "types": [
+            "Normal"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 2,
+          "maximumLevel": 3,
+          "relativeWeight": 30,
+          "encounterSharePercent": 30,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 10,
+          "name": "Caterpie",
+          "types": [
+            "Bug"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 2,
+          "maximumLevel": 3,
+          "relativeWeight": 15,
+          "encounterSharePercent": 15,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 13,
+          "name": "Weedle",
+          "types": [
+            "Bug",
+            "Poison"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 2,
+          "maximumLevel": 3,
+          "relativeWeight": 15,
+          "encounterSharePercent": 15,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 43,
+          "name": "Oddish",
+          "types": [
+            "Grass",
+            "Poison"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 2,
+          "maximumLevel": 3,
+          "relativeWeight": 8,
+          "encounterSharePercent": 8,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 10,
+          "name": "Caterpie",
+          "types": [
+            "Bug"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 2,
+          "maximumLevel": 3,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 43,
+          "name": "Oddish",
+          "types": [
+            "Grass",
+            "Poison"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 2,
+          "maximumLevel": 3,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    },
+    {
+      "tableId": "route1",
+      "title": "Route 1 / Deckber Village",
+      "mapNames": [
+        "Route 1",
+        "Deckber Village"
+      ],
+      "maps": [
+        {
+          "mapId": "route1",
+          "mapNumber": null,
+          "name": "Route 1",
+          "encounterTerrain": "Marked encounter terrain"
+        },
+        {
+          "mapId": "route1East",
+          "mapNumber": null,
+          "name": "Route 1",
+          "encounterTerrain": "Marked encounter terrain"
+        },
+        {
+          "mapId": "deckberVillageNorth",
+          "mapNumber": null,
+          "name": "Deckber Village",
+          "encounterTerrain": "Marked encounter terrain"
+        }
+      ],
+      "stepEncounterRatePercent": 8.5,
+      "encounterProfile": "route1",
+      "habitatRole": "",
+      "grindingHub": null,
+      "normalSpawns": [
+        {
+          "speciesId": 16,
+          "name": "Pidgey",
+          "types": [
+            "Normal",
+            "Flying"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 2,
+          "maximumLevel": 5,
+          "relativeWeight": 36,
+          "encounterSharePercent": 36,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 19,
+          "name": "Rattata",
+          "types": [
+            "Normal"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 2,
+          "maximumLevel": 5,
+          "relativeWeight": 34,
+          "encounterSharePercent": 34,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 21,
+          "name": "Spearow",
+          "types": [
+            "Normal",
+            "Flying"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 3,
+          "maximumLevel": 5,
+          "relativeWeight": 12,
+          "encounterSharePercent": 12,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 10,
+          "name": "Caterpie",
+          "types": [
+            "Bug"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 2,
+          "maximumLevel": 4,
+          "relativeWeight": 7,
+          "encounterSharePercent": 7,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 13,
+          "name": "Weedle",
+          "types": [
+            "Bug",
+            "Poison"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 2,
+          "maximumLevel": 4,
+          "relativeWeight": 7,
+          "encounterSharePercent": 7,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 25,
+          "name": "Pikachu",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 3,
+          "maximumLevel": 6,
+          "relativeWeight": 4,
+          "encounterSharePercent": 4,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 10,
+          "name": "Caterpie",
+          "types": [
+            "Bug"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 2,
+          "maximumLevel": 4,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 25,
+          "name": "Pikachu",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 3,
+          "maximumLevel": 6,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    },
+    {
+      "tableId": "route2",
+      "title": "Route 2 / Route 2 Larsen",
+      "mapNames": [
+        "Route 2",
+        "Route 2 Larsen"
+      ],
+      "maps": [
+        {
+          "mapId": "legacy.pco.map0020",
+          "mapNumber": 20,
+          "name": "Route 2",
+          "encounterTerrain": "Marked encounter terrain"
+        },
+        {
+          "mapId": "legacy.pco.map0021",
+          "mapNumber": 21,
+          "name": "Route 2",
+          "encounterTerrain": "Marked encounter terrain"
+        },
+        {
+          "mapId": "legacy.pco.map0022",
+          "mapNumber": 22,
+          "name": "Route 2 Larsen",
+          "encounterTerrain": "Marked encounter terrain"
+        },
+        {
+          "mapId": "legacy.pco.map0046",
+          "mapNumber": 46,
+          "name": "Route 2",
+          "encounterTerrain": "Marked encounter terrain"
+        },
+        {
+          "mapId": "legacy.pco.map0047",
+          "mapNumber": 47,
+          "name": "Route 2",
+          "encounterTerrain": "Marked encounter terrain"
+        },
+        {
+          "mapId": "legacy.pco.map0049",
+          "mapNumber": 49,
+          "name": "Route 2",
+          "encounterTerrain": "Marked encounter terrain"
+        }
+      ],
+      "stepEncounterRatePercent": 9,
+      "encounterProfile": "route2_ocana_approach",
+      "habitatRole": "rock_gym_approach_training",
+      "grindingHub": null,
+      "normalSpawns": [
+        {
+          "speciesId": 263,
+          "name": "Zigzagoon",
+          "types": [
+            "Normal"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 7,
+          "maximumLevel": 10,
+          "relativeWeight": 28,
+          "encounterSharePercent": 28,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 276,
+          "name": "Taillow",
+          "types": [
+            "Normal",
+            "Flying"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 7,
+          "maximumLevel": 10,
+          "relativeWeight": 24,
+          "encounterSharePercent": 24,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 293,
+          "name": "Whismur",
+          "types": [
+            "Normal"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 8,
+          "maximumLevel": 11,
+          "relativeWeight": 18,
+          "encounterSharePercent": 18,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 290,
+          "name": "Nincada",
+          "types": [
+            "Bug",
+            "Ground"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 8,
+          "maximumLevel": 11,
+          "relativeWeight": 13,
+          "encounterSharePercent": 13,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 296,
+          "name": "Makuhita",
+          "types": [
+            "Fighting"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 9,
+          "maximumLevel": 12,
+          "relativeWeight": 10,
+          "encounterSharePercent": 10,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 74,
+          "name": "Geodude",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 9,
+          "maximumLevel": 12,
+          "relativeWeight": 7,
+          "encounterSharePercent": 7,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 296,
+          "name": "Makuhita",
+          "types": [
+            "Fighting"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 9,
+          "maximumLevel": 12,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 74,
+          "name": "Geodude",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 9,
+          "maximumLevel": 12,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    },
+    {
+      "tableId": "lupiesForest",
+      "title": "Lupies abandoned / Lupies School Secret S.4",
+      "mapNames": [
+        "Lupies abandoned",
+        "Lupies School Secret S.4"
+      ],
+      "maps": [
+        {
+          "mapId": "legacy.pco.map0035",
+          "mapNumber": 35,
+          "name": "Lupies abandoned",
+          "encounterTerrain": "Marked encounter terrain"
+        },
+        {
+          "mapId": "legacy.pco.map0045",
+          "mapNumber": 45,
+          "name": "Lupies School Secret S.4",
+          "encounterTerrain": "Marked encounter terrain"
+        }
+      ],
+      "stepEncounterRatePercent": 8.5,
+      "encounterProfile": "lupies_forest_old_canopy",
+      "habitatRole": "early_forest_police_rocket_chronicle",
+      "grindingHub": null,
+      "normalSpawns": [
+        {
+          "speciesId": 10,
+          "name": "Caterpie",
+          "types": [
+            "Bug"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 6,
+          "maximumLevel": 9,
+          "relativeWeight": 26,
+          "encounterSharePercent": 26,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 13,
+          "name": "Weedle",
+          "types": [
+            "Bug",
+            "Poison"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 6,
+          "maximumLevel": 9,
+          "relativeWeight": 24,
+          "encounterSharePercent": 24,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 43,
+          "name": "Oddish",
+          "types": [
+            "Grass",
+            "Poison"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 7,
+          "maximumLevel": 10,
+          "relativeWeight": 20,
+          "encounterSharePercent": 20,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 163,
+          "name": "Hoothoot",
+          "types": [
+            "Normal",
+            "Flying"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 7,
+          "maximumLevel": 10,
+          "relativeWeight": 14,
+          "encounterSharePercent": 14,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 46,
+          "name": "Paras",
+          "types": [
+            "Bug",
+            "Grass"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 8,
+          "maximumLevel": 11,
+          "relativeWeight": 10,
+          "encounterSharePercent": 10,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 165,
+          "name": "Ledyba",
+          "types": [
+            "Bug",
+            "Flying"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 8,
+          "maximumLevel": 11,
+          "relativeWeight": 4,
+          "encounterSharePercent": 4,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 198,
+          "name": "Murkrow",
+          "types": [
+            "Dark",
+            "Flying"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 9,
+          "maximumLevel": 12,
+          "relativeWeight": 2,
+          "encounterSharePercent": 2,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 165,
+          "name": "Ledyba",
+          "types": [
+            "Bug",
+            "Flying"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 8,
+          "maximumLevel": 11,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 198,
+          "name": "Murkrow",
+          "types": [
+            "Dark",
+            "Flying"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 9,
+          "maximumLevel": 12,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    },
+    {
+      "tableId": "ocanaMineB1",
+      "title": "Ocana Mine A / Ocana Mine B",
+      "mapNames": [
+        "Ocana Mine A",
+        "Ocana Mine B"
+      ],
+      "maps": [
+        {
+          "mapId": "legacy.pco.map0064",
+          "mapNumber": 64,
+          "name": "Ocana Mine A",
+          "encounterTerrain": "Area-wide"
+        },
+        {
+          "mapId": "legacy.pco.map0065",
+          "mapNumber": 65,
+          "name": "Ocana Mine B",
+          "encounterTerrain": "Area-wide"
+        }
+      ],
+      "stepEncounterRatePercent": 8.5,
+      "encounterProfile": "ocana_mine_b1",
+      "habitatRole": "ocana_mine_a_b_ore_fragment_loop",
+      "grindingHub": {
+        "id": "ocana_mine_a_b",
+        "favoredTrainerTypes": [
+          "Water",
+          "Grass"
+        ],
+        "design": "dominant_favorable_pool_with_low_weight_counter_pressure"
+      },
+      "normalSpawns": [
+        {
+          "speciesId": 50,
+          "name": "Diglett",
+          "types": [
+            "Ground"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 10,
+          "maximumLevel": 14,
+          "relativeWeight": 30,
+          "encounterSharePercent": 30,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 74,
+          "name": "Geodude",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 10,
+          "maximumLevel": 14,
+          "relativeWeight": 30,
+          "encounterSharePercent": 30,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 75,
+          "name": "Graveler",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 12,
+          "maximumLevel": 16,
+          "relativeWeight": 18,
+          "encounterSharePercent": 18,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 51,
+          "name": "Dugtrio",
+          "types": [
+            "Ground"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 14,
+          "maximumLevel": 17,
+          "relativeWeight": 8,
+          "encounterSharePercent": 8,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 41,
+          "name": "Zubat",
+          "types": [
+            "Poison",
+            "Flying"
+          ],
+          "rarityTier": "uncommon",
+          "role": "counter",
+          "minimumLevel": 11,
+          "maximumLevel": 15,
+          "relativeWeight": 6,
+          "encounterSharePercent": 6,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 81,
+          "name": "Magnemite",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "uncommon",
+          "role": "counter",
+          "minimumLevel": 12,
+          "maximumLevel": 16,
+          "relativeWeight": 5,
+          "encounterSharePercent": 5,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 46,
+          "name": "Paras",
+          "types": [
+            "Bug",
+            "Grass"
+          ],
+          "rarityTier": "rare",
+          "role": "counter",
+          "minimumLevel": 12,
+          "maximumLevel": 16,
+          "relativeWeight": 3,
+          "encounterSharePercent": 3,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 51,
+          "name": "Dugtrio",
+          "types": [
+            "Ground"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 14,
+          "maximumLevel": 17,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 46,
+          "name": "Paras",
+          "types": [
+            "Bug",
+            "Grass"
+          ],
+          "rarityTier": "ultra",
+          "role": "counter",
+          "minimumLevel": 12,
+          "maximumLevel": 16,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    },
+    {
+      "tableId": "ocanaMineB2",
+      "title": "Ocana Mine C",
+      "mapNames": [
+        "Ocana Mine C"
+      ],
+      "maps": [
+        {
+          "mapId": "legacy.pco.map0066",
+          "mapNumber": 66,
+          "name": "Ocana Mine C",
+          "encounterTerrain": "Area-wide"
+        }
+      ],
+      "stepEncounterRatePercent": 9,
+      "encounterProfile": "ocana_mine_b2",
+      "habitatRole": "post_gym3_water_grass_training_and_mining_loop",
+      "grindingHub": {
+        "id": "ocana_mine_c",
+        "favoredTrainerTypes": [
+          "Water",
+          "Grass"
+        ],
+        "design": "dominant_favorable_pool_with_low_weight_counter_pressure"
+      },
+      "normalSpawns": [
+        {
+          "speciesId": 75,
+          "name": "Graveler",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 27,
+          "maximumLevel": 31,
+          "relativeWeight": 28,
+          "encounterSharePercent": 28,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 95,
+          "name": "Onix",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 27,
+          "maximumLevel": 31,
+          "relativeWeight": 20,
+          "encounterSharePercent": 20,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 111,
+          "name": "Rhyhorn",
+          "types": [
+            "Ground",
+            "Rock"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 28,
+          "maximumLevel": 32,
+          "relativeWeight": 18,
+          "encounterSharePercent": 18,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 299,
+          "name": "Nosepass",
+          "types": [
+            "Rock"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 28,
+          "maximumLevel": 32,
+          "relativeWeight": 12,
+          "encounterSharePercent": 12,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 76,
+          "name": "Golem",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 31,
+          "maximumLevel": 35,
+          "relativeWeight": 8,
+          "encounterSharePercent": 8,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 42,
+          "name": "Golbat",
+          "types": [
+            "Poison",
+            "Flying"
+          ],
+          "rarityTier": "uncommon",
+          "role": "counter",
+          "minimumLevel": 29,
+          "maximumLevel": 33,
+          "relativeWeight": 5,
+          "encounterSharePercent": 5,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 82,
+          "name": "Magneton",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "uncommon",
+          "role": "counter",
+          "minimumLevel": 30,
+          "maximumLevel": 34,
+          "relativeWeight": 6,
+          "encounterSharePercent": 6,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 47,
+          "name": "Parasect",
+          "types": [
+            "Bug",
+            "Grass"
+          ],
+          "rarityTier": "rare",
+          "role": "counter",
+          "minimumLevel": 30,
+          "maximumLevel": 34,
+          "relativeWeight": 3,
+          "encounterSharePercent": 3,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 76,
+          "name": "Golem",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 31,
+          "maximumLevel": 35,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 47,
+          "name": "Parasect",
+          "types": [
+            "Bug",
+            "Grass"
+          ],
+          "rarityTier": "ultra",
+          "role": "counter",
+          "minimumLevel": 30,
+          "maximumLevel": 34,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    },
+    {
+      "tableId": "route3Casto",
+      "title": "Route 3 / Casto Cliffs",
+      "mapNames": [
+        "Route 3",
+        "Casto Cliffs"
+      ],
+      "maps": [
+        {
+          "mapId": "legacy.pco.map0067",
+          "mapNumber": 67,
+          "name": "Route 3",
+          "encounterTerrain": "Marked encounter terrain"
+        },
+        {
+          "mapId": "legacy.pco.map0068",
+          "mapNumber": 68,
+          "name": "Route 3",
+          "encounterTerrain": "Marked encounter terrain"
+        },
+        {
+          "mapId": "legacy.pco.map0069",
+          "mapNumber": 69,
+          "name": "Route 3",
+          "encounterTerrain": "Marked encounter terrain"
+        },
+        {
+          "mapId": "legacy.pco.map0071",
+          "mapNumber": 71,
+          "name": "Casto Cliffs",
+          "encounterTerrain": "Marked encounter terrain"
+        },
+        {
+          "mapId": "legacy.pco.map0072",
+          "mapNumber": 72,
+          "name": "Casto Cliffs",
+          "encounterTerrain": "Marked encounter terrain"
+        },
+        {
+          "mapId": "legacy.pco.map0074",
+          "mapNumber": 74,
+          "name": "Casto Cliffs",
+          "encounterTerrain": "Marked encounter terrain"
+        },
+        {
+          "mapId": "legacy.pco.map0075",
+          "mapNumber": 75,
+          "name": "Casto Cliffs",
+          "encounterTerrain": "Marked encounter terrain"
+        }
+      ],
+      "stepEncounterRatePercent": 8.5,
+      "encounterProfile": "route3_casto",
+      "habitatRole": "ocana_pavillion_bridge",
+      "grindingHub": null,
+      "normalSpawns": [
+        {
+          "speciesId": 293,
+          "name": "Whismur",
+          "types": [
+            "Normal"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 17,
+          "maximumLevel": 21,
+          "relativeWeight": 24,
+          "encounterSharePercent": 24,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 276,
+          "name": "Taillow",
+          "types": [
+            "Normal",
+            "Flying"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 17,
+          "maximumLevel": 21,
+          "relativeWeight": 22,
+          "encounterSharePercent": 22,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 290,
+          "name": "Nincada",
+          "types": [
+            "Bug",
+            "Ground"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 18,
+          "maximumLevel": 22,
+          "relativeWeight": 18,
+          "encounterSharePercent": 18,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 296,
+          "name": "Makuhita",
+          "types": [
+            "Fighting"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 19,
+          "maximumLevel": 23,
+          "relativeWeight": 14,
+          "encounterSharePercent": 14,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 322,
+          "name": "Numel",
+          "types": [
+            "Fire",
+            "Ground"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 19,
+          "maximumLevel": 23,
+          "relativeWeight": 12,
+          "encounterSharePercent": 12,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 227,
+          "name": "Skarmory",
+          "types": [
+            "Steel",
+            "Flying"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 21,
+          "maximumLevel": 24,
+          "relativeWeight": 6,
+          "encounterSharePercent": 6,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 207,
+          "name": "Gligar",
+          "types": [
+            "Ground",
+            "Flying"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 22,
+          "maximumLevel": 25,
+          "relativeWeight": 4,
+          "encounterSharePercent": 4,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 227,
+          "name": "Skarmory",
+          "types": [
+            "Steel",
+            "Flying"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 21,
+          "maximumLevel": 24,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 207,
+          "name": "Gligar",
+          "types": [
+            "Ground",
+            "Flying"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 22,
+          "maximumLevel": 25,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    },
+    {
+      "tableId": "caritaCavern",
+      "title": "Carita Cavern",
+      "mapNames": [
+        "Carita Cavern"
+      ],
+      "maps": [
+        {
+          "mapId": "legacy.pco.map0070",
+          "mapNumber": 70,
+          "name": "Carita Cavern",
+          "encounterTerrain": "Area-wide"
+        }
+      ],
+      "stepEncounterRatePercent": 8.5,
+      "encounterProfile": "carita_cavern",
+      "habitatRole": "ocana_pavillion_cave_entry_ecology",
+      "grindingHub": null,
+      "normalSpawns": [
+        {
+          "speciesId": 293,
+          "name": "Whismur",
+          "types": [
+            "Normal"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 18,
+          "maximumLevel": 22,
+          "relativeWeight": 26,
+          "encounterSharePercent": 26,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 41,
+          "name": "Zubat",
+          "types": [
+            "Poison",
+            "Flying"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 18,
+          "maximumLevel": 22,
+          "relativeWeight": 24,
+          "encounterSharePercent": 24,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 74,
+          "name": "Geodude",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 18,
+          "maximumLevel": 22,
+          "relativeWeight": 20,
+          "encounterSharePercent": 20,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 296,
+          "name": "Makuhita",
+          "types": [
+            "Fighting"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 19,
+          "maximumLevel": 23,
+          "relativeWeight": 14,
+          "encounterSharePercent": 14,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 304,
+          "name": "Aron",
+          "types": [
+            "Steel",
+            "Rock"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 19,
+          "maximumLevel": 23,
+          "relativeWeight": 11,
+          "encounterSharePercent": 11,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 302,
+          "name": "Sableye",
+          "types": [
+            "Dark",
+            "Ghost"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 21,
+          "maximumLevel": 24,
+          "relativeWeight": 5,
+          "encounterSharePercent": 5,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 304,
+          "name": "Aron",
+          "types": [
+            "Steel",
+            "Rock"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 19,
+          "maximumLevel": 23,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 302,
+          "name": "Sableye",
+          "types": [
+            "Dark",
+            "Ghost"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 21,
+          "maximumLevel": 24,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    },
+    {
+      "tableId": "castoCaves",
+      "title": "Casto Cave",
+      "mapNames": [
+        "Casto Cave"
+      ],
+      "maps": [
+        {
+          "mapId": "legacy.pco.map0081",
+          "mapNumber": 81,
+          "name": "Casto Cave",
+          "encounterTerrain": "Area-wide"
+        },
+        {
+          "mapId": "legacy.pco.map0082",
+          "mapNumber": 82,
+          "name": "Casto Cave",
+          "encounterTerrain": "Area-wide"
+        }
+      ],
+      "stepEncounterRatePercent": 9,
+      "encounterProfile": "casto_caves",
+      "habitatRole": "upper_casto_rare_onix_trade_loop",
+      "grindingHub": null,
+      "normalSpawns": [
+        {
+          "speciesId": 41,
+          "name": "Zubat",
+          "types": [
+            "Poison",
+            "Flying"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 19,
+          "maximumLevel": 23,
+          "relativeWeight": 27,
+          "encounterSharePercent": 27,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 74,
+          "name": "Geodude",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 19,
+          "maximumLevel": 23,
+          "relativeWeight": 23,
+          "encounterSharePercent": 23,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 304,
+          "name": "Aron",
+          "types": [
+            "Steel",
+            "Rock"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 19,
+          "maximumLevel": 24,
+          "relativeWeight": 18,
+          "encounterSharePercent": 18,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 290,
+          "name": "Nincada",
+          "types": [
+            "Bug",
+            "Ground"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 19,
+          "maximumLevel": 24,
+          "relativeWeight": 14,
+          "encounterSharePercent": 14,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 299,
+          "name": "Nosepass",
+          "types": [
+            "Rock"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 20,
+          "maximumLevel": 25,
+          "relativeWeight": 10,
+          "encounterSharePercent": 10,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 95,
+          "name": "Onix",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 22,
+          "maximumLevel": 26,
+          "relativeWeight": 5,
+          "encounterSharePercent": 5,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 303,
+          "name": "Mawile",
+          "types": [
+            "Steel",
+            "Fairy"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 23,
+          "maximumLevel": 26,
+          "relativeWeight": 3,
+          "encounterSharePercent": 3,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 95,
+          "name": "Onix",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 22,
+          "maximumLevel": 26,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 303,
+          "name": "Mawile",
+          "types": [
+            "Steel",
+            "Fairy"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 23,
+          "maximumLevel": 26,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    },
+    {
+      "tableId": "castoCavesDeep",
+      "title": "Casto Cave",
+      "mapNames": [
+        "Casto Cave"
+      ],
+      "maps": [
+        {
+          "mapId": "legacy.pco.map0083",
+          "mapNumber": 83,
+          "name": "Casto Cave",
+          "encounterTerrain": "Area-wide"
+        },
+        {
+          "mapId": "legacy.pco.map0084",
+          "mapNumber": 84,
+          "name": "Casto Cave",
+          "encounterTerrain": "Area-wide"
+        },
+        {
+          "mapId": "legacy.pco.map0085",
+          "mapNumber": 85,
+          "name": "Casto Cave",
+          "encounterTerrain": "Area-wide"
+        }
+      ],
+      "stepEncounterRatePercent": 9,
+      "encounterProfile": "casto_caves",
+      "habitatRole": "deep_casto_mineral_and_shadow_ecology",
+      "grindingHub": null,
+      "normalSpawns": [
+        {
+          "speciesId": 42,
+          "name": "Golbat",
+          "types": [
+            "Poison",
+            "Flying"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 23,
+          "maximumLevel": 27,
+          "relativeWeight": 24,
+          "encounterSharePercent": 24,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 75,
+          "name": "Graveler",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 24,
+          "maximumLevel": 28,
+          "relativeWeight": 22,
+          "encounterSharePercent": 22,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 304,
+          "name": "Aron",
+          "types": [
+            "Steel",
+            "Rock"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 22,
+          "maximumLevel": 27,
+          "relativeWeight": 18,
+          "encounterSharePercent": 18,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 299,
+          "name": "Nosepass",
+          "types": [
+            "Rock"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 23,
+          "maximumLevel": 28,
+          "relativeWeight": 14,
+          "encounterSharePercent": 14,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 302,
+          "name": "Sableye",
+          "types": [
+            "Dark",
+            "Ghost"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 24,
+          "maximumLevel": 28,
+          "relativeWeight": 9,
+          "encounterSharePercent": 9,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 303,
+          "name": "Mawile",
+          "types": [
+            "Steel",
+            "Fairy"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 24,
+          "maximumLevel": 28,
+          "relativeWeight": 8,
+          "encounterSharePercent": 8,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 95,
+          "name": "Onix",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 25,
+          "maximumLevel": 29,
+          "relativeWeight": 5,
+          "encounterSharePercent": 5,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 303,
+          "name": "Mawile",
+          "types": [
+            "Steel",
+            "Fairy"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 24,
+          "maximumLevel": 28,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 95,
+          "name": "Onix",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 25,
+          "maximumLevel": 29,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    },
+    {
+      "tableId": "route4Pavillion",
+      "title": "Hawso Swamp Forest",
+      "mapNames": [
+        "Hawso Swamp Forest"
+      ],
+      "maps": [
+        {
+          "mapId": "legacy.pco.map0097",
+          "mapNumber": 97,
+          "name": "Hawso Swamp Forest",
+          "encounterTerrain": "Marked encounter terrain"
+        },
+        {
+          "mapId": "legacy.pco.map0098",
+          "mapNumber": 98,
+          "name": "Hawso Swamp Forest",
+          "encounterTerrain": "Marked encounter terrain"
+        }
+      ],
+      "stepEncounterRatePercent": 8.5,
+      "encounterProfile": "route4_pavillion",
+      "habitatRole": "grass_gym_training_bridge",
+      "grindingHub": null,
+      "normalSpawns": [
+        {
+          "speciesId": 309,
+          "name": "Electrike",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 22,
+          "maximumLevel": 26,
+          "relativeWeight": 23,
+          "encounterSharePercent": 23,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 285,
+          "name": "Shroomish",
+          "types": [
+            "Grass"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 22,
+          "maximumLevel": 26,
+          "relativeWeight": 21,
+          "encounterSharePercent": 21,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 315,
+          "name": "Roselia",
+          "types": [
+            "Grass",
+            "Poison"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 23,
+          "maximumLevel": 27,
+          "relativeWeight": 18,
+          "encounterSharePercent": 18,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 333,
+          "name": "Swablu",
+          "types": [
+            "Normal",
+            "Flying"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 23,
+          "maximumLevel": 27,
+          "relativeWeight": 16,
+          "encounterSharePercent": 16,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 316,
+          "name": "Gulpin",
+          "types": [
+            "Poison"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 24,
+          "maximumLevel": 28,
+          "relativeWeight": 12,
+          "encounterSharePercent": 12,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 335,
+          "name": "Zangoose",
+          "types": [
+            "Normal"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 25,
+          "maximumLevel": 29,
+          "relativeWeight": 5,
+          "encounterSharePercent": 5,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 336,
+          "name": "Seviper",
+          "types": [
+            "Poison"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 25,
+          "maximumLevel": 29,
+          "relativeWeight": 5,
+          "encounterSharePercent": 5,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 336,
+          "name": "Seviper",
+          "types": [
+            "Poison"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 25,
+          "maximumLevel": 29,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 335,
+          "name": "Zangoose",
+          "types": [
+            "Normal"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 25,
+          "maximumLevel": 29,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    },
+    {
+      "tableId": "diglettCave",
+      "title": "Diglett Cave",
+      "mapNames": [
+        "Diglett Cave"
+      ],
+      "maps": [
+        {
+          "mapId": "legacy.pco.map0124",
+          "mapNumber": 124,
+          "name": "Diglett Cave",
+          "encounterTerrain": "Area-wide"
+        }
+      ],
+      "stepEncounterRatePercent": 9,
+      "encounterProfile": "diglett_cave",
+      "habitatRole": "post_gym2_ground_training",
+      "grindingHub": null,
+      "normalSpawns": [
+        {
+          "speciesId": 50,
+          "name": "Diglett",
+          "types": [
+            "Ground"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 25,
+          "maximumLevel": 30,
+          "relativeWeight": 44,
+          "encounterSharePercent": 44,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 74,
+          "name": "Geodude",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 25,
+          "maximumLevel": 30,
+          "relativeWeight": 22,
+          "encounterSharePercent": 22,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 290,
+          "name": "Nincada",
+          "types": [
+            "Bug",
+            "Ground"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 26,
+          "maximumLevel": 31,
+          "relativeWeight": 18,
+          "encounterSharePercent": 18,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 328,
+          "name": "Trapinch",
+          "types": [
+            "Ground"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 27,
+          "maximumLevel": 32,
+          "relativeWeight": 12,
+          "encounterSharePercent": 12,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 51,
+          "name": "Dugtrio",
+          "types": [
+            "Ground"
+          ],
+          "rarityTier": "super",
+          "role": "primary",
+          "minimumLevel": 30,
+          "maximumLevel": 33,
+          "relativeWeight": 4,
+          "encounterSharePercent": 4,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 328,
+          "name": "Trapinch",
+          "types": [
+            "Ground"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 27,
+          "maximumLevel": 32,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 51,
+          "name": "Dugtrio",
+          "types": [
+            "Ground"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 30,
+          "maximumLevel": 33,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    },
+    {
+      "tableId": "miGordaSeaCave",
+      "title": "Sea Cave / Cave Shuckle",
+      "mapNames": [
+        "Sea Cave",
+        "Cave Shuckle"
+      ],
+      "maps": [
+        {
+          "mapId": "legacy.pco.map0149",
+          "mapNumber": 149,
+          "name": "Sea Cave",
+          "encounterTerrain": "Area-wide"
+        },
+        {
+          "mapId": "legacy.pco.map0150",
+          "mapNumber": 150,
+          "name": "Sea Cave",
+          "encounterTerrain": "Area-wide"
+        },
+        {
+          "mapId": "legacy.pco.map0151",
+          "mapNumber": 151,
+          "name": "Sea Cave",
+          "encounterTerrain": "Area-wide"
+        },
+        {
+          "mapId": "legacy.pco.map0152",
+          "mapNumber": 152,
+          "name": "Sea Cave",
+          "encounterTerrain": "Area-wide"
+        },
+        {
+          "mapId": "legacy.pco.map0153",
+          "mapNumber": 153,
+          "name": "Cave Shuckle",
+          "encounterTerrain": "Area-wide"
+        }
+      ],
+      "stepEncounterRatePercent": 9,
+      "encounterProfile": "mi_gorda_sea_cave",
+      "habitatRole": "post_gym3_repeatable_cave",
+      "grindingHub": null,
+      "normalSpawns": [
+        {
+          "speciesId": 72,
+          "name": "Tentacool",
+          "types": [
+            "Water",
+            "Poison"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 34,
+          "maximumLevel": 39,
+          "relativeWeight": 24,
+          "encounterSharePercent": 24,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 170,
+          "name": "Chinchou",
+          "types": [
+            "Water",
+            "Electric"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 34,
+          "maximumLevel": 39,
+          "relativeWeight": 21,
+          "encounterSharePercent": 21,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 339,
+          "name": "Barboach",
+          "types": [
+            "Water",
+            "Ground"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 35,
+          "maximumLevel": 40,
+          "relativeWeight": 18,
+          "encounterSharePercent": 18,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 318,
+          "name": "Carvanha",
+          "types": [
+            "Water",
+            "Dark"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 35,
+          "maximumLevel": 40,
+          "relativeWeight": 15,
+          "encounterSharePercent": 15,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 341,
+          "name": "Corphish",
+          "types": [
+            "Water"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 36,
+          "maximumLevel": 41,
+          "relativeWeight": 11,
+          "encounterSharePercent": 11,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 213,
+          "name": "Shuckle",
+          "types": [
+            "Bug",
+            "Rock"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 37,
+          "maximumLevel": 42,
+          "relativeWeight": 6,
+          "encounterSharePercent": 6,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 349,
+          "name": "Feebas",
+          "types": [
+            "Water"
+          ],
+          "rarityTier": "super",
+          "role": "primary",
+          "minimumLevel": 36,
+          "maximumLevel": 41,
+          "relativeWeight": 3,
+          "encounterSharePercent": 3,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 369,
+          "name": "Relicanth",
+          "types": [
+            "Water",
+            "Rock"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 39,
+          "maximumLevel": 43,
+          "relativeWeight": 1.5,
+          "encounterSharePercent": 1.5,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 366,
+          "name": "Clamperl",
+          "types": [
+            "Water"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 40,
+          "maximumLevel": 44,
+          "relativeWeight": 0.5,
+          "encounterSharePercent": 0.5,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 369,
+          "name": "Relicanth",
+          "types": [
+            "Water",
+            "Rock"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 39,
+          "maximumLevel": 43,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 366,
+          "name": "Clamperl",
+          "types": [
+            "Water"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 40,
+          "maximumLevel": 44,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    },
+    {
+      "tableId": "verdentPortCavern",
+      "title": "Verdent Port Cavern",
+      "mapNames": [
+        "Verdent Port Cavern"
+      ],
+      "maps": [
+        {
+          "mapId": "legacy.pco.map0158",
+          "mapNumber": 158,
+          "name": "Verdent Port Cavern",
+          "encounterTerrain": "Area-wide"
+        },
+        {
+          "mapId": "legacy.pco.map0159",
+          "mapNumber": 159,
+          "name": "Verdent Port Cavern",
+          "encounterTerrain": "Area-wide"
+        },
+        {
+          "mapId": "legacy.pco.map0160",
+          "mapNumber": 160,
+          "name": "Verdent Port Cavern",
+          "encounterTerrain": "Area-wide"
+        }
+      ],
+      "stepEncounterRatePercent": 9,
+      "encounterProfile": "verdent_port_cavern",
+      "habitatRole": "post_gym3_material_loop",
+      "grindingHub": null,
+      "normalSpawns": [
+        {
+          "speciesId": 81,
+          "name": "Magnemite",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 36,
+          "maximumLevel": 41,
+          "relativeWeight": 24,
+          "encounterSharePercent": 24,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 170,
+          "name": "Chinchou",
+          "types": [
+            "Water",
+            "Electric"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 36,
+          "maximumLevel": 41,
+          "relativeWeight": 22,
+          "encounterSharePercent": 22,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 304,
+          "name": "Aron",
+          "types": [
+            "Steel",
+            "Rock"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 37,
+          "maximumLevel": 42,
+          "relativeWeight": 18,
+          "encounterSharePercent": 18,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 339,
+          "name": "Barboach",
+          "types": [
+            "Water",
+            "Ground"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 37,
+          "maximumLevel": 42,
+          "relativeWeight": 14,
+          "encounterSharePercent": 14,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 303,
+          "name": "Mawile",
+          "types": [
+            "Steel",
+            "Fairy"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 38,
+          "maximumLevel": 43,
+          "relativeWeight": 9,
+          "encounterSharePercent": 9,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 302,
+          "name": "Sableye",
+          "types": [
+            "Dark",
+            "Ghost"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 38,
+          "maximumLevel": 43,
+          "relativeWeight": 8,
+          "encounterSharePercent": 8,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 369,
+          "name": "Relicanth",
+          "types": [
+            "Water",
+            "Rock"
+          ],
+          "rarityTier": "super",
+          "role": "primary",
+          "minimumLevel": 40,
+          "maximumLevel": 44,
+          "relativeWeight": 4,
+          "encounterSharePercent": 4,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 366,
+          "name": "Clamperl",
+          "types": [
+            "Water"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 41,
+          "maximumLevel": 45,
+          "relativeWeight": 1,
+          "encounterSharePercent": 1,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 369,
+          "name": "Relicanth",
+          "types": [
+            "Water",
+            "Rock"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 40,
+          "maximumLevel": 44,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 366,
+          "name": "Clamperl",
+          "types": [
+            "Water"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 41,
+          "maximumLevel": 45,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    },
+    {
+      "tableId": "powerPlant",
+      "title": "Power Plant",
+      "mapNames": [
+        "Power Plant"
+      ],
+      "maps": [
+        {
+          "mapId": "legacy.pco.map0201",
+          "mapNumber": 201,
+          "name": "Power Plant",
+          "encounterTerrain": "Area-wide"
+        },
+        {
+          "mapId": "legacy.pco.map0202",
+          "mapNumber": 202,
+          "name": "Power Plant",
+          "encounterTerrain": "Area-wide"
+        },
+        {
+          "mapId": "legacy.pco.map0203",
+          "mapNumber": 203,
+          "name": "Power Plant",
+          "encounterTerrain": "Area-wide"
+        }
+      ],
+      "stepEncounterRatePercent": 8.2,
+      "encounterProfile": "route6_power_plant",
+      "habitatRole": "post_gym3_electric_industrial_interior",
+      "grindingHub": null,
+      "normalSpawns": [
+        {
+          "speciesId": 81,
+          "name": "Magnemite",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 35,
+          "maximumLevel": 40,
+          "relativeWeight": 24,
+          "encounterSharePercent": 24,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 100,
+          "name": "Voltorb",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 35,
+          "maximumLevel": 40,
+          "relativeWeight": 22,
+          "encounterSharePercent": 22,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 25,
+          "name": "Pikachu",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 36,
+          "maximumLevel": 41,
+          "relativeWeight": 17,
+          "encounterSharePercent": 17,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 170,
+          "name": "Chinchou",
+          "types": [
+            "Water",
+            "Electric"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 36,
+          "maximumLevel": 41,
+          "relativeWeight": 14,
+          "encounterSharePercent": 14,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 82,
+          "name": "Magneton",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 38,
+          "maximumLevel": 43,
+          "relativeWeight": 10,
+          "encounterSharePercent": 10,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 101,
+          "name": "Electrode",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 39,
+          "maximumLevel": 44,
+          "relativeWeight": 7,
+          "encounterSharePercent": 7,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 125,
+          "name": "Electabuzz",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "super",
+          "role": "primary",
+          "minimumLevel": 40,
+          "maximumLevel": 45,
+          "relativeWeight": 4,
+          "encounterSharePercent": 4,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 171,
+          "name": "Lanturn",
+          "types": [
+            "Water",
+            "Electric"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 41,
+          "maximumLevel": 46,
+          "relativeWeight": 2,
+          "encounterSharePercent": 2,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 125,
+          "name": "Electabuzz",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 40,
+          "maximumLevel": 45,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 171,
+          "name": "Lanturn",
+          "types": [
+            "Water",
+            "Electric"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 41,
+          "maximumLevel": 46,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    }
+  ],
+  "species": [
+    {
+      "speciesId": 10,
+      "name": "Caterpie",
+      "types": [
+        "Bug"
+      ],
+      "locations": [
+        {
+          "tableId": "sevillaTownGrass",
+          "area": "Sevilla Town",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 2,
+          "maximumLevel": 3
+        },
+        {
+          "tableId": "sevillaTownGrass",
+          "area": "Sevilla Town",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 2,
+          "maximumLevel": 3
+        },
+        {
+          "tableId": "route1",
+          "area": "Route 1 / Deckber Village",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 2,
+          "maximumLevel": 4
+        },
+        {
+          "tableId": "route1",
+          "area": "Route 1 / Deckber Village",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 2,
+          "maximumLevel": 4
+        },
+        {
+          "tableId": "lupiesForest",
+          "area": "Lupies abandoned / Lupies School Secret S.4",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 6,
+          "maximumLevel": 9
+        }
+      ]
+    },
+    {
+      "speciesId": 13,
+      "name": "Weedle",
+      "types": [
+        "Bug",
+        "Poison"
+      ],
+      "locations": [
+        {
+          "tableId": "sevillaTownGrass",
+          "area": "Sevilla Town",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 2,
+          "maximumLevel": 3
+        },
+        {
+          "tableId": "route1",
+          "area": "Route 1 / Deckber Village",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 2,
+          "maximumLevel": 4
+        },
+        {
+          "tableId": "lupiesForest",
+          "area": "Lupies abandoned / Lupies School Secret S.4",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 6,
+          "maximumLevel": 9
+        }
+      ]
+    },
+    {
+      "speciesId": 16,
+      "name": "Pidgey",
+      "types": [
+        "Normal",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "sevillaTownGrass",
+          "area": "Sevilla Town",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 2,
+          "maximumLevel": 3
+        },
+        {
+          "tableId": "route1",
+          "area": "Route 1 / Deckber Village",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 2,
+          "maximumLevel": 5
+        }
+      ]
+    },
+    {
+      "speciesId": 19,
+      "name": "Rattata",
+      "types": [
+        "Normal"
+      ],
+      "locations": [
+        {
+          "tableId": "sevillaTownGrass",
+          "area": "Sevilla Town",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 2,
+          "maximumLevel": 3
+        },
+        {
+          "tableId": "route1",
+          "area": "Route 1 / Deckber Village",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 2,
+          "maximumLevel": 5
+        }
+      ]
+    },
+    {
+      "speciesId": 21,
+      "name": "Spearow",
+      "types": [
+        "Normal",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "route1",
+          "area": "Route 1 / Deckber Village",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 3,
+          "maximumLevel": 5
+        }
+      ]
+    },
+    {
+      "speciesId": 25,
+      "name": "Pikachu",
+      "types": [
+        "Electric"
+      ],
+      "locations": [
+        {
+          "tableId": "route1",
+          "area": "Route 1 / Deckber Village",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 3,
+          "maximumLevel": 6
+        },
+        {
+          "tableId": "route1",
+          "area": "Route 1 / Deckber Village",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 3,
+          "maximumLevel": 6
+        },
+        {
+          "tableId": "powerPlant",
+          "area": "Power Plant",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 36,
+          "maximumLevel": 41
+        }
+      ]
+    },
+    {
+      "speciesId": 41,
+      "name": "Zubat",
+      "types": [
+        "Poison",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB1",
+          "area": "Ocana Mine A / Ocana Mine B",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 11,
+          "maximumLevel": 15
+        },
+        {
+          "tableId": "caritaCavern",
+          "area": "Carita Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 18,
+          "maximumLevel": 22
+        },
+        {
+          "tableId": "castoCaves",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 19,
+          "maximumLevel": 23
+        }
+      ]
+    },
+    {
+      "speciesId": 42,
+      "name": "Golbat",
+      "types": [
+        "Poison",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB2",
+          "area": "Ocana Mine C",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 29,
+          "maximumLevel": 33
+        },
+        {
+          "tableId": "castoCavesDeep",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 23,
+          "maximumLevel": 27
+        }
+      ]
+    },
+    {
+      "speciesId": 43,
+      "name": "Oddish",
+      "types": [
+        "Grass",
+        "Poison"
+      ],
+      "locations": [
+        {
+          "tableId": "sevillaTownGrass",
+          "area": "Sevilla Town",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 2,
+          "maximumLevel": 3
+        },
+        {
+          "tableId": "sevillaTownGrass",
+          "area": "Sevilla Town",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 2,
+          "maximumLevel": 3
+        },
+        {
+          "tableId": "lupiesForest",
+          "area": "Lupies abandoned / Lupies School Secret S.4",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 7,
+          "maximumLevel": 10
+        }
+      ]
+    },
+    {
+      "speciesId": 46,
+      "name": "Paras",
+      "types": [
+        "Bug",
+        "Grass"
+      ],
+      "locations": [
+        {
+          "tableId": "lupiesForest",
+          "area": "Lupies abandoned / Lupies School Secret S.4",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        },
+        {
+          "tableId": "ocanaMineB1",
+          "area": "Ocana Mine A / Ocana Mine B",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 12,
+          "maximumLevel": 16
+        },
+        {
+          "tableId": "ocanaMineB1",
+          "area": "Ocana Mine A / Ocana Mine B",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 12,
+          "maximumLevel": 16
+        }
+      ]
+    },
+    {
+      "speciesId": 47,
+      "name": "Parasect",
+      "types": [
+        "Bug",
+        "Grass"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB2",
+          "area": "Ocana Mine C",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 30,
+          "maximumLevel": 34
+        },
+        {
+          "tableId": "ocanaMineB2",
+          "area": "Ocana Mine C",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 30,
+          "maximumLevel": 34
+        }
+      ]
+    },
+    {
+      "speciesId": 50,
+      "name": "Diglett",
+      "types": [
+        "Ground"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB1",
+          "area": "Ocana Mine A / Ocana Mine B",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 10,
+          "maximumLevel": 14
+        },
+        {
+          "tableId": "diglettCave",
+          "area": "Diglett Cave",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 25,
+          "maximumLevel": 30
+        }
+      ]
+    },
+    {
+      "speciesId": 51,
+      "name": "Dugtrio",
+      "types": [
+        "Ground"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB1",
+          "area": "Ocana Mine A / Ocana Mine B",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 14,
+          "maximumLevel": 17
+        },
+        {
+          "tableId": "ocanaMineB1",
+          "area": "Ocana Mine A / Ocana Mine B",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 14,
+          "maximumLevel": 17
+        },
+        {
+          "tableId": "diglettCave",
+          "area": "Diglett Cave",
+          "method": "Normal encounter",
+          "rarityTier": "super",
+          "minimumLevel": 30,
+          "maximumLevel": 33
+        },
+        {
+          "tableId": "diglettCave",
+          "area": "Diglett Cave",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 30,
+          "maximumLevel": 33
+        }
+      ]
+    },
+    {
+      "speciesId": 72,
+      "name": "Tentacool",
+      "types": [
+        "Water",
+        "Poison"
+      ],
+      "locations": [
+        {
+          "tableId": "miGordaSeaCave",
+          "area": "Sea Cave / Cave Shuckle",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 34,
+          "maximumLevel": 39
+        }
+      ]
+    },
+    {
+      "speciesId": 74,
+      "name": "Geodude",
+      "types": [
+        "Rock",
+        "Ground"
+      ],
+      "locations": [
+        {
+          "tableId": "route2",
+          "area": "Route 2 / Route 2 Larsen",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 9,
+          "maximumLevel": 12
+        },
+        {
+          "tableId": "route2",
+          "area": "Route 2 / Route 2 Larsen",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 9,
+          "maximumLevel": 12
+        },
+        {
+          "tableId": "ocanaMineB1",
+          "area": "Ocana Mine A / Ocana Mine B",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 10,
+          "maximumLevel": 14
+        },
+        {
+          "tableId": "caritaCavern",
+          "area": "Carita Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 18,
+          "maximumLevel": 22
+        },
+        {
+          "tableId": "castoCaves",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 19,
+          "maximumLevel": 23
+        },
+        {
+          "tableId": "diglettCave",
+          "area": "Diglett Cave",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 25,
+          "maximumLevel": 30
+        }
+      ]
+    },
+    {
+      "speciesId": 75,
+      "name": "Graveler",
+      "types": [
+        "Rock",
+        "Ground"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB1",
+          "area": "Ocana Mine A / Ocana Mine B",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 12,
+          "maximumLevel": 16
+        },
+        {
+          "tableId": "ocanaMineB2",
+          "area": "Ocana Mine C",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 27,
+          "maximumLevel": 31
+        },
+        {
+          "tableId": "castoCavesDeep",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 24,
+          "maximumLevel": 28
+        }
+      ]
+    },
+    {
+      "speciesId": 76,
+      "name": "Golem",
+      "types": [
+        "Rock",
+        "Ground"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB2",
+          "area": "Ocana Mine C",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 31,
+          "maximumLevel": 35
+        },
+        {
+          "tableId": "ocanaMineB2",
+          "area": "Ocana Mine C",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 31,
+          "maximumLevel": 35
+        }
+      ]
+    },
+    {
+      "speciesId": 81,
+      "name": "Magnemite",
+      "types": [
+        "Electric"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB1",
+          "area": "Ocana Mine A / Ocana Mine B",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 12,
+          "maximumLevel": 16
+        },
+        {
+          "tableId": "verdentPortCavern",
+          "area": "Verdent Port Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 36,
+          "maximumLevel": 41
+        },
+        {
+          "tableId": "powerPlant",
+          "area": "Power Plant",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 35,
+          "maximumLevel": 40
+        }
+      ]
+    },
+    {
+      "speciesId": 82,
+      "name": "Magneton",
+      "types": [
+        "Electric"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB2",
+          "area": "Ocana Mine C",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 30,
+          "maximumLevel": 34
+        },
+        {
+          "tableId": "powerPlant",
+          "area": "Power Plant",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 38,
+          "maximumLevel": 43
+        }
+      ]
+    },
+    {
+      "speciesId": 95,
+      "name": "Onix",
+      "types": [
+        "Rock",
+        "Ground"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB2",
+          "area": "Ocana Mine C",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 27,
+          "maximumLevel": 31
+        },
+        {
+          "tableId": "castoCaves",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 22,
+          "maximumLevel": 26
+        },
+        {
+          "tableId": "castoCaves",
+          "area": "Casto Cave",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 22,
+          "maximumLevel": 26
+        },
+        {
+          "tableId": "castoCavesDeep",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 25,
+          "maximumLevel": 29
+        },
+        {
+          "tableId": "castoCavesDeep",
+          "area": "Casto Cave",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 25,
+          "maximumLevel": 29
+        }
+      ]
+    },
+    {
+      "speciesId": 100,
+      "name": "Voltorb",
+      "types": [
+        "Electric"
+      ],
+      "locations": [
+        {
+          "tableId": "powerPlant",
+          "area": "Power Plant",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 35,
+          "maximumLevel": 40
+        }
+      ]
+    },
+    {
+      "speciesId": 101,
+      "name": "Electrode",
+      "types": [
+        "Electric"
+      ],
+      "locations": [
+        {
+          "tableId": "powerPlant",
+          "area": "Power Plant",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 39,
+          "maximumLevel": 44
+        }
+      ]
+    },
+    {
+      "speciesId": 111,
+      "name": "Rhyhorn",
+      "types": [
+        "Ground",
+        "Rock"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB2",
+          "area": "Ocana Mine C",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 28,
+          "maximumLevel": 32
+        }
+      ]
+    },
+    {
+      "speciesId": 125,
+      "name": "Electabuzz",
+      "types": [
+        "Electric"
+      ],
+      "locations": [
+        {
+          "tableId": "powerPlant",
+          "area": "Power Plant",
+          "method": "Normal encounter",
+          "rarityTier": "super",
+          "minimumLevel": 40,
+          "maximumLevel": 45
+        },
+        {
+          "tableId": "powerPlant",
+          "area": "Power Plant",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 40,
+          "maximumLevel": 45
+        }
+      ]
+    },
+    {
+      "speciesId": 163,
+      "name": "Hoothoot",
+      "types": [
+        "Normal",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "lupiesForest",
+          "area": "Lupies abandoned / Lupies School Secret S.4",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 7,
+          "maximumLevel": 10
+        }
+      ]
+    },
+    {
+      "speciesId": 165,
+      "name": "Ledyba",
+      "types": [
+        "Bug",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "lupiesForest",
+          "area": "Lupies abandoned / Lupies School Secret S.4",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        },
+        {
+          "tableId": "lupiesForest",
+          "area": "Lupies abandoned / Lupies School Secret S.4",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        }
+      ]
+    },
+    {
+      "speciesId": 170,
+      "name": "Chinchou",
+      "types": [
+        "Water",
+        "Electric"
+      ],
+      "locations": [
+        {
+          "tableId": "miGordaSeaCave",
+          "area": "Sea Cave / Cave Shuckle",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 34,
+          "maximumLevel": 39
+        },
+        {
+          "tableId": "verdentPortCavern",
+          "area": "Verdent Port Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 36,
+          "maximumLevel": 41
+        },
+        {
+          "tableId": "powerPlant",
+          "area": "Power Plant",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 36,
+          "maximumLevel": 41
+        }
+      ]
+    },
+    {
+      "speciesId": 171,
+      "name": "Lanturn",
+      "types": [
+        "Water",
+        "Electric"
+      ],
+      "locations": [
+        {
+          "tableId": "powerPlant",
+          "area": "Power Plant",
+          "method": "Normal encounter",
+          "rarityTier": "mega",
+          "minimumLevel": 41,
+          "maximumLevel": 46
+        },
+        {
+          "tableId": "powerPlant",
+          "area": "Power Plant",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 41,
+          "maximumLevel": 46
+        }
+      ]
+    },
+    {
+      "speciesId": 198,
+      "name": "Murkrow",
+      "types": [
+        "Dark",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "lupiesForest",
+          "area": "Lupies abandoned / Lupies School Secret S.4",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 9,
+          "maximumLevel": 12
+        },
+        {
+          "tableId": "lupiesForest",
+          "area": "Lupies abandoned / Lupies School Secret S.4",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 9,
+          "maximumLevel": 12
+        }
+      ]
+    },
+    {
+      "speciesId": 207,
+      "name": "Gligar",
+      "types": [
+        "Ground",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "route3Casto",
+          "area": "Route 3 / Casto Cliffs",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 22,
+          "maximumLevel": 25
+        },
+        {
+          "tableId": "route3Casto",
+          "area": "Route 3 / Casto Cliffs",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 22,
+          "maximumLevel": 25
+        }
+      ]
+    },
+    {
+      "speciesId": 213,
+      "name": "Shuckle",
+      "types": [
+        "Bug",
+        "Rock"
+      ],
+      "locations": [
+        {
+          "tableId": "miGordaSeaCave",
+          "area": "Sea Cave / Cave Shuckle",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 37,
+          "maximumLevel": 42
+        }
+      ]
+    },
+    {
+      "speciesId": 227,
+      "name": "Skarmory",
+      "types": [
+        "Steel",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "route3Casto",
+          "area": "Route 3 / Casto Cliffs",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 21,
+          "maximumLevel": 24
+        },
+        {
+          "tableId": "route3Casto",
+          "area": "Route 3 / Casto Cliffs",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 21,
+          "maximumLevel": 24
+        }
+      ]
+    },
+    {
+      "speciesId": 263,
+      "name": "Zigzagoon",
+      "types": [
+        "Normal"
+      ],
+      "locations": [
+        {
+          "tableId": "route2",
+          "area": "Route 2 / Route 2 Larsen",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 7,
+          "maximumLevel": 10
+        }
+      ]
+    },
+    {
+      "speciesId": 276,
+      "name": "Taillow",
+      "types": [
+        "Normal",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "route2",
+          "area": "Route 2 / Route 2 Larsen",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 7,
+          "maximumLevel": 10
+        },
+        {
+          "tableId": "route3Casto",
+          "area": "Route 3 / Casto Cliffs",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 17,
+          "maximumLevel": 21
+        }
+      ]
+    },
+    {
+      "speciesId": 285,
+      "name": "Shroomish",
+      "types": [
+        "Grass"
+      ],
+      "locations": [
+        {
+          "tableId": "route4Pavillion",
+          "area": "Hawso Swamp Forest",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 22,
+          "maximumLevel": 26
+        }
+      ]
+    },
+    {
+      "speciesId": 290,
+      "name": "Nincada",
+      "types": [
+        "Bug",
+        "Ground"
+      ],
+      "locations": [
+        {
+          "tableId": "route2",
+          "area": "Route 2 / Route 2 Larsen",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        },
+        {
+          "tableId": "route3Casto",
+          "area": "Route 3 / Casto Cliffs",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 18,
+          "maximumLevel": 22
+        },
+        {
+          "tableId": "castoCaves",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 19,
+          "maximumLevel": 24
+        },
+        {
+          "tableId": "diglettCave",
+          "area": "Diglett Cave",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 26,
+          "maximumLevel": 31
+        }
+      ]
+    },
+    {
+      "speciesId": 293,
+      "name": "Whismur",
+      "types": [
+        "Normal"
+      ],
+      "locations": [
+        {
+          "tableId": "route2",
+          "area": "Route 2 / Route 2 Larsen",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        },
+        {
+          "tableId": "route3Casto",
+          "area": "Route 3 / Casto Cliffs",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 17,
+          "maximumLevel": 21
+        },
+        {
+          "tableId": "caritaCavern",
+          "area": "Carita Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 18,
+          "maximumLevel": 22
+        }
+      ]
+    },
+    {
+      "speciesId": 296,
+      "name": "Makuhita",
+      "types": [
+        "Fighting"
+      ],
+      "locations": [
+        {
+          "tableId": "route2",
+          "area": "Route 2 / Route 2 Larsen",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 9,
+          "maximumLevel": 12
+        },
+        {
+          "tableId": "route2",
+          "area": "Route 2 / Route 2 Larsen",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 9,
+          "maximumLevel": 12
+        },
+        {
+          "tableId": "route3Casto",
+          "area": "Route 3 / Casto Cliffs",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 19,
+          "maximumLevel": 23
+        },
+        {
+          "tableId": "caritaCavern",
+          "area": "Carita Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 19,
+          "maximumLevel": 23
+        }
+      ]
+    },
+    {
+      "speciesId": 299,
+      "name": "Nosepass",
+      "types": [
+        "Rock"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB2",
+          "area": "Ocana Mine C",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 28,
+          "maximumLevel": 32
+        },
+        {
+          "tableId": "castoCaves",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 20,
+          "maximumLevel": 25
+        },
+        {
+          "tableId": "castoCavesDeep",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 23,
+          "maximumLevel": 28
+        }
+      ]
+    },
+    {
+      "speciesId": 302,
+      "name": "Sableye",
+      "types": [
+        "Dark",
+        "Ghost"
+      ],
+      "locations": [
+        {
+          "tableId": "caritaCavern",
+          "area": "Carita Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 21,
+          "maximumLevel": 24
+        },
+        {
+          "tableId": "caritaCavern",
+          "area": "Carita Cavern",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 21,
+          "maximumLevel": 24
+        },
+        {
+          "tableId": "castoCavesDeep",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 24,
+          "maximumLevel": 28
+        },
+        {
+          "tableId": "verdentPortCavern",
+          "area": "Verdent Port Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 38,
+          "maximumLevel": 43
+        }
+      ]
+    },
+    {
+      "speciesId": 303,
+      "name": "Mawile",
+      "types": [
+        "Steel",
+        "Fairy"
+      ],
+      "locations": [
+        {
+          "tableId": "castoCaves",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 23,
+          "maximumLevel": 26
+        },
+        {
+          "tableId": "castoCaves",
+          "area": "Casto Cave",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 23,
+          "maximumLevel": 26
+        },
+        {
+          "tableId": "castoCavesDeep",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 24,
+          "maximumLevel": 28
+        },
+        {
+          "tableId": "castoCavesDeep",
+          "area": "Casto Cave",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 24,
+          "maximumLevel": 28
+        },
+        {
+          "tableId": "verdentPortCavern",
+          "area": "Verdent Port Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 38,
+          "maximumLevel": 43
+        }
+      ]
+    },
+    {
+      "speciesId": 304,
+      "name": "Aron",
+      "types": [
+        "Steel",
+        "Rock"
+      ],
+      "locations": [
+        {
+          "tableId": "caritaCavern",
+          "area": "Carita Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 19,
+          "maximumLevel": 23
+        },
+        {
+          "tableId": "caritaCavern",
+          "area": "Carita Cavern",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 19,
+          "maximumLevel": 23
+        },
+        {
+          "tableId": "castoCaves",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 19,
+          "maximumLevel": 24
+        },
+        {
+          "tableId": "castoCavesDeep",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 22,
+          "maximumLevel": 27
+        },
+        {
+          "tableId": "verdentPortCavern",
+          "area": "Verdent Port Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 37,
+          "maximumLevel": 42
+        }
+      ]
+    },
+    {
+      "speciesId": 309,
+      "name": "Electrike",
+      "types": [
+        "Electric"
+      ],
+      "locations": [
+        {
+          "tableId": "route4Pavillion",
+          "area": "Hawso Swamp Forest",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 22,
+          "maximumLevel": 26
+        }
+      ]
+    },
+    {
+      "speciesId": 315,
+      "name": "Roselia",
+      "types": [
+        "Grass",
+        "Poison"
+      ],
+      "locations": [
+        {
+          "tableId": "route4Pavillion",
+          "area": "Hawso Swamp Forest",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 23,
+          "maximumLevel": 27
+        }
+      ]
+    },
+    {
+      "speciesId": 316,
+      "name": "Gulpin",
+      "types": [
+        "Poison"
+      ],
+      "locations": [
+        {
+          "tableId": "route4Pavillion",
+          "area": "Hawso Swamp Forest",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 24,
+          "maximumLevel": 28
+        }
+      ]
+    },
+    {
+      "speciesId": 318,
+      "name": "Carvanha",
+      "types": [
+        "Water",
+        "Dark"
+      ],
+      "locations": [
+        {
+          "tableId": "miGordaSeaCave",
+          "area": "Sea Cave / Cave Shuckle",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 35,
+          "maximumLevel": 40
+        }
+      ]
+    },
+    {
+      "speciesId": 322,
+      "name": "Numel",
+      "types": [
+        "Fire",
+        "Ground"
+      ],
+      "locations": [
+        {
+          "tableId": "route3Casto",
+          "area": "Route 3 / Casto Cliffs",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 19,
+          "maximumLevel": 23
+        }
+      ]
+    },
+    {
+      "speciesId": 328,
+      "name": "Trapinch",
+      "types": [
+        "Ground"
+      ],
+      "locations": [
+        {
+          "tableId": "diglettCave",
+          "area": "Diglett Cave",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 27,
+          "maximumLevel": 32
+        },
+        {
+          "tableId": "diglettCave",
+          "area": "Diglett Cave",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 27,
+          "maximumLevel": 32
+        }
+      ]
+    },
+    {
+      "speciesId": 333,
+      "name": "Swablu",
+      "types": [
+        "Normal",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "route4Pavillion",
+          "area": "Hawso Swamp Forest",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 23,
+          "maximumLevel": 27
+        }
+      ]
+    },
+    {
+      "speciesId": 335,
+      "name": "Zangoose",
+      "types": [
+        "Normal"
+      ],
+      "locations": [
+        {
+          "tableId": "route4Pavillion",
+          "area": "Hawso Swamp Forest",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 25,
+          "maximumLevel": 29
+        },
+        {
+          "tableId": "route4Pavillion",
+          "area": "Hawso Swamp Forest",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 25,
+          "maximumLevel": 29
+        }
+      ]
+    },
+    {
+      "speciesId": 336,
+      "name": "Seviper",
+      "types": [
+        "Poison"
+      ],
+      "locations": [
+        {
+          "tableId": "route4Pavillion",
+          "area": "Hawso Swamp Forest",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 25,
+          "maximumLevel": 29
+        },
+        {
+          "tableId": "route4Pavillion",
+          "area": "Hawso Swamp Forest",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 25,
+          "maximumLevel": 29
+        }
+      ]
+    },
+    {
+      "speciesId": 339,
+      "name": "Barboach",
+      "types": [
+        "Water",
+        "Ground"
+      ],
+      "locations": [
+        {
+          "tableId": "miGordaSeaCave",
+          "area": "Sea Cave / Cave Shuckle",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 35,
+          "maximumLevel": 40
+        },
+        {
+          "tableId": "verdentPortCavern",
+          "area": "Verdent Port Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 37,
+          "maximumLevel": 42
+        }
+      ]
+    },
+    {
+      "speciesId": 341,
+      "name": "Corphish",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "miGordaSeaCave",
+          "area": "Sea Cave / Cave Shuckle",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 36,
+          "maximumLevel": 41
+        }
+      ]
+    },
+    {
+      "speciesId": 349,
+      "name": "Feebas",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "miGordaSeaCave",
+          "area": "Sea Cave / Cave Shuckle",
+          "method": "Normal encounter",
+          "rarityTier": "super",
+          "minimumLevel": 36,
+          "maximumLevel": 41
+        }
+      ]
+    },
+    {
+      "speciesId": 366,
+      "name": "Clamperl",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "miGordaSeaCave",
+          "area": "Sea Cave / Cave Shuckle",
+          "method": "Normal encounter",
+          "rarityTier": "ultra",
+          "minimumLevel": 40,
+          "maximumLevel": 44
+        },
+        {
+          "tableId": "miGordaSeaCave",
+          "area": "Sea Cave / Cave Shuckle",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 40,
+          "maximumLevel": 44
+        },
+        {
+          "tableId": "verdentPortCavern",
+          "area": "Verdent Port Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "mega",
+          "minimumLevel": 41,
+          "maximumLevel": 45
+        },
+        {
+          "tableId": "verdentPortCavern",
+          "area": "Verdent Port Cavern",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 41,
+          "maximumLevel": 45
+        }
+      ]
+    },
+    {
+      "speciesId": 369,
+      "name": "Relicanth",
+      "types": [
+        "Water",
+        "Rock"
+      ],
+      "locations": [
+        {
+          "tableId": "miGordaSeaCave",
+          "area": "Sea Cave / Cave Shuckle",
+          "method": "Normal encounter",
+          "rarityTier": "mega",
+          "minimumLevel": 39,
+          "maximumLevel": 43
+        },
+        {
+          "tableId": "miGordaSeaCave",
+          "area": "Sea Cave / Cave Shuckle",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 39,
+          "maximumLevel": 43
+        },
+        {
+          "tableId": "verdentPortCavern",
+          "area": "Verdent Port Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "super",
+          "minimumLevel": 40,
+          "maximumLevel": 44
+        },
+        {
+          "tableId": "verdentPortCavern",
+          "area": "Verdent Port Cavern",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 40,
+          "maximumLevel": 44
+        }
+      ]
+    }
+  ]
+}
