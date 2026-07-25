@@ -253,6 +253,39 @@
       box-shadow: 0 0 40px rgba(216,180,106,.22);
     }
 
+    .button.secondary {
+      border-color: var(--blueborder);
+      background: linear-gradient(180deg, rgba(87,184,255,.14), rgba(87,184,255,.04));
+      color: #d9f0ff;
+    }
+
+    .button.disabled,
+    .download-link.disabled {
+      cursor: not-allowed;
+      opacity: .48;
+      pointer-events: none;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .button:focus-visible,
+    .download-link:focus-visible {
+      outline: 2px solid var(--resonance);
+      outline-offset: 4px;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 2.2rem;
+    }
+
+    .hero-actions .button {
+      margin-top: 0;
+    }
+
     section {
       padding: 5.5rem 0;
       position: relative;
@@ -359,6 +392,170 @@
       text-shadow: 0 0 18px rgba(87,184,255,.28);
     }
 
+    .download-stage {
+      background:
+        radial-gradient(circle at 50% 28%, rgba(87,184,255,.12), transparent 30rem),
+        linear-gradient(180deg, rgba(9,12,20,.18), rgba(9,12,20,.62), rgba(9,12,20,.18));
+    }
+
+    .alpha-state {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      margin: 0 0 1rem;
+      border: 1px solid var(--blueborder);
+      border-radius: 16px;
+      background: rgba(5, 8, 14, .7);
+      color: var(--muted);
+    }
+
+    .alpha-state strong {
+      white-space: nowrap;
+    }
+
+    .alpha-state strong::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: .55rem;
+      border-radius: 50%;
+      background: var(--resonance);
+      box-shadow: 0 0 14px rgba(87,184,255,.7);
+    }
+
+    .launch-locked {
+      color: var(--gold2);
+    }
+
+    .alpha-state .launch-locked::before {
+      background: var(--gold);
+      box-shadow: 0 0 14px rgba(216,180,106,.6);
+    }
+
+    .play-panel {
+      min-height: 0;
+      padding: clamp(1.4rem, 4vw, 2.25rem);
+      text-align: center;
+    }
+
+    .play-panel h3 {
+      font-size: clamp(1.45rem, 3vw, 2rem);
+    }
+
+    .play-panel p {
+      max-width: 760px;
+      margin: .5rem auto 0;
+    }
+
+    .download-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 1.35rem;
+    }
+
+    .download-actions .button {
+      margin-top: 0;
+    }
+
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .platform-card {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .platform-card.recommended {
+      border-color: rgba(87,184,255,.62);
+      box-shadow: 0 20px 60px rgba(0,0,0,.34), 0 0 34px rgba(87,184,255,.10);
+    }
+
+    .platform-heading {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: .75rem;
+    }
+
+    .platform-badge {
+      display: none;
+      padding: .28rem .55rem;
+      border: 1px solid var(--blueborder);
+      border-radius: 999px;
+      color: var(--resonance);
+      font-size: .65rem;
+      line-height: 1.2;
+      letter-spacing: .08em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .recommended .platform-badge {
+      display: inline-block;
+    }
+
+    .platform-copy {
+      flex: 1;
+    }
+
+    .download-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      width: 100%;
+      margin-top: .7rem;
+      padding: .8rem .9rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--parchment);
+      background: rgba(216,180,106,.06);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .download-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(216,180,106,.55);
+      background: rgba(216,180,106,.11);
+    }
+
+    .download-link span:last-child {
+      color: var(--dim);
+      font-size: .72rem;
+      white-space: nowrap;
+    }
+
+    .install-note {
+      margin-top: 1rem !important;
+      padding-top: .85rem;
+      border-top: 1px solid rgba(216,180,106,.14);
+      color: var(--dim) !important;
+      font-size: .82rem;
+    }
+
+    .download-footnote {
+      margin: 1.2rem 0 0;
+      color: var(--dim);
+      font-size: .82rem;
+      text-align: center;
+    }
+
+    code {
+      color: var(--gold2);
+      font-family: Consolas, "Courier New", monospace;
+      font-size: .9em;
+    }
+
     .dispatch {
       display: grid;
       grid-template-columns: 1.2fr .8fr;
@@ -444,16 +641,25 @@
         grid-template-columns: 1fr;
       }
 
+      .platform-grid {
+        grid-template-columns: 1fr;
+      }
+
       .status div {
         align-items: flex-start;
         flex-direction: column;
         gap: .15rem;
       }
+
+      .alpha-state {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 
-<body>
+<body data-alpha-live="false">
   <nav class="topbar">
     <div class="nav">
       <div class="brand">The Obscyran Archives</div>
@@ -462,6 +668,7 @@
         <a href="#vision">Vision</a>
         <a href="#karel">Karel</a>
         <a href="#dispatch">Dispatches</a>
+        <a href="#download">Play Alpha</a>
         <a href="#community">Community</a>
         <a href="#faq">FAQ</a>
       </div>
@@ -477,7 +684,10 @@
       <p class="subtitle" style="font-style: italic;">
         Beyond its shores lies the forgotten world of Obscyra.
       </p>
-      <a class="button" href="#karel">Begin Your Chronicle</a>
+      <div class="hero-actions">
+        <a class="button" href="#download">Download Alpha</a>
+        <a class="button secondary alpha-gated" data-alpha-href="https://play.theobscyranarchives.net/" data-alpha-new-window="true">Play in Browser at Launch</a>
+      </div>
     </div>
   </header>
 
@@ -507,8 +717,8 @@
           </div>
           <div class="card">
             <div class="label">Current Milestone</div>
-            <div class="big">Operation: Karel Reborn</div>
-            <p>The public effort awakening Karel for its first travelers.</p>
+            <div class="big">Karel Alpha — Launch Ready</div>
+            <p>Desktop and browser access will unlock together when the Alpha begins.</p>
           </div>
         </div>
       </div>
@@ -550,8 +760,8 @@
           <div class="status">
             <div><span>The World of Obscyra</span><strong>Chronicled</strong></div>
             <div><span>Karel, the First Continent</span><strong>Awakening</strong></div>
-            <div><span>Operation: Karel Reborn</span><strong class="active">In Progress</strong></div>
-            <div><span>First Traveler Routes</span><strong>Being Charted</strong></div>
+            <div><span>Operation: Karel Reborn</span><strong class="active">Alpha Prepared</strong></div>
+            <div><span>First Traveler Routes</span><strong>Prepared Through the Power Plant</strong></div>
             <div><span>Aetherra, a Distant Continent</span><strong>Not Yet Discovered</strong></div>
           </div>
         </div>
@@ -637,6 +847,93 @@
       </div>
     </section>
 
+    <section id="download" class="download-stage">
+      <div class="wrap">
+        <div class="label">Alpha Access · Launcher v0.3.0</div>
+        <h2 class="section-title">Enter Karel</h2>
+        <p class="section-intro">
+          The PokéCyrus Online Alpha is prepared through the Power Plant. At launch, download the self-updating desktop launcher for the full client experience or enter through the browser play portal.
+        </p>
+
+        <div class="alpha-state" role="status">
+          <span>Prepared access: Windows, macOS, Linux, and browser</span>
+          <strong class="launch-locked">Unlocks at Alpha Launch</strong>
+        </div>
+
+        <div class="card play-panel">
+          <div class="label">No Installation Required</div>
+          <h3>Play in Your Browser at Launch</h3>
+          <p>The browser play portal will unlock with the desktop downloads so every first traveler begins together.</p>
+          <div class="download-actions">
+            <a class="button alpha-gated" data-alpha-href="https://play.theobscyranarchives.net/" data-alpha-new-window="true">Play in Browser at Launch</a>
+            <a class="button secondary" href="https://github.com/ShadowNergii/pokecyrusonline/releases/tag/pco-alpha-v0.3.0" target="_blank" rel="noopener">Alpha Release Notes</a>
+          </div>
+        </div>
+
+        <div class="platform-grid" aria-label="Desktop launcher downloads">
+          <article class="card platform-card" data-platform="windows">
+            <div class="platform-heading">
+              <div>
+                <div class="label">Desktop Launcher</div>
+                <h3>Windows</h3>
+              </div>
+              <span class="platform-badge">Recommended</span>
+            </div>
+            <p class="platform-copy">Windows 10 or newer, 64-bit. The installer adds the launcher and keeps the client current automatically.</p>
+            <a class="download-link alpha-gated" data-alpha-href="https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.0_x64-setup.exe">
+              <span>Download Windows Installer</span>
+              <span>EXE · 2.8 MB</span>
+            </a>
+            <p class="install-note">Alpha builds may prompt Windows SmartScreen. Confirm that the publisher is PokéCyrus Online before continuing.</p>
+          </article>
+
+          <article class="card platform-card" data-platform="macos">
+            <div class="platform-heading">
+              <div>
+                <div class="label">Desktop Launcher</div>
+                <h3>macOS</h3>
+              </div>
+              <span class="platform-badge">Recommended</span>
+            </div>
+            <p class="platform-copy">Choose the build that matches your Mac processor. Both packages include the self-updating launcher.</p>
+            <a class="download-link alpha-gated" data-alpha-href="https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.0_aarch64.dmg">
+              <span>Apple Silicon</span>
+              <span>DMG · 4.1 MB</span>
+            </a>
+            <a class="download-link alpha-gated" data-alpha-href="https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.0_x64.dmg">
+              <span>Intel Mac</span>
+              <span>DMG · 4.2 MB</span>
+            </a>
+            <p class="install-note">Unnotarized Alpha: on first launch, macOS may require Control-click → Open or System Settings → Privacy &amp; Security → Open Anyway.</p>
+          </article>
+
+          <article class="card platform-card" data-platform="linux">
+            <div class="platform-heading">
+              <div>
+                <div class="label">Desktop Launcher</div>
+                <h3>Linux</h3>
+              </div>
+              <span class="platform-badge">Recommended</span>
+            </div>
+            <p class="platform-copy">Use the portable AppImage on most 64-bit distributions, or install the Debian package on Debian and Ubuntu systems.</p>
+            <a class="download-link alpha-gated" data-alpha-href="https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.0_amd64.AppImage">
+              <span>Download AppImage</span>
+              <span>78.1 MB</span>
+            </a>
+            <a class="download-link alpha-gated" data-alpha-href="https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.0_amd64.deb">
+              <span>Download Debian Package</span>
+              <span>DEB · 4.3 MB</span>
+            </a>
+            <p class="install-note">For AppImage, allow execution before opening: <code>chmod +x PokeCyrus.Online_0.3.0_amd64.AppImage</code>.</p>
+          </article>
+        </div>
+
+        <p class="download-footnote">
+          At launch, the desktop client will check the signed PokéCyrus Online update feed and offer new Alpha builds when they are released.
+        </p>
+      </div>
+    </section>
+
     <!-- Get Involved — real URLs go in the TODO slots; no broken links shipped until then. -->
     <section id="community">
       <div class="wrap">
@@ -659,10 +956,10 @@
             <p><a class="button" href="#dispatch" style="margin-top: 1rem;">Read the Dispatches</a></p>
           </div>
           <div class="card">
-            <div class="label">Future Playtests</div>
-            <h3>Become a Traveler</h3>
-            <p>Be there when the first traveler routes of Karel open. Sign-ups will be announced here.</p>
-            <!-- TODO: when ready, add: <p><a class="button" href="SIGNUP_URL" style="margin-top:1rem;">Sign Up to Playtest</a></p> -->
+            <div class="label">Alpha Access</div>
+            <h3>Begin Your Chronicle</h3>
+            <p>Karel is prepared through the Power Plant. Desktop downloads and browser access will unlock at Alpha launch.</p>
+            <p><a class="button" href="#download" style="margin-top:1rem;">View Alpha Access</a></p>
           </div>
           <div class="card">
             <div class="label">Community Events</div>
@@ -737,7 +1034,7 @@
           </div>
           <div class="card">
             <h3>When can I play?</h3>
-            <p>The first chance to set foot on Karel comes with Operation: Karel Reborn. Watch the Dispatches for the call.</p>
+            <p>At Alpha launch. Karel is prepared through the Power Plant for Windows, macOS, Linux, and browser players.</p>
           </div>
         </div>
       </div>
@@ -787,5 +1084,36 @@
       </p>
     </div>
   </footer>
+  <script>
+    (() => {
+      const alphaLive = document.body.dataset.alphaLive === "true";
+      const gatedLinks = document.querySelectorAll("[data-alpha-href]");
+
+      gatedLinks.forEach((link) => {
+        if (alphaLive) {
+          link.href = link.dataset.alphaHref;
+          if (link.dataset.alphaNewWindow === "true") {
+            link.target = "_blank";
+            link.rel = "noopener";
+          }
+          return;
+        }
+
+        link.classList.add("disabled");
+        link.setAttribute("aria-disabled", "true");
+        link.setAttribute("title", "Available when the PokéCyrus Online Alpha launches");
+      });
+
+      const source = (navigator.userAgentData?.platform || navigator.platform || navigator.userAgent || "").toLowerCase();
+      let platform = "";
+
+      if (source.includes("win")) platform = "windows";
+      else if (source.includes("mac")) platform = "macos";
+      else if (source.includes("linux")) platform = "linux";
+
+      const recommended = document.querySelector(`[data-platform="${platform}"]`);
+      if (recommended) recommended.classList.add("recommended");
+    })();
+  </script>
 </body>
 </html>
