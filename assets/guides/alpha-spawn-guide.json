@@ -29,16 +29,16 @@
       "ultraPercent": 25,
       "note": "Unboosted shares from the server honey weights. Active world boosts may alter unlikely encounter odds."
     },
-    "fishingRule": "Fishing is a separate method: with a Fishing Rod, face a fishable water tile and cast. About 78% of casts hook something. Maps without a dedicated water habitat use the shared Karel default rod pool; water habitats reuse their own encounter pool.",
+    "fishingRule": "Fishing is a separate method: with an Old, Good, or Super Rod, face a fishable water tile and cast. About 78% of casts hook something. Every fishable body of water has its own dedicated pool — the rod tier gates rarity (Old = Common/Uncommon, Good = +Rare/Super, Super = +Mega/Ultra).",
     "shinyRule": "Shiny odds and active server boosts are intentionally displayed live in game rather than frozen into this guide.",
     "celebrationRule": "Staff-scheduled Alpha Celebration swarms are dynamic and appear in game while active; they are not fixed route spawns."
   },
   "summary": {
     "encounterMaps": 43,
     "encounterHabitats": 16,
-    "uniqueCatchableSpecies": 92,
-    "fishingDefaultPoolSpecies": 8,
-    "fishingLocalWaterPools": 2
+    "uniqueCatchableSpecies": 127,
+    "fishingWaterBodies": 14,
+    "fishingMaps": 27
   },
   "habitats": [
     {
@@ -3367,141 +3367,924 @@
   ],
   "fishing": {
     "method": "Fishing",
-    "requirement": "An Old, Good, or Super Rod and a fishable water tile: face open water and cast. The rod tier gates what you can hook — the Old Rod reaches common/uncommon water Pokemon, the Good Rod adds Rare and Super Rare, and the Super Rod adds Mega and Ultra Rare.",
+    "requirement": "An Old, Good, or Super Rod and a fishable water tile: face open water and cast. Every fishable body of water has its own dedicated pool, and the rod tier gates what you can hook — the Old Rod reaches Common/Uncommon water Pokemon, the Good Rod adds Rare and Super Rare, and the Super Rod adds Mega and Ultra Rare.",
     "castSuccessPercent": 78,
-    "defaultRodPool": {
-      "tableId": "karelFishing",
-      "title": "Karel Default Rod Pool",
-      "appliesTo": "Casting on open water on any Alpha map whose encounter habitat is not itself a water habitat.",
-      "spawns": [
-        {
-          "speciesId": 129,
-          "name": "Magikarp",
-          "types": [
-            "Water"
-          ],
-          "rarityTier": "common",
-          "role": "fishing",
-          "minimumLevel": 5,
-          "maximumLevel": 10,
-          "relativeWeight": 34,
-          "encounterSharePercent": 29.06,
-          "method": "Fishing",
-          "futureTeamLevelOneEligible": true
-        },
-        {
-          "speciesId": 60,
-          "name": "Poliwag",
-          "types": [
-            "Water"
-          ],
-          "rarityTier": "common",
-          "role": "fishing",
-          "minimumLevel": 5,
-          "maximumLevel": 10,
-          "relativeWeight": 24,
-          "encounterSharePercent": 20.51,
-          "method": "Fishing",
-          "futureTeamLevelOneEligible": true
-        },
-        {
-          "speciesId": 98,
-          "name": "Krabby",
-          "types": [
-            "Water"
-          ],
-          "rarityTier": "uncommon",
-          "role": "fishing",
-          "minimumLevel": 6,
-          "maximumLevel": 11,
-          "relativeWeight": 18,
-          "encounterSharePercent": 15.38,
-          "method": "Fishing",
-          "futureTeamLevelOneEligible": true
-        },
-        {
-          "speciesId": 118,
-          "name": "Goldeen",
-          "types": [
-            "Water"
-          ],
-          "rarityTier": "uncommon",
-          "role": "fishing",
-          "minimumLevel": 7,
-          "maximumLevel": 12,
-          "relativeWeight": 12,
-          "encounterSharePercent": 10.26,
-          "method": "Fishing",
-          "futureTeamLevelOneEligible": true
-        },
-        {
-          "speciesId": 72,
-          "name": "Tentacool",
-          "types": [
-            "Water",
-            "Poison"
-          ],
-          "rarityTier": "rare",
-          "role": "fishing",
-          "minimumLevel": 8,
-          "maximumLevel": 13,
-          "relativeWeight": 8,
-          "encounterSharePercent": 6.84,
-          "method": "Fishing",
-          "futureTeamLevelOneEligible": true
-        },
-        {
-          "speciesId": 54,
-          "name": "Psyduck",
-          "types": [
-            "Water"
-          ],
-          "rarityTier": "rare",
-          "role": "fishing",
-          "minimumLevel": 8,
-          "maximumLevel": 13,
-          "relativeWeight": 4,
-          "encounterSharePercent": 3.42,
-          "method": "Fishing",
-          "futureTeamLevelOneEligible": true
-        },
-        {
-          "speciesId": 456,
-          "name": "Finneon",
-          "types": [
-            "Water"
-          ],
-          "rarityTier": "uncommon",
-          "role": "primary",
-          "minimumLevel": 6,
-          "maximumLevel": 11,
-          "relativeWeight": 8,
-          "encounterSharePercent": 6.84,
-          "method": "Fishing",
-          "futureTeamLevelOneEligible": true
-        },
-        {
-          "speciesId": 79,
-          "name": "Slowpoke",
-          "types": [
-            "Water",
-            "Psychic"
-          ],
-          "rarityTier": "rare",
-          "role": "primary",
-          "minimumLevel": 8,
-          "maximumLevel": 13,
-          "relativeWeight": 9,
-          "encounterSharePercent": 7.69,
-          "method": "Fishing",
-          "futureTeamLevelOneEligible": true
-        }
-      ]
-    },
-    "localWaterPools": [
+    "rodTiers": [
       {
-        "tableId": "ocanaMineB2",
-        "title": "Ocana Mine C",
+        "rod": "Old Rod",
+        "hooks": "Common & Uncommon"
+      },
+      {
+        "rod": "Good Rod",
+        "hooks": "adds Rare & Super Rare"
+      },
+      {
+        "rod": "Super Rod",
+        "hooks": "adds Mega & Ultra Rare"
+      }
+    ],
+    "waterBodies": [
+      {
+        "poolId": "fishingDeckberCrownwater",
+        "bodyName": "Deckber Crownwater Reeds",
+        "encounterProfile": "fishing_deckber_crownwater",
+        "maps": [
+          {
+            "mapId": "deckberVillageWaterfront",
+            "mapNumber": null,
+            "name": "Deckber Village"
+          }
+        ],
+        "levelRange": {
+          "minimum": 4,
+          "maximum": 10
+        },
+        "spawns": [
+          {
+            "speciesId": 54,
+            "name": "Psyduck",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 4,
+            "maximumLevel": 7,
+            "relativeWeight": 28,
+            "encounterSharePercent": 28,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 60,
+            "name": "Poliwag",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 4,
+            "maximumLevel": 7,
+            "relativeWeight": 24,
+            "encounterSharePercent": 24,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 98,
+            "name": "Krabby",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 5,
+            "maximumLevel": 8,
+            "relativeWeight": 18,
+            "encounterSharePercent": 18,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 283,
+            "name": "Surskit",
+            "types": [
+              "Bug",
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 5,
+            "maximumLevel": 8,
+            "relativeWeight": 12,
+            "encounterSharePercent": 12,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 418,
+            "name": "Buizel",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "rare",
+            "role": "fishing",
+            "minimumLevel": 6,
+            "maximumLevel": 9,
+            "relativeWeight": 8,
+            "encounterSharePercent": 8,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 341,
+            "name": "Corphish",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "super",
+            "role": "fishing",
+            "minimumLevel": 6,
+            "maximumLevel": 9,
+            "relativeWeight": 5,
+            "encounterSharePercent": 5,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 55,
+            "name": "Golduck",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "mega",
+            "role": "fishing",
+            "minimumLevel": 7,
+            "maximumLevel": 10,
+            "relativeWeight": 3,
+            "encounterSharePercent": 3,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 99,
+            "name": "Kingler",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "ultra",
+            "role": "fishing",
+            "minimumLevel": 7,
+            "maximumLevel": 10,
+            "relativeWeight": 2,
+            "encounterSharePercent": 2,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          }
+        ]
+      },
+      {
+        "poolId": "fishingDeckberMillstream",
+        "bodyName": "Deckber Windmill Stream",
+        "encounterProfile": "fishing_deckber_millstream",
+        "maps": [
+          {
+            "mapId": "deckberWindmillDistrict",
+            "mapNumber": null,
+            "name": "Deckber Village"
+          }
+        ],
+        "levelRange": {
+          "minimum": 4,
+          "maximum": 10
+        },
+        "spawns": [
+          {
+            "speciesId": 129,
+            "name": "Magikarp",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 4,
+            "maximumLevel": 7,
+            "relativeWeight": 28,
+            "encounterSharePercent": 28,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 118,
+            "name": "Goldeen",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 4,
+            "maximumLevel": 7,
+            "relativeWeight": 24,
+            "encounterSharePercent": 24,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 270,
+            "name": "Lotad",
+            "types": [
+              "Water",
+              "Grass"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 5,
+            "maximumLevel": 8,
+            "relativeWeight": 18,
+            "encounterSharePercent": 18,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 339,
+            "name": "Barboach",
+            "types": [
+              "Water",
+              "Ground"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 5,
+            "maximumLevel": 8,
+            "relativeWeight": 12,
+            "encounterSharePercent": 12,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 79,
+            "name": "Slowpoke",
+            "types": [
+              "Water",
+              "Psychic"
+            ],
+            "rarityTier": "rare",
+            "role": "fishing",
+            "minimumLevel": 6,
+            "maximumLevel": 9,
+            "relativeWeight": 8,
+            "encounterSharePercent": 8,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 349,
+            "name": "Feebas",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "super",
+            "role": "fishing",
+            "minimumLevel": 6,
+            "maximumLevel": 9,
+            "relativeWeight": 5,
+            "encounterSharePercent": 5,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 271,
+            "name": "Lombre",
+            "types": [
+              "Water",
+              "Grass"
+            ],
+            "rarityTier": "mega",
+            "role": "fishing",
+            "minimumLevel": 7,
+            "maximumLevel": 10,
+            "relativeWeight": 3,
+            "encounterSharePercent": 3,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 350,
+            "name": "Milotic",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "ultra",
+            "role": "fishing",
+            "minimumLevel": 7,
+            "maximumLevel": 10,
+            "relativeWeight": 2,
+            "encounterSharePercent": 2,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          }
+        ]
+      },
+      {
+        "poolId": "fishingRoute2WestCreek",
+        "bodyName": "Route 2 West Creek",
+        "encounterProfile": "fishing_route2_west_creek",
+        "maps": [
+          {
+            "mapId": "legacy.pco.map0020",
+            "mapNumber": 20,
+            "name": "Route 2"
+          }
+        ],
+        "levelRange": {
+          "minimum": 7,
+          "maximum": 13
+        },
+        "spawns": [
+          {
+            "speciesId": 60,
+            "name": "Poliwag",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 7,
+            "maximumLevel": 10,
+            "relativeWeight": 28,
+            "encounterSharePercent": 28,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 283,
+            "name": "Surskit",
+            "types": [
+              "Bug",
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 7,
+            "maximumLevel": 10,
+            "relativeWeight": 24,
+            "encounterSharePercent": 24,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 422,
+            "name": "Shellos",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 8,
+            "maximumLevel": 11,
+            "relativeWeight": 18,
+            "encounterSharePercent": 18,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 183,
+            "name": "Marill",
+            "types": [
+              "Water",
+              "Fairy"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 8,
+            "maximumLevel": 11,
+            "relativeWeight": 12,
+            "encounterSharePercent": 12,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 79,
+            "name": "Slowpoke",
+            "types": [
+              "Water",
+              "Psychic"
+            ],
+            "rarityTier": "rare",
+            "role": "fishing",
+            "minimumLevel": 9,
+            "maximumLevel": 12,
+            "relativeWeight": 8,
+            "encounterSharePercent": 8,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 400,
+            "name": "Bibarel",
+            "types": [
+              "Normal",
+              "Water"
+            ],
+            "rarityTier": "super",
+            "role": "fishing",
+            "minimumLevel": 9,
+            "maximumLevel": 12,
+            "relativeWeight": 5,
+            "encounterSharePercent": 5,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 80,
+            "name": "Slowbro",
+            "types": [
+              "Water",
+              "Psychic"
+            ],
+            "rarityTier": "mega",
+            "role": "fishing",
+            "minimumLevel": 10,
+            "maximumLevel": 13,
+            "relativeWeight": 3,
+            "encounterSharePercent": 3,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 199,
+            "name": "Slowking",
+            "types": [
+              "Water",
+              "Psychic"
+            ],
+            "rarityTier": "ultra",
+            "role": "fishing",
+            "minimumLevel": 10,
+            "maximumLevel": 13,
+            "relativeWeight": 2,
+            "encounterSharePercent": 2,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          }
+        ]
+      },
+      {
+        "poolId": "fishingRoute2EastCreek",
+        "bodyName": "Route 2 East Creek",
+        "encounterProfile": "fishing_route2_east_creek",
+        "maps": [
+          {
+            "mapId": "legacy.pco.map0021",
+            "mapNumber": 21,
+            "name": "Route 2"
+          }
+        ],
+        "levelRange": {
+          "minimum": 7,
+          "maximum": 13
+        },
+        "spawns": [
+          {
+            "speciesId": 118,
+            "name": "Goldeen",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 7,
+            "maximumLevel": 10,
+            "relativeWeight": 28,
+            "encounterSharePercent": 28,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 98,
+            "name": "Krabby",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 7,
+            "maximumLevel": 10,
+            "relativeWeight": 24,
+            "encounterSharePercent": 24,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 456,
+            "name": "Finneon",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 8,
+            "maximumLevel": 11,
+            "relativeWeight": 18,
+            "encounterSharePercent": 18,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 418,
+            "name": "Buizel",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 8,
+            "maximumLevel": 11,
+            "relativeWeight": 12,
+            "encounterSharePercent": 12,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 116,
+            "name": "Horsea",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "rare",
+            "role": "fishing",
+            "minimumLevel": 9,
+            "maximumLevel": 12,
+            "relativeWeight": 8,
+            "encounterSharePercent": 8,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 86,
+            "name": "Seel",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "super",
+            "role": "fishing",
+            "minimumLevel": 9,
+            "maximumLevel": 12,
+            "relativeWeight": 5,
+            "encounterSharePercent": 5,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 119,
+            "name": "Seaking",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "mega",
+            "role": "fishing",
+            "minimumLevel": 10,
+            "maximumLevel": 13,
+            "relativeWeight": 3,
+            "encounterSharePercent": 3,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 87,
+            "name": "Dewgong",
+            "types": [
+              "Water",
+              "Ice"
+            ],
+            "rarityTier": "ultra",
+            "role": "fishing",
+            "minimumLevel": 10,
+            "maximumLevel": 13,
+            "relativeWeight": 2,
+            "encounterSharePercent": 2,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          }
+        ]
+      },
+      {
+        "poolId": "fishingCastoFalls",
+        "bodyName": "Casto Cliff Falls",
+        "encounterProfile": "fishing_casto_falls",
+        "maps": [
+          {
+            "mapId": "legacy.pco.map0074",
+            "mapNumber": 74,
+            "name": "Casto Cliffs"
+          }
+        ],
+        "levelRange": {
+          "minimum": 17,
+          "maximum": 25
+        },
+        "spawns": [
+          {
+            "speciesId": 118,
+            "name": "Goldeen",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 17,
+            "maximumLevel": 21,
+            "relativeWeight": 28,
+            "encounterSharePercent": 28,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 418,
+            "name": "Buizel",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 17,
+            "maximumLevel": 21,
+            "relativeWeight": 24,
+            "encounterSharePercent": 24,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 60,
+            "name": "Poliwag",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 18,
+            "maximumLevel": 22,
+            "relativeWeight": 18,
+            "encounterSharePercent": 18,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 278,
+            "name": "Wingull",
+            "types": [
+              "Water",
+              "Flying"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 18,
+            "maximumLevel": 22,
+            "relativeWeight": 12,
+            "encounterSharePercent": 12,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 61,
+            "name": "Poliwhirl",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "rare",
+            "role": "fishing",
+            "minimumLevel": 19,
+            "maximumLevel": 23,
+            "relativeWeight": 8,
+            "encounterSharePercent": 8,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 279,
+            "name": "Pelipper",
+            "types": [
+              "Water",
+              "Flying"
+            ],
+            "rarityTier": "super",
+            "role": "fishing",
+            "minimumLevel": 20,
+            "maximumLevel": 24,
+            "relativeWeight": 5,
+            "encounterSharePercent": 5,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 419,
+            "name": "Floatzel",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "mega",
+            "role": "fishing",
+            "minimumLevel": 21,
+            "maximumLevel": 25,
+            "relativeWeight": 3,
+            "encounterSharePercent": 3,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 130,
+            "name": "Gyarados",
+            "types": [
+              "Water",
+              "Flying"
+            ],
+            "rarityTier": "ultra",
+            "role": "fishing",
+            "minimumLevel": 21,
+            "maximumLevel": 25,
+            "relativeWeight": 2,
+            "encounterSharePercent": 2,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          }
+        ]
+      },
+      {
+        "poolId": "fishingCastoReservoir",
+        "bodyName": "Casto Cliff Reservoir",
+        "encounterProfile": "fishing_casto_reservoir",
+        "maps": [
+          {
+            "mapId": "legacy.pco.map0075",
+            "mapNumber": 75,
+            "name": "Casto Cliffs"
+          }
+        ],
+        "levelRange": {
+          "minimum": 17,
+          "maximum": 25
+        },
+        "spawns": [
+          {
+            "speciesId": 79,
+            "name": "Slowpoke",
+            "types": [
+              "Water",
+              "Psychic"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 17,
+            "maximumLevel": 21,
+            "relativeWeight": 28,
+            "encounterSharePercent": 28,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 283,
+            "name": "Surskit",
+            "types": [
+              "Bug",
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 17,
+            "maximumLevel": 21,
+            "relativeWeight": 24,
+            "encounterSharePercent": 24,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 270,
+            "name": "Lotad",
+            "types": [
+              "Water",
+              "Grass"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 18,
+            "maximumLevel": 22,
+            "relativeWeight": 18,
+            "encounterSharePercent": 18,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 341,
+            "name": "Corphish",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 18,
+            "maximumLevel": 22,
+            "relativeWeight": 12,
+            "encounterSharePercent": 12,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 120,
+            "name": "Staryu",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "rare",
+            "role": "fishing",
+            "minimumLevel": 19,
+            "maximumLevel": 23,
+            "relativeWeight": 8,
+            "encounterSharePercent": 8,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 271,
+            "name": "Lombre",
+            "types": [
+              "Water",
+              "Grass"
+            ],
+            "rarityTier": "super",
+            "role": "fishing",
+            "minimumLevel": 20,
+            "maximumLevel": 24,
+            "relativeWeight": 5,
+            "encounterSharePercent": 5,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 121,
+            "name": "Starmie",
+            "types": [
+              "Water",
+              "Psychic"
+            ],
+            "rarityTier": "mega",
+            "role": "fishing",
+            "minimumLevel": 21,
+            "maximumLevel": 25,
+            "relativeWeight": 3,
+            "encounterSharePercent": 3,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 272,
+            "name": "Ludicolo",
+            "types": [
+              "Water",
+              "Grass"
+            ],
+            "rarityTier": "ultra",
+            "role": "fishing",
+            "minimumLevel": 21,
+            "maximumLevel": 25,
+            "relativeWeight": 2,
+            "encounterSharePercent": 2,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          }
+        ]
+      },
+      {
+        "poolId": "fishingOcanaUnderground",
+        "bodyName": "Ocana Mine Underground Pool",
+        "encounterProfile": "fishing_ocana_underground",
         "maps": [
           {
             "mapId": "legacy.pco.map0066",
@@ -3509,43 +4292,1259 @@
             "name": "Ocana Mine C"
           }
         ],
-        "waterSpeciesCount": 0,
-        "incidentalWaterMatch": true,
-        "note": "Reused as a rod pool only because its habitat label matches the fishing water pattern; its roster holds no Water-type species. This mirrors the current rollFishingEncounter behavior and should be confirmed by the gameplay owner."
+        "levelRange": {
+          "minimum": 27,
+          "maximum": 35
+        },
+        "spawns": [
+          {
+            "speciesId": 339,
+            "name": "Barboach",
+            "types": [
+              "Water",
+              "Ground"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 27,
+            "maximumLevel": 31,
+            "relativeWeight": 28,
+            "encounterSharePercent": 28,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 170,
+            "name": "Chinchou",
+            "types": [
+              "Water",
+              "Electric"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 27,
+            "maximumLevel": 31,
+            "relativeWeight": 24,
+            "encounterSharePercent": 24,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 90,
+            "name": "Shellder",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 28,
+            "maximumLevel": 32,
+            "relativeWeight": 18,
+            "encounterSharePercent": 18,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 366,
+            "name": "Clamperl",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 28,
+            "maximumLevel": 32,
+            "relativeWeight": 12,
+            "encounterSharePercent": 12,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 369,
+            "name": "Relicanth",
+            "types": [
+              "Water",
+              "Rock"
+            ],
+            "rarityTier": "rare",
+            "role": "fishing",
+            "minimumLevel": 29,
+            "maximumLevel": 33,
+            "relativeWeight": 8,
+            "encounterSharePercent": 8,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 138,
+            "name": "Omanyte",
+            "types": [
+              "Rock",
+              "Water"
+            ],
+            "rarityTier": "super",
+            "role": "fishing",
+            "minimumLevel": 30,
+            "maximumLevel": 34,
+            "relativeWeight": 5,
+            "encounterSharePercent": 5,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 340,
+            "name": "Whiscash",
+            "types": [
+              "Water",
+              "Ground"
+            ],
+            "rarityTier": "mega",
+            "role": "fishing",
+            "minimumLevel": 31,
+            "maximumLevel": 35,
+            "relativeWeight": 3,
+            "encounterSharePercent": 3,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 171,
+            "name": "Lanturn",
+            "types": [
+              "Water",
+              "Electric"
+            ],
+            "rarityTier": "ultra",
+            "role": "fishing",
+            "minimumLevel": 31,
+            "maximumLevel": 35,
+            "relativeWeight": 2,
+            "encounterSharePercent": 2,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          }
+        ]
       },
       {
-        "tableId": "miGordaSeaCave",
-        "title": "Sea Cave / Cave Shuckle",
+        "poolId": "fishingMiGordaTidepools",
+        "bodyName": "Mi Gorda Tidepools",
+        "encounterProfile": "fishing_mi_gorda_tidepools",
         "maps": [
           {
-            "mapId": "legacy.pco.map0149",
-            "mapNumber": 149,
-            "name": "Sea Cave"
+            "mapId": "legacy.pco.map0131",
+            "mapNumber": 131,
+            "name": "Mi Gorda Beach"
           },
           {
-            "mapId": "legacy.pco.map0150",
-            "mapNumber": 150,
-            "name": "Sea Cave"
+            "mapId": "legacy.pco.map0133",
+            "mapNumber": 133,
+            "name": "Mi Gorda Beach"
           },
           {
-            "mapId": "legacy.pco.map0151",
-            "mapNumber": 151,
-            "name": "Sea Cave"
+            "mapId": "legacy.pco.map0146",
+            "mapNumber": 146,
+            "name": "Mi Gorda Beach"
           },
           {
-            "mapId": "legacy.pco.map0152",
-            "mapNumber": 152,
-            "name": "Sea Cave"
-          },
-          {
-            "mapId": "legacy.pco.map0153",
-            "mapNumber": 153,
-            "name": "Cave Shuckle"
+            "mapId": "legacy.pco.map0154",
+            "mapNumber": 154,
+            "name": "Mi Gorda Beach"
           }
         ],
-        "waterSpeciesCount": 10,
-        "incidentalWaterMatch": false,
-        "note": "Casting on water here draws from this habitat's own encounter pool (listed above), not the default rod pool."
+        "levelRange": {
+          "minimum": 29,
+          "maximum": 37
+        },
+        "spawns": [
+          {
+            "speciesId": 98,
+            "name": "Krabby",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 29,
+            "maximumLevel": 33,
+            "relativeWeight": 28,
+            "encounterSharePercent": 28,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 456,
+            "name": "Finneon",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 29,
+            "maximumLevel": 33,
+            "relativeWeight": 24,
+            "encounterSharePercent": 24,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 278,
+            "name": "Wingull",
+            "types": [
+              "Water",
+              "Flying"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 30,
+            "maximumLevel": 34,
+            "relativeWeight": 18,
+            "encounterSharePercent": 18,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 370,
+            "name": "Luvdisc",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 30,
+            "maximumLevel": 34,
+            "relativeWeight": 12,
+            "encounterSharePercent": 12,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 90,
+            "name": "Shellder",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "rare",
+            "role": "fishing",
+            "minimumLevel": 31,
+            "maximumLevel": 35,
+            "relativeWeight": 8,
+            "encounterSharePercent": 8,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 458,
+            "name": "Mantyke",
+            "types": [
+              "Water",
+              "Flying"
+            ],
+            "rarityTier": "super",
+            "role": "fishing",
+            "minimumLevel": 32,
+            "maximumLevel": 36,
+            "relativeWeight": 5,
+            "encounterSharePercent": 5,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 99,
+            "name": "Kingler",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "mega",
+            "role": "fishing",
+            "minimumLevel": 33,
+            "maximumLevel": 37,
+            "relativeWeight": 3,
+            "encounterSharePercent": 3,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 91,
+            "name": "Cloyster",
+            "types": [
+              "Water",
+              "Ice"
+            ],
+            "rarityTier": "ultra",
+            "role": "fishing",
+            "minimumLevel": 33,
+            "maximumLevel": 37,
+            "relativeWeight": 2,
+            "encounterSharePercent": 2,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          }
+        ]
+      },
+      {
+        "poolId": "fishingMiGordaCanals",
+        "bodyName": "Mi Gorda Canals",
+        "encounterProfile": "fishing_mi_gorda_canals",
+        "maps": [
+          {
+            "mapId": "legacy.pco.map0135",
+            "mapNumber": 135,
+            "name": "Mi Gorda Town"
+          },
+          {
+            "mapId": "legacy.pco.map0142",
+            "mapNumber": 142,
+            "name": "Mi Gorda Town"
+          }
+        ],
+        "levelRange": {
+          "minimum": 29,
+          "maximum": 37
+        },
+        "spawns": [
+          {
+            "speciesId": 60,
+            "name": "Poliwag",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 29,
+            "maximumLevel": 33,
+            "relativeWeight": 28,
+            "encounterSharePercent": 28,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 183,
+            "name": "Marill",
+            "types": [
+              "Water",
+              "Fairy"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 29,
+            "maximumLevel": 33,
+            "relativeWeight": 24,
+            "encounterSharePercent": 24,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 118,
+            "name": "Goldeen",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 30,
+            "maximumLevel": 34,
+            "relativeWeight": 18,
+            "encounterSharePercent": 18,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 283,
+            "name": "Surskit",
+            "types": [
+              "Bug",
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 30,
+            "maximumLevel": 34,
+            "relativeWeight": 12,
+            "encounterSharePercent": 12,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 400,
+            "name": "Bibarel",
+            "types": [
+              "Normal",
+              "Water"
+            ],
+            "rarityTier": "rare",
+            "role": "fishing",
+            "minimumLevel": 31,
+            "maximumLevel": 35,
+            "relativeWeight": 8,
+            "encounterSharePercent": 8,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 199,
+            "name": "Slowking",
+            "types": [
+              "Water",
+              "Psychic"
+            ],
+            "rarityTier": "super",
+            "role": "fishing",
+            "minimumLevel": 32,
+            "maximumLevel": 36,
+            "relativeWeight": 5,
+            "encounterSharePercent": 5,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 61,
+            "name": "Poliwhirl",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "mega",
+            "role": "fishing",
+            "minimumLevel": 33,
+            "maximumLevel": 37,
+            "relativeWeight": 3,
+            "encounterSharePercent": 3,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 272,
+            "name": "Ludicolo",
+            "types": [
+              "Water",
+              "Grass"
+            ],
+            "rarityTier": "ultra",
+            "role": "fishing",
+            "minimumLevel": 33,
+            "maximumLevel": 37,
+            "relativeWeight": 2,
+            "encounterSharePercent": 2,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          }
+        ]
+      },
+      {
+        "poolId": "fishingMiGordaOpenCoast",
+        "bodyName": "Mi Gorda Open Coast",
+        "encounterProfile": "fishing_mi_gorda_open_coast",
+        "maps": [
+          {
+            "mapId": "legacy.pco.map0132",
+            "mapNumber": 132,
+            "name": "Mi Gorda Beach"
+          },
+          {
+            "mapId": "legacy.pco.map0134",
+            "mapNumber": 134,
+            "name": "Mi Gorda Beach"
+          },
+          {
+            "mapId": "legacy.pco.map0143",
+            "mapNumber": 143,
+            "name": "Mi Gorda Beach"
+          },
+          {
+            "mapId": "legacy.pco.map0148",
+            "mapNumber": 148,
+            "name": "Mi Gorda Beach"
+          },
+          {
+            "mapId": "legacy.pco.map0155",
+            "mapNumber": 155,
+            "name": "Mi Gorda Beach"
+          },
+          {
+            "mapId": "legacy.pco.map0156",
+            "mapNumber": 156,
+            "name": "Mi Gorda Beach"
+          }
+        ],
+        "levelRange": {
+          "minimum": 30,
+          "maximum": 38
+        },
+        "spawns": [
+          {
+            "speciesId": 72,
+            "name": "Tentacool",
+            "types": [
+              "Water",
+              "Poison"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 30,
+            "maximumLevel": 34,
+            "relativeWeight": 28,
+            "encounterSharePercent": 28,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 116,
+            "name": "Horsea",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 30,
+            "maximumLevel": 34,
+            "relativeWeight": 24,
+            "encounterSharePercent": 24,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 320,
+            "name": "Wailmer",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 31,
+            "maximumLevel": 35,
+            "relativeWeight": 18,
+            "encounterSharePercent": 18,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 318,
+            "name": "Carvanha",
+            "types": [
+              "Water",
+              "Dark"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 31,
+            "maximumLevel": 35,
+            "relativeWeight": 12,
+            "encounterSharePercent": 12,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 279,
+            "name": "Pelipper",
+            "types": [
+              "Water",
+              "Flying"
+            ],
+            "rarityTier": "rare",
+            "role": "fishing",
+            "minimumLevel": 32,
+            "maximumLevel": 36,
+            "relativeWeight": 8,
+            "encounterSharePercent": 8,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 117,
+            "name": "Seadra",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "super",
+            "role": "fishing",
+            "minimumLevel": 33,
+            "maximumLevel": 37,
+            "relativeWeight": 5,
+            "encounterSharePercent": 5,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 73,
+            "name": "Tentacruel",
+            "types": [
+              "Water",
+              "Poison"
+            ],
+            "rarityTier": "mega",
+            "role": "fishing",
+            "minimumLevel": 34,
+            "maximumLevel": 38,
+            "relativeWeight": 3,
+            "encounterSharePercent": 3,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 319,
+            "name": "Sharpedo",
+            "types": [
+              "Water",
+              "Dark"
+            ],
+            "rarityTier": "ultra",
+            "role": "fishing",
+            "minimumLevel": 34,
+            "maximumLevel": 38,
+            "relativeWeight": 2,
+            "encounterSharePercent": 2,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          }
+        ]
+      },
+      {
+        "poolId": "fishingMiGordaGymBasin",
+        "bodyName": "Mi Gorda Gym Basin",
+        "encounterProfile": "fishing_mi_gorda_gym_basin",
+        "maps": [
+          {
+            "mapId": "legacy.pco.map0144",
+            "mapNumber": 144,
+            "name": "Mi Gorda Pokemon Gym"
+          },
+          {
+            "mapId": "legacy.pco.map0145",
+            "mapNumber": 145,
+            "name": "Mi Gorda Pokemon Gym"
+          }
+        ],
+        "levelRange": {
+          "minimum": 31,
+          "maximum": 39
+        },
+        "spawns": [
+          {
+            "speciesId": 129,
+            "name": "Magikarp",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 31,
+            "maximumLevel": 35,
+            "relativeWeight": 28,
+            "encounterSharePercent": 28,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 349,
+            "name": "Feebas",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 31,
+            "maximumLevel": 35,
+            "relativeWeight": 24,
+            "encounterSharePercent": 24,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 370,
+            "name": "Luvdisc",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 32,
+            "maximumLevel": 36,
+            "relativeWeight": 18,
+            "encounterSharePercent": 18,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 120,
+            "name": "Staryu",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 32,
+            "maximumLevel": 36,
+            "relativeWeight": 12,
+            "encounterSharePercent": 12,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 119,
+            "name": "Seaking",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "rare",
+            "role": "fishing",
+            "minimumLevel": 33,
+            "maximumLevel": 37,
+            "relativeWeight": 8,
+            "encounterSharePercent": 8,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 121,
+            "name": "Starmie",
+            "types": [
+              "Water",
+              "Psychic"
+            ],
+            "rarityTier": "super",
+            "role": "fishing",
+            "minimumLevel": 34,
+            "maximumLevel": 38,
+            "relativeWeight": 5,
+            "encounterSharePercent": 5,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 130,
+            "name": "Gyarados",
+            "types": [
+              "Water",
+              "Flying"
+            ],
+            "rarityTier": "mega",
+            "role": "fishing",
+            "minimumLevel": 35,
+            "maximumLevel": 39,
+            "relativeWeight": 3,
+            "encounterSharePercent": 3,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 350,
+            "name": "Milotic",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "ultra",
+            "role": "fishing",
+            "minimumLevel": 35,
+            "maximumLevel": 39,
+            "relativeWeight": 2,
+            "encounterSharePercent": 2,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          }
+        ]
+      },
+      {
+        "poolId": "fishingMiGordaReef",
+        "bodyName": "Mi Gorda Reef",
+        "encounterProfile": "fishing_mi_gorda_reef",
+        "maps": [
+          {
+            "mapId": "legacy.pco.map0147",
+            "mapNumber": 147,
+            "name": "Mi Gorda Beach"
+          },
+          {
+            "mapId": "legacy.pco.map0157",
+            "mapNumber": 157,
+            "name": "Mi Gorda Beach"
+          }
+        ],
+        "levelRange": {
+          "minimum": 31,
+          "maximum": 39
+        },
+        "spawns": [
+          {
+            "speciesId": 170,
+            "name": "Chinchou",
+            "types": [
+              "Water",
+              "Electric"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 31,
+            "maximumLevel": 35,
+            "relativeWeight": 28,
+            "encounterSharePercent": 28,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 120,
+            "name": "Staryu",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 31,
+            "maximumLevel": 35,
+            "relativeWeight": 24,
+            "encounterSharePercent": 24,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 366,
+            "name": "Clamperl",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 32,
+            "maximumLevel": 36,
+            "relativeWeight": 18,
+            "encounterSharePercent": 18,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 456,
+            "name": "Finneon",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 32,
+            "maximumLevel": 36,
+            "relativeWeight": 12,
+            "encounterSharePercent": 12,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 369,
+            "name": "Relicanth",
+            "types": [
+              "Water",
+              "Rock"
+            ],
+            "rarityTier": "rare",
+            "role": "fishing",
+            "minimumLevel": 33,
+            "maximumLevel": 37,
+            "relativeWeight": 8,
+            "encounterSharePercent": 8,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 368,
+            "name": "Gorebyss",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "super",
+            "role": "fishing",
+            "minimumLevel": 34,
+            "maximumLevel": 38,
+            "relativeWeight": 5,
+            "encounterSharePercent": 5,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 367,
+            "name": "Huntail",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "mega",
+            "role": "fishing",
+            "minimumLevel": 35,
+            "maximumLevel": 39,
+            "relativeWeight": 3,
+            "encounterSharePercent": 3,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 230,
+            "name": "Kingdra",
+            "types": [
+              "Water",
+              "Dragon"
+            ],
+            "rarityTier": "ultra",
+            "role": "fishing",
+            "minimumLevel": 35,
+            "maximumLevel": 39,
+            "relativeWeight": 2,
+            "encounterSharePercent": 2,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          }
+        ]
+      },
+      {
+        "poolId": "fishingMiGordaPortDocks",
+        "bodyName": "Mi Gorda Port Docks",
+        "encounterProfile": "fishing_mi_gorda_port_docks",
+        "maps": [
+          {
+            "mapId": "legacy.pco.map0161",
+            "mapNumber": 161,
+            "name": "Mi Gorda Port of Shipment"
+          },
+          {
+            "mapId": "legacy.pco.map0162",
+            "mapNumber": 162,
+            "name": "Mi Gorda Port of Shipment"
+          }
+        ],
+        "levelRange": {
+          "minimum": 33,
+          "maximum": 41
+        },
+        "spawns": [
+          {
+            "speciesId": 98,
+            "name": "Krabby",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 33,
+            "maximumLevel": 37,
+            "relativeWeight": 28,
+            "encounterSharePercent": 28,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 341,
+            "name": "Corphish",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 33,
+            "maximumLevel": 37,
+            "relativeWeight": 24,
+            "encounterSharePercent": 24,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 170,
+            "name": "Chinchou",
+            "types": [
+              "Water",
+              "Electric"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 34,
+            "maximumLevel": 38,
+            "relativeWeight": 18,
+            "encounterSharePercent": 18,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 456,
+            "name": "Finneon",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 34,
+            "maximumLevel": 38,
+            "relativeWeight": 12,
+            "encounterSharePercent": 12,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 318,
+            "name": "Carvanha",
+            "types": [
+              "Water",
+              "Dark"
+            ],
+            "rarityTier": "rare",
+            "role": "fishing",
+            "minimumLevel": 35,
+            "maximumLevel": 39,
+            "relativeWeight": 8,
+            "encounterSharePercent": 8,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 458,
+            "name": "Mantyke",
+            "types": [
+              "Water",
+              "Flying"
+            ],
+            "rarityTier": "super",
+            "role": "fishing",
+            "minimumLevel": 36,
+            "maximumLevel": 40,
+            "relativeWeight": 5,
+            "encounterSharePercent": 5,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 99,
+            "name": "Kingler",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "mega",
+            "role": "fishing",
+            "minimumLevel": 37,
+            "maximumLevel": 41,
+            "relativeWeight": 3,
+            "encounterSharePercent": 3,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 319,
+            "name": "Sharpedo",
+            "types": [
+              "Water",
+              "Dark"
+            ],
+            "rarityTier": "ultra",
+            "role": "fishing",
+            "minimumLevel": 37,
+            "maximumLevel": 41,
+            "relativeWeight": 2,
+            "encounterSharePercent": 2,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          }
+        ]
+      },
+      {
+        "poolId": "fishingMiGordaDeepHarbor",
+        "bodyName": "Mi Gorda Deep Harbor",
+        "encounterProfile": "fishing_mi_gorda_deep_harbor",
+        "maps": [
+          {
+            "mapId": "legacy.pco.map0163",
+            "mapNumber": 163,
+            "name": "Mi Gorda Port of Shipment"
+          },
+          {
+            "mapId": "legacy.pco.map0164",
+            "mapNumber": 164,
+            "name": "Mi Gorda Port of Shipment"
+          }
+        ],
+        "levelRange": {
+          "minimum": 34,
+          "maximum": 42
+        },
+        "spawns": [
+          {
+            "speciesId": 72,
+            "name": "Tentacool",
+            "types": [
+              "Water",
+              "Poison"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 34,
+            "maximumLevel": 38,
+            "relativeWeight": 28,
+            "encounterSharePercent": 28,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 320,
+            "name": "Wailmer",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "common",
+            "role": "fishing",
+            "minimumLevel": 34,
+            "maximumLevel": 38,
+            "relativeWeight": 24,
+            "encounterSharePercent": 24,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 116,
+            "name": "Horsea",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 35,
+            "maximumLevel": 39,
+            "relativeWeight": 18,
+            "encounterSharePercent": 18,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 170,
+            "name": "Chinchou",
+            "types": [
+              "Water",
+              "Electric"
+            ],
+            "rarityTier": "uncommon",
+            "role": "fishing",
+            "minimumLevel": 35,
+            "maximumLevel": 39,
+            "relativeWeight": 12,
+            "encounterSharePercent": 12,
+            "method": "Fishing",
+            "rod": "Old Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 117,
+            "name": "Seadra",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "rare",
+            "role": "fishing",
+            "minimumLevel": 36,
+            "maximumLevel": 40,
+            "relativeWeight": 8,
+            "encounterSharePercent": 8,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 171,
+            "name": "Lanturn",
+            "types": [
+              "Water",
+              "Electric"
+            ],
+            "rarityTier": "super",
+            "role": "fishing",
+            "minimumLevel": 37,
+            "maximumLevel": 41,
+            "relativeWeight": 5,
+            "encounterSharePercent": 5,
+            "method": "Fishing",
+            "rod": "Good Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 73,
+            "name": "Tentacruel",
+            "types": [
+              "Water",
+              "Poison"
+            ],
+            "rarityTier": "mega",
+            "role": "fishing",
+            "minimumLevel": 38,
+            "maximumLevel": 42,
+            "relativeWeight": 3,
+            "encounterSharePercent": 3,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          },
+          {
+            "speciesId": 321,
+            "name": "Wailord",
+            "types": [
+              "Water"
+            ],
+            "rarityTier": "ultra",
+            "role": "fishing",
+            "minimumLevel": 38,
+            "maximumLevel": 42,
+            "relativeWeight": 2,
+            "encounterSharePercent": 2,
+            "method": "Fishing",
+            "rod": "Super Rod",
+            "futureTeamLevelOneEligible": true
+          }
+        ]
       }
     ]
   },
@@ -4014,12 +6013,29 @@
       ],
       "locations": [
         {
-          "tableId": "karelFishing",
-          "area": "Karel Default Rod Pool",
+          "tableId": "fishingDeckberCrownwater",
+          "area": "Deckber Crownwater Reeds",
           "method": "Fishing",
-          "rarityTier": "rare",
-          "minimumLevel": 8,
-          "maximumLevel": 13
+          "rarityTier": "common",
+          "minimumLevel": 4,
+          "maximumLevel": 7
+        }
+      ]
+    },
+    {
+      "speciesId": 55,
+      "name": "Golduck",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingDeckberCrownwater",
+          "area": "Deckber Crownwater Reeds",
+          "method": "Fishing",
+          "rarityTier": "mega",
+          "minimumLevel": 7,
+          "maximumLevel": 10
         }
       ]
     },
@@ -4048,12 +6064,61 @@
       ],
       "locations": [
         {
-          "tableId": "karelFishing",
-          "area": "Karel Default Rod Pool",
+          "tableId": "fishingDeckberCrownwater",
+          "area": "Deckber Crownwater Reeds",
           "method": "Fishing",
           "rarityTier": "common",
-          "minimumLevel": 5,
+          "minimumLevel": 4,
+          "maximumLevel": 7
+        },
+        {
+          "tableId": "fishingRoute2WestCreek",
+          "area": "Route 2 West Creek",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 7,
           "maximumLevel": 10
+        },
+        {
+          "tableId": "fishingCastoFalls",
+          "area": "Casto Cliff Falls",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 18,
+          "maximumLevel": 22
+        },
+        {
+          "tableId": "fishingMiGordaCanals",
+          "area": "Mi Gorda Canals",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 29,
+          "maximumLevel": 33
+        }
+      ]
+    },
+    {
+      "speciesId": 61,
+      "name": "Poliwhirl",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingCastoFalls",
+          "area": "Casto Cliff Falls",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 19,
+          "maximumLevel": 23
+        },
+        {
+          "tableId": "fishingMiGordaCanals",
+          "area": "Mi Gorda Canals",
+          "method": "Fishing",
+          "rarityTier": "mega",
+          "minimumLevel": 33,
+          "maximumLevel": 37
         }
       ]
     },
@@ -4091,12 +6156,46 @@
           "maximumLevel": 39
         },
         {
-          "tableId": "karelFishing",
-          "area": "Karel Default Rod Pool",
+          "tableId": "fishingMiGordaOpenCoast",
+          "area": "Mi Gorda Open Coast",
           "method": "Fishing",
-          "rarityTier": "rare",
-          "minimumLevel": 8,
-          "maximumLevel": 13
+          "rarityTier": "common",
+          "minimumLevel": 30,
+          "maximumLevel": 34
+        },
+        {
+          "tableId": "fishingMiGordaDeepHarbor",
+          "area": "Mi Gorda Deep Harbor",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 34,
+          "maximumLevel": 38
+        }
+      ]
+    },
+    {
+      "speciesId": 73,
+      "name": "Tentacruel",
+      "types": [
+        "Water",
+        "Poison"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingMiGordaOpenCoast",
+          "area": "Mi Gorda Open Coast",
+          "method": "Fishing",
+          "rarityTier": "mega",
+          "minimumLevel": 34,
+          "maximumLevel": 38
+        },
+        {
+          "tableId": "fishingMiGordaDeepHarbor",
+          "area": "Mi Gorda Deep Harbor",
+          "method": "Fishing",
+          "rarityTier": "mega",
+          "minimumLevel": 38,
+          "maximumLevel": 42
         }
       ]
     },
@@ -4235,11 +6334,45 @@
       ],
       "locations": [
         {
-          "tableId": "karelFishing",
-          "area": "Karel Default Rod Pool",
+          "tableId": "fishingDeckberMillstream",
+          "area": "Deckber Windmill Stream",
           "method": "Fishing",
           "rarityTier": "rare",
-          "minimumLevel": 8,
+          "minimumLevel": 6,
+          "maximumLevel": 9
+        },
+        {
+          "tableId": "fishingRoute2WestCreek",
+          "area": "Route 2 West Creek",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 9,
+          "maximumLevel": 12
+        },
+        {
+          "tableId": "fishingCastoReservoir",
+          "area": "Casto Cliff Reservoir",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 17,
+          "maximumLevel": 21
+        }
+      ]
+    },
+    {
+      "speciesId": 80,
+      "name": "Slowbro",
+      "types": [
+        "Water",
+        "Psychic"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingRoute2WestCreek",
+          "area": "Route 2 West Creek",
+          "method": "Fishing",
+          "rarityTier": "mega",
+          "minimumLevel": 10,
           "maximumLevel": 13
         }
       ]
@@ -4303,6 +6436,41 @@
       ]
     },
     {
+      "speciesId": 86,
+      "name": "Seel",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingRoute2EastCreek",
+          "area": "Route 2 East Creek",
+          "method": "Fishing",
+          "rarityTier": "super",
+          "minimumLevel": 9,
+          "maximumLevel": 12
+        }
+      ]
+    },
+    {
+      "speciesId": 87,
+      "name": "Dewgong",
+      "types": [
+        "Water",
+        "Ice"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingRoute2EastCreek",
+          "area": "Route 2 East Creek",
+          "method": "Fishing",
+          "rarityTier": "ultra",
+          "minimumLevel": 10,
+          "maximumLevel": 13
+        }
+      ]
+    },
+    {
       "speciesId": 88,
       "name": "Grimer",
       "types": [
@@ -4316,6 +6484,49 @@
           "rarityTier": "uncommon",
           "minimumLevel": 24,
           "maximumLevel": 28
+        }
+      ]
+    },
+    {
+      "speciesId": 90,
+      "name": "Shellder",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingOcanaUnderground",
+          "area": "Ocana Mine Underground Pool",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 28,
+          "maximumLevel": 32
+        },
+        {
+          "tableId": "fishingMiGordaTidepools",
+          "area": "Mi Gorda Tidepools",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 31,
+          "maximumLevel": 35
+        }
+      ]
+    },
+    {
+      "speciesId": 91,
+      "name": "Cloyster",
+      "types": [
+        "Water",
+        "Ice"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingMiGordaTidepools",
+          "area": "Mi Gorda Tidepools",
+          "method": "Fishing",
+          "rarityTier": "ultra",
+          "minimumLevel": 33,
+          "maximumLevel": 37
         }
       ]
     },
@@ -4429,12 +6640,69 @@
       ],
       "locations": [
         {
-          "tableId": "karelFishing",
-          "area": "Karel Default Rod Pool",
+          "tableId": "fishingDeckberCrownwater",
+          "area": "Deckber Crownwater Reeds",
           "method": "Fishing",
           "rarityTier": "uncommon",
-          "minimumLevel": 6,
-          "maximumLevel": 11
+          "minimumLevel": 5,
+          "maximumLevel": 8
+        },
+        {
+          "tableId": "fishingRoute2EastCreek",
+          "area": "Route 2 East Creek",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 7,
+          "maximumLevel": 10
+        },
+        {
+          "tableId": "fishingMiGordaTidepools",
+          "area": "Mi Gorda Tidepools",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 29,
+          "maximumLevel": 33
+        },
+        {
+          "tableId": "fishingMiGordaPortDocks",
+          "area": "Mi Gorda Port Docks",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 33,
+          "maximumLevel": 37
+        }
+      ]
+    },
+    {
+      "speciesId": 99,
+      "name": "Kingler",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingDeckberCrownwater",
+          "area": "Deckber Crownwater Reeds",
+          "method": "Fishing",
+          "rarityTier": "ultra",
+          "minimumLevel": 7,
+          "maximumLevel": 10
+        },
+        {
+          "tableId": "fishingMiGordaTidepools",
+          "area": "Mi Gorda Tidepools",
+          "method": "Fishing",
+          "rarityTier": "mega",
+          "minimumLevel": 33,
+          "maximumLevel": 37
+        },
+        {
+          "tableId": "fishingMiGordaPortDocks",
+          "area": "Mi Gorda Port Docks",
+          "method": "Fishing",
+          "rarityTier": "mega",
+          "minimumLevel": 37,
+          "maximumLevel": 41
         }
       ]
     },
@@ -4516,6 +6784,39 @@
       ]
     },
     {
+      "speciesId": 116,
+      "name": "Horsea",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingRoute2EastCreek",
+          "area": "Route 2 East Creek",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 9,
+          "maximumLevel": 12
+        },
+        {
+          "tableId": "fishingMiGordaOpenCoast",
+          "area": "Mi Gorda Open Coast",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 30,
+          "maximumLevel": 34
+        },
+        {
+          "tableId": "fishingMiGordaDeepHarbor",
+          "area": "Mi Gorda Deep Harbor",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 35,
+          "maximumLevel": 39
+        }
+      ]
+    },
+    {
       "speciesId": 117,
       "name": "Seadra",
       "types": [
@@ -4537,6 +6838,22 @@
           "rarityTier": "uncommon",
           "minimumLevel": 37,
           "maximumLevel": 42
+        },
+        {
+          "tableId": "fishingMiGordaOpenCoast",
+          "area": "Mi Gorda Open Coast",
+          "method": "Fishing",
+          "rarityTier": "super",
+          "minimumLevel": 33,
+          "maximumLevel": 37
+        },
+        {
+          "tableId": "fishingMiGordaDeepHarbor",
+          "area": "Mi Gorda Deep Harbor",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 36,
+          "maximumLevel": 40
         }
       ]
     },
@@ -4548,12 +6865,120 @@
       ],
       "locations": [
         {
-          "tableId": "karelFishing",
-          "area": "Karel Default Rod Pool",
+          "tableId": "fishingDeckberMillstream",
+          "area": "Deckber Windmill Stream",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 4,
+          "maximumLevel": 7
+        },
+        {
+          "tableId": "fishingRoute2EastCreek",
+          "area": "Route 2 East Creek",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 7,
+          "maximumLevel": 10
+        },
+        {
+          "tableId": "fishingCastoFalls",
+          "area": "Casto Cliff Falls",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 17,
+          "maximumLevel": 21
+        },
+        {
+          "tableId": "fishingMiGordaCanals",
+          "area": "Mi Gorda Canals",
           "method": "Fishing",
           "rarityTier": "uncommon",
-          "minimumLevel": 7,
-          "maximumLevel": 12
+          "minimumLevel": 30,
+          "maximumLevel": 34
+        }
+      ]
+    },
+    {
+      "speciesId": 119,
+      "name": "Seaking",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingRoute2EastCreek",
+          "area": "Route 2 East Creek",
+          "method": "Fishing",
+          "rarityTier": "mega",
+          "minimumLevel": 10,
+          "maximumLevel": 13
+        },
+        {
+          "tableId": "fishingMiGordaGymBasin",
+          "area": "Mi Gorda Gym Basin",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 33,
+          "maximumLevel": 37
+        }
+      ]
+    },
+    {
+      "speciesId": 120,
+      "name": "Staryu",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingCastoReservoir",
+          "area": "Casto Cliff Reservoir",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 19,
+          "maximumLevel": 23
+        },
+        {
+          "tableId": "fishingMiGordaGymBasin",
+          "area": "Mi Gorda Gym Basin",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 32,
+          "maximumLevel": 36
+        },
+        {
+          "tableId": "fishingMiGordaReef",
+          "area": "Mi Gorda Reef",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 31,
+          "maximumLevel": 35
+        }
+      ]
+    },
+    {
+      "speciesId": 121,
+      "name": "Starmie",
+      "types": [
+        "Water",
+        "Psychic"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingCastoReservoir",
+          "area": "Casto Cliff Reservoir",
+          "method": "Fishing",
+          "rarityTier": "mega",
+          "minimumLevel": 21,
+          "maximumLevel": 25
+        },
+        {
+          "tableId": "fishingMiGordaGymBasin",
+          "area": "Mi Gorda Gym Basin",
+          "method": "Fishing",
+          "rarityTier": "super",
+          "minimumLevel": 34,
+          "maximumLevel": 38
         }
       ]
     },
@@ -4590,12 +7015,64 @@
       ],
       "locations": [
         {
-          "tableId": "karelFishing",
-          "area": "Karel Default Rod Pool",
+          "tableId": "fishingDeckberMillstream",
+          "area": "Deckber Windmill Stream",
           "method": "Fishing",
           "rarityTier": "common",
-          "minimumLevel": 5,
-          "maximumLevel": 10
+          "minimumLevel": 4,
+          "maximumLevel": 7
+        },
+        {
+          "tableId": "fishingMiGordaGymBasin",
+          "area": "Mi Gorda Gym Basin",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 31,
+          "maximumLevel": 35
+        }
+      ]
+    },
+    {
+      "speciesId": 130,
+      "name": "Gyarados",
+      "types": [
+        "Water",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingCastoFalls",
+          "area": "Casto Cliff Falls",
+          "method": "Fishing",
+          "rarityTier": "ultra",
+          "minimumLevel": 21,
+          "maximumLevel": 25
+        },
+        {
+          "tableId": "fishingMiGordaGymBasin",
+          "area": "Mi Gorda Gym Basin",
+          "method": "Fishing",
+          "rarityTier": "mega",
+          "minimumLevel": 35,
+          "maximumLevel": 39
+        }
+      ]
+    },
+    {
+      "speciesId": 138,
+      "name": "Omanyte",
+      "types": [
+        "Rock",
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingOcanaUnderground",
+          "area": "Ocana Mine Underground Pool",
+          "method": "Fishing",
+          "rarityTier": "super",
+          "minimumLevel": 30,
+          "maximumLevel": 34
         }
       ]
     },
@@ -4666,6 +7143,38 @@
           "rarityTier": "uncommon",
           "minimumLevel": 36,
           "maximumLevel": 41
+        },
+        {
+          "tableId": "fishingOcanaUnderground",
+          "area": "Ocana Mine Underground Pool",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 27,
+          "maximumLevel": 31
+        },
+        {
+          "tableId": "fishingMiGordaReef",
+          "area": "Mi Gorda Reef",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 31,
+          "maximumLevel": 35
+        },
+        {
+          "tableId": "fishingMiGordaPortDocks",
+          "area": "Mi Gorda Port Docks",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 34,
+          "maximumLevel": 38
+        },
+        {
+          "tableId": "fishingMiGordaDeepHarbor",
+          "area": "Mi Gorda Deep Harbor",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 35,
+          "maximumLevel": 39
         }
       ]
     },
@@ -4692,6 +7201,48 @@
           "rarityTier": "ultra",
           "minimumLevel": 41,
           "maximumLevel": 46
+        },
+        {
+          "tableId": "fishingOcanaUnderground",
+          "area": "Ocana Mine Underground Pool",
+          "method": "Fishing",
+          "rarityTier": "ultra",
+          "minimumLevel": 31,
+          "maximumLevel": 35
+        },
+        {
+          "tableId": "fishingMiGordaDeepHarbor",
+          "area": "Mi Gorda Deep Harbor",
+          "method": "Fishing",
+          "rarityTier": "super",
+          "minimumLevel": 37,
+          "maximumLevel": 41
+        }
+      ]
+    },
+    {
+      "speciesId": 183,
+      "name": "Marill",
+      "types": [
+        "Water",
+        "Fairy"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingRoute2WestCreek",
+          "area": "Route 2 West Creek",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        },
+        {
+          "tableId": "fishingMiGordaCanals",
+          "area": "Mi Gorda Canals",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 29,
+          "maximumLevel": 33
         }
       ]
     },
@@ -4718,6 +7269,32 @@
           "rarityTier": "mega",
           "minimumLevel": 9,
           "maximumLevel": 12
+        }
+      ]
+    },
+    {
+      "speciesId": 199,
+      "name": "Slowking",
+      "types": [
+        "Water",
+        "Psychic"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingRoute2WestCreek",
+          "area": "Route 2 West Creek",
+          "method": "Fishing",
+          "rarityTier": "ultra",
+          "minimumLevel": 10,
+          "maximumLevel": 13
+        },
+        {
+          "tableId": "fishingMiGordaCanals",
+          "area": "Mi Gorda Canals",
+          "method": "Fishing",
+          "rarityTier": "super",
+          "minimumLevel": 32,
+          "maximumLevel": 36
         }
       ]
     },
@@ -4826,6 +7403,24 @@
       ]
     },
     {
+      "speciesId": 230,
+      "name": "Kingdra",
+      "types": [
+        "Water",
+        "Dragon"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingMiGordaReef",
+          "area": "Mi Gorda Reef",
+          "method": "Fishing",
+          "rarityTier": "ultra",
+          "minimumLevel": 35,
+          "maximumLevel": 39
+        }
+      ]
+    },
+    {
       "speciesId": 263,
       "name": "Zigzagoon",
       "types": [
@@ -4860,6 +7455,84 @@
       ]
     },
     {
+      "speciesId": 270,
+      "name": "Lotad",
+      "types": [
+        "Water",
+        "Grass"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingDeckberMillstream",
+          "area": "Deckber Windmill Stream",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 5,
+          "maximumLevel": 8
+        },
+        {
+          "tableId": "fishingCastoReservoir",
+          "area": "Casto Cliff Reservoir",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 18,
+          "maximumLevel": 22
+        }
+      ]
+    },
+    {
+      "speciesId": 271,
+      "name": "Lombre",
+      "types": [
+        "Water",
+        "Grass"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingDeckberMillstream",
+          "area": "Deckber Windmill Stream",
+          "method": "Fishing",
+          "rarityTier": "mega",
+          "minimumLevel": 7,
+          "maximumLevel": 10
+        },
+        {
+          "tableId": "fishingCastoReservoir",
+          "area": "Casto Cliff Reservoir",
+          "method": "Fishing",
+          "rarityTier": "super",
+          "minimumLevel": 20,
+          "maximumLevel": 24
+        }
+      ]
+    },
+    {
+      "speciesId": 272,
+      "name": "Ludicolo",
+      "types": [
+        "Water",
+        "Grass"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingCastoReservoir",
+          "area": "Casto Cliff Reservoir",
+          "method": "Fishing",
+          "rarityTier": "ultra",
+          "minimumLevel": 21,
+          "maximumLevel": 25
+        },
+        {
+          "tableId": "fishingMiGordaCanals",
+          "area": "Mi Gorda Canals",
+          "method": "Fishing",
+          "rarityTier": "ultra",
+          "minimumLevel": 33,
+          "maximumLevel": 37
+        }
+      ]
+    },
+    {
       "speciesId": 276,
       "name": "Taillow",
       "types": [
@@ -4882,6 +7555,100 @@
           "rarityTier": "common",
           "minimumLevel": 17,
           "maximumLevel": 21
+        }
+      ]
+    },
+    {
+      "speciesId": 278,
+      "name": "Wingull",
+      "types": [
+        "Water",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingCastoFalls",
+          "area": "Casto Cliff Falls",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 18,
+          "maximumLevel": 22
+        },
+        {
+          "tableId": "fishingMiGordaTidepools",
+          "area": "Mi Gorda Tidepools",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 30,
+          "maximumLevel": 34
+        }
+      ]
+    },
+    {
+      "speciesId": 279,
+      "name": "Pelipper",
+      "types": [
+        "Water",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingCastoFalls",
+          "area": "Casto Cliff Falls",
+          "method": "Fishing",
+          "rarityTier": "super",
+          "minimumLevel": 20,
+          "maximumLevel": 24
+        },
+        {
+          "tableId": "fishingMiGordaOpenCoast",
+          "area": "Mi Gorda Open Coast",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 32,
+          "maximumLevel": 36
+        }
+      ]
+    },
+    {
+      "speciesId": 283,
+      "name": "Surskit",
+      "types": [
+        "Bug",
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingDeckberCrownwater",
+          "area": "Deckber Crownwater Reeds",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 5,
+          "maximumLevel": 8
+        },
+        {
+          "tableId": "fishingRoute2WestCreek",
+          "area": "Route 2 West Creek",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 7,
+          "maximumLevel": 10
+        },
+        {
+          "tableId": "fishingCastoReservoir",
+          "area": "Casto Cliff Reservoir",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 17,
+          "maximumLevel": 21
+        },
+        {
+          "tableId": "fishingMiGordaCanals",
+          "area": "Mi Gorda Canals",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 30,
+          "maximumLevel": 34
         }
       ]
     },
@@ -5369,6 +8136,90 @@
           "rarityTier": "uncommon",
           "minimumLevel": 35,
           "maximumLevel": 40
+        },
+        {
+          "tableId": "fishingMiGordaOpenCoast",
+          "area": "Mi Gorda Open Coast",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 31,
+          "maximumLevel": 35
+        },
+        {
+          "tableId": "fishingMiGordaPortDocks",
+          "area": "Mi Gorda Port Docks",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 35,
+          "maximumLevel": 39
+        }
+      ]
+    },
+    {
+      "speciesId": 319,
+      "name": "Sharpedo",
+      "types": [
+        "Water",
+        "Dark"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingMiGordaOpenCoast",
+          "area": "Mi Gorda Open Coast",
+          "method": "Fishing",
+          "rarityTier": "ultra",
+          "minimumLevel": 34,
+          "maximumLevel": 38
+        },
+        {
+          "tableId": "fishingMiGordaPortDocks",
+          "area": "Mi Gorda Port Docks",
+          "method": "Fishing",
+          "rarityTier": "ultra",
+          "minimumLevel": 37,
+          "maximumLevel": 41
+        }
+      ]
+    },
+    {
+      "speciesId": 320,
+      "name": "Wailmer",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingMiGordaOpenCoast",
+          "area": "Mi Gorda Open Coast",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 31,
+          "maximumLevel": 35
+        },
+        {
+          "tableId": "fishingMiGordaDeepHarbor",
+          "area": "Mi Gorda Deep Harbor",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 34,
+          "maximumLevel": 38
+        }
+      ]
+    },
+    {
+      "speciesId": 321,
+      "name": "Wailord",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingMiGordaDeepHarbor",
+          "area": "Mi Gorda Deep Harbor",
+          "method": "Fishing",
+          "rarityTier": "ultra",
+          "minimumLevel": 38,
+          "maximumLevel": 42
         }
       ]
     },
@@ -5524,6 +8375,22 @@
           "rarityTier": "uncommon",
           "minimumLevel": 37,
           "maximumLevel": 42
+        },
+        {
+          "tableId": "fishingDeckberMillstream",
+          "area": "Deckber Windmill Stream",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 5,
+          "maximumLevel": 8
+        },
+        {
+          "tableId": "fishingOcanaUnderground",
+          "area": "Ocana Mine Underground Pool",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 27,
+          "maximumLevel": 31
         }
       ]
     },
@@ -5542,6 +8409,14 @@
           "rarityTier": "rare",
           "minimumLevel": 40,
           "maximumLevel": 44
+        },
+        {
+          "tableId": "fishingOcanaUnderground",
+          "area": "Ocana Mine Underground Pool",
+          "method": "Fishing",
+          "rarityTier": "mega",
+          "minimumLevel": 31,
+          "maximumLevel": 35
         }
       ]
     },
@@ -5559,6 +8434,30 @@
           "rarityTier": "rare",
           "minimumLevel": 36,
           "maximumLevel": 41
+        },
+        {
+          "tableId": "fishingDeckberCrownwater",
+          "area": "Deckber Crownwater Reeds",
+          "method": "Fishing",
+          "rarityTier": "super",
+          "minimumLevel": 6,
+          "maximumLevel": 9
+        },
+        {
+          "tableId": "fishingCastoReservoir",
+          "area": "Casto Cliff Reservoir",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 18,
+          "maximumLevel": 22
+        },
+        {
+          "tableId": "fishingMiGordaPortDocks",
+          "area": "Mi Gorda Port Docks",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 33,
+          "maximumLevel": 37
         }
       ]
     },
@@ -5576,6 +8475,47 @@
           "rarityTier": "super",
           "minimumLevel": 36,
           "maximumLevel": 41
+        },
+        {
+          "tableId": "fishingDeckberMillstream",
+          "area": "Deckber Windmill Stream",
+          "method": "Fishing",
+          "rarityTier": "super",
+          "minimumLevel": 6,
+          "maximumLevel": 9
+        },
+        {
+          "tableId": "fishingMiGordaGymBasin",
+          "area": "Mi Gorda Gym Basin",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 31,
+          "maximumLevel": 35
+        }
+      ]
+    },
+    {
+      "speciesId": 350,
+      "name": "Milotic",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingDeckberMillstream",
+          "area": "Deckber Windmill Stream",
+          "method": "Fishing",
+          "rarityTier": "ultra",
+          "minimumLevel": 7,
+          "maximumLevel": 10
+        },
+        {
+          "tableId": "fishingMiGordaGymBasin",
+          "area": "Mi Gorda Gym Basin",
+          "method": "Fishing",
+          "rarityTier": "ultra",
+          "minimumLevel": 35,
+          "maximumLevel": 39
         }
       ]
     },
@@ -5659,6 +8599,22 @@
           "rarityTier": "ultra",
           "minimumLevel": 41,
           "maximumLevel": 45
+        },
+        {
+          "tableId": "fishingOcanaUnderground",
+          "area": "Ocana Mine Underground Pool",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 28,
+          "maximumLevel": 32
+        },
+        {
+          "tableId": "fishingMiGordaReef",
+          "area": "Mi Gorda Reef",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 32,
+          "maximumLevel": 36
         }
       ]
     },
@@ -5676,6 +8632,31 @@
           "rarityTier": "rare",
           "minimumLevel": 39,
           "maximumLevel": 43
+        },
+        {
+          "tableId": "fishingMiGordaReef",
+          "area": "Mi Gorda Reef",
+          "method": "Fishing",
+          "rarityTier": "mega",
+          "minimumLevel": 35,
+          "maximumLevel": 39
+        }
+      ]
+    },
+    {
+      "speciesId": 368,
+      "name": "Gorebyss",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingMiGordaReef",
+          "area": "Mi Gorda Reef",
+          "method": "Fishing",
+          "rarityTier": "super",
+          "minimumLevel": 34,
+          "maximumLevel": 38
         }
       ]
     },
@@ -5718,6 +8699,47 @@
           "rarityTier": "mega",
           "minimumLevel": 40,
           "maximumLevel": 44
+        },
+        {
+          "tableId": "fishingOcanaUnderground",
+          "area": "Ocana Mine Underground Pool",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 29,
+          "maximumLevel": 33
+        },
+        {
+          "tableId": "fishingMiGordaReef",
+          "area": "Mi Gorda Reef",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 33,
+          "maximumLevel": 37
+        }
+      ]
+    },
+    {
+      "speciesId": 370,
+      "name": "Luvdisc",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingMiGordaTidepools",
+          "area": "Mi Gorda Tidepools",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 30,
+          "maximumLevel": 34
+        },
+        {
+          "tableId": "fishingMiGordaGymBasin",
+          "area": "Mi Gorda Gym Basin",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 32,
+          "maximumLevel": 36
         }
       ]
     },
@@ -5783,6 +8805,32 @@
       ]
     },
     {
+      "speciesId": 400,
+      "name": "Bibarel",
+      "types": [
+        "Normal",
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingRoute2WestCreek",
+          "area": "Route 2 West Creek",
+          "method": "Fishing",
+          "rarityTier": "super",
+          "minimumLevel": 9,
+          "maximumLevel": 12
+        },
+        {
+          "tableId": "fishingMiGordaCanals",
+          "area": "Mi Gorda Canals",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 31,
+          "maximumLevel": 35
+        }
+      ]
+    },
+    {
       "speciesId": 403,
       "name": "Shinx",
       "types": [
@@ -5817,6 +8865,56 @@
       ]
     },
     {
+      "speciesId": 418,
+      "name": "Buizel",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingDeckberCrownwater",
+          "area": "Deckber Crownwater Reeds",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 6,
+          "maximumLevel": 9
+        },
+        {
+          "tableId": "fishingRoute2EastCreek",
+          "area": "Route 2 East Creek",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        },
+        {
+          "tableId": "fishingCastoFalls",
+          "area": "Casto Cliff Falls",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 17,
+          "maximumLevel": 21
+        }
+      ]
+    },
+    {
+      "speciesId": 419,
+      "name": "Floatzel",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingCastoFalls",
+          "area": "Casto Cliff Falls",
+          "method": "Fishing",
+          "rarityTier": "mega",
+          "minimumLevel": 21,
+          "maximumLevel": 25
+        }
+      ]
+    },
+    {
       "speciesId": 420,
       "name": "Cherubi",
       "types": [
@@ -5828,6 +8926,23 @@
           "area": "Lupies abandoned / Lupies School Secret S.4",
           "method": "Normal encounter",
           "rarityTier": "common",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        }
+      ]
+    },
+    {
+      "speciesId": 422,
+      "name": "Shellos",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingRoute2WestCreek",
+          "area": "Route 2 West Creek",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
           "minimumLevel": 8,
           "maximumLevel": 11
         }
@@ -5884,12 +8999,62 @@
       ],
       "locations": [
         {
-          "tableId": "karelFishing",
-          "area": "Karel Default Rod Pool",
+          "tableId": "fishingRoute2EastCreek",
+          "area": "Route 2 East Creek",
           "method": "Fishing",
           "rarityTier": "uncommon",
-          "minimumLevel": 6,
+          "minimumLevel": 8,
           "maximumLevel": 11
+        },
+        {
+          "tableId": "fishingMiGordaTidepools",
+          "area": "Mi Gorda Tidepools",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 29,
+          "maximumLevel": 33
+        },
+        {
+          "tableId": "fishingMiGordaReef",
+          "area": "Mi Gorda Reef",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 32,
+          "maximumLevel": 36
+        },
+        {
+          "tableId": "fishingMiGordaPortDocks",
+          "area": "Mi Gorda Port Docks",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 34,
+          "maximumLevel": 38
+        }
+      ]
+    },
+    {
+      "speciesId": 458,
+      "name": "Mantyke",
+      "types": [
+        "Water",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "fishingMiGordaTidepools",
+          "area": "Mi Gorda Tidepools",
+          "method": "Fishing",
+          "rarityTier": "super",
+          "minimumLevel": 32,
+          "maximumLevel": 36
+        },
+        {
+          "tableId": "fishingMiGordaPortDocks",
+          "area": "Mi Gorda Port Docks",
+          "method": "Fishing",
+          "rarityTier": "super",
+          "minimumLevel": 36,
+          "maximumLevel": 40
         }
       ]
     },
