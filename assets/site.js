@@ -3,16 +3,20 @@
   "use strict";
 
   /* ============================================================
-     ALPHA RELEASE — SINGLE MANUAL SWITCH
-     `live` stays false until the Alpha is confirmed fun & playable.
-     Set it to true and redeploy to go live everywhere at once:
-       - the countdown flips to "LIVE"
-       - every Play / download / browser button activates
-     The countdown is only a soft "launching soon" indicator; its
-     reaching zero does NOT release the Alpha.
+     RELEASE — MANUAL SWITCHES
+     `live` gates the /play client links: the download buttons and
+     the browser-play link. While false they show "Available at
+     Launch" and never expose a client link.
+
+     CD DIRECTIVE (2026-07-26): keep downloads and client links
+     DISABLED. Do NOT set `live: true` until the Creative Director
+     explicitly lifts this — the Closed Alpha is signup-only for now.
+
+     `signupOpen` and the countdown control the signup form ONLY;
+     they do not touch downloads.
      ============================================================ */
   var PCO = {
-    live: false,
+    live: false,  // HELD false by CD directive — see note above; do not flip without CD sign-off
     signupOpen: false,                       // flip true to open Closed Alpha signup before the countdown ends
     signupEndpoint: "https://formspree.io/f/mqerwavg",  // Formspree AJAX endpoint for the Closed Alpha signup form
 
