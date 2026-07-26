@@ -17,7 +17,7 @@
      ============================================================ */
   var PCO = {
     live: false,  // HELD false by CD directive — see note above; do not flip without CD sign-off
-    signupOpen: false,                       // flip true to open Closed Alpha signup before the countdown ends
+    signupOpen: true,                        // OPEN — Closed Alpha signup live (CD, 2026-07-26)
     signupEndpoint: "https://formspree.io/f/mqerwavg",  // Formspree AJAX endpoint for the Closed Alpha signup form
 
     launch: "2026-07-26T19:00:00Z",           // countdown target — when Closed Alpha signup opens (adjustable)
