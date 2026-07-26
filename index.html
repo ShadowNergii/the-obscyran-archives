@@ -17,6 +17,11 @@
   <link rel="stylesheet" href="/assets/site.css" />
   <style>
     .signup { max-width: 460px; margin: 1.5rem auto 0; }
+    .signup-ign { display: block; width: 100%; box-sizing: border-box; margin: 0 0 .5rem; padding: .7rem .9rem;
+      border-radius: 8px; border: 1px solid rgba(255,255,255,.18); background: rgba(0,0,0,.35); color: #fff; font-size: 1rem; }
+    .signup-ign::placeholder { color: rgba(255,255,255,.4); }
+    .signup-ign:focus { outline: none; border-color: #e11d2a; }
+    .signup-ign:disabled, .signup-email:disabled { opacity: .6; }
     .signup-row { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center; }
     .signup-email { flex: 1 1 240px; min-width: 200px; padding: .7rem .9rem; border-radius: 8px;
       border: 1px solid rgba(255,255,255,.18); background: rgba(0,0,0,.35); color: #fff; font-size: 1rem; }
@@ -47,11 +52,12 @@
       <div class="cd-live" id="cd-live" style="display:none;"></div>
 
       <form class="signup" id="signup" novalidate>
+        <input class="signup-ign" id="signup-ign" type="text" name="ign" maxlength="20" placeholder="In-game name (optional)" aria-label="Desired in-game name" />
         <div class="signup-row">
           <input class="signup-email" id="signup-email" type="email" name="email" autocomplete="email" placeholder="you@email.com" aria-label="Email for Closed Alpha access" />
           <button class="btn btn-red" id="signup-btn" type="submit" disabled>Opens Soon</button>
         </div>
-        <p class="signup-note" id="signup-note">Closed Alpha access is limited — sign up to request your invite.</p>
+        <p class="signup-note" id="signup-note">Closed Alpha access is limited — add your in-game name and email to request your invite.</p>
       </form>
     </div>
   </header>

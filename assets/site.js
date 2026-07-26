@@ -100,9 +100,11 @@
   function setSignupFormOpen(open) {
     var btn = document.getElementById("signup-btn");
     var email = document.getElementById("signup-email");
+    var ign = document.getElementById("signup-ign");
     var cap = document.querySelector(".cd-caption");
     if (btn) { btn.disabled = !open; btn.textContent = open ? "Sign Up" : "Opens Soon"; }
     if (email) { email.disabled = !open; }
+    if (ign) { ign.disabled = !open; }
     if (cap && open) { cap.style.display = "none"; }  // countdown message replaces the caption once open
   }
 
@@ -143,6 +145,7 @@
     var form = document.getElementById("signup");
     if (!form) { return; }
     var email = document.getElementById("signup-email");
+    var ign = document.getElementById("signup-ign");
     var note = document.getElementById("signup-note");
     setSignupFormOpen(signupIsOpen());
     function fail(text) { if (note) { note.textContent = text; note.className = "signup-note err"; } }
@@ -150,6 +153,7 @@
       e.preventDefault();
       if (!signupIsOpen()) { return; }
       var value = (email && email.value || "").trim();
+      var ignValue = (ign && ign.value || "").trim();
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) { fail("Please enter a valid email address."); return; }
       if (!PCO.signupEndpoint) { fail("Signup isn’t wired up yet — join our Discord in the meantime."); return; }
       var btn = document.getElementById("signup-btn");
@@ -158,7 +162,7 @@
       fetch(PCO.signupEndpoint, {
         method: "POST",
         headers: { "Accept": "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({ email: value, source: "closed-alpha-signup", _subject: "PokéCyrus Online — Closed Alpha signup" })
+        body: JSON.stringify({ email: value, ign: ignValue, source: "closed-alpha-signup", _subject: "PokéCyrus Online — Closed Alpha signup" })
       }).then(function (r) { if (!r.ok) { throw new Error(r.status); } return r; })
         .then(function () {
           form.innerHTML = '<div class="signup-done">You’re on the list! We’ll email your Closed Alpha invite. See you in Karel.</div>';
