@@ -29,13 +29,16 @@
       "ultraPercent": 25,
       "note": "Unboosted shares from the server honey weights. Active world boosts may alter unlikely encounter odds."
     },
+    "fishingRule": "Fishing is a separate method: with a Fishing Rod, face a fishable water tile and cast. About 78% of casts hook something. Maps without a dedicated water habitat use the shared Karel default rod pool; water habitats reuse their own encounter pool.",
     "shinyRule": "Shiny odds and active server boosts are intentionally displayed live in game rather than frozen into this guide.",
     "celebrationRule": "Staff-scheduled Alpha Celebration swarms are dynamic and appear in game while active; they are not fixed route spawns."
   },
   "summary": {
-    "encounterMaps": 42,
-    "encounterHabitats": 15,
-    "uniqueCatchableSpecies": 56
+    "encounterMaps": 43,
+    "encounterHabitats": 16,
+    "uniqueCatchableSpecies": 92,
+    "fishingDefaultPoolSpecies": 8,
+    "fishingLocalWaterPools": 2
   },
   "habitats": [
     {
@@ -390,7 +393,7 @@
           "minimumLevel": 7,
           "maximumLevel": 10,
           "relativeWeight": 28,
-          "encounterSharePercent": 28,
+          "encounterSharePercent": 17.28,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -406,7 +409,7 @@
           "minimumLevel": 7,
           "maximumLevel": 10,
           "relativeWeight": 24,
-          "encounterSharePercent": 24,
+          "encounterSharePercent": 14.81,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -421,7 +424,7 @@
           "minimumLevel": 8,
           "maximumLevel": 11,
           "relativeWeight": 18,
-          "encounterSharePercent": 18,
+          "encounterSharePercent": 11.11,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -437,7 +440,7 @@
           "minimumLevel": 8,
           "maximumLevel": 11,
           "relativeWeight": 13,
-          "encounterSharePercent": 13,
+          "encounterSharePercent": 8.02,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -452,7 +455,7 @@
           "minimumLevel": 9,
           "maximumLevel": 12,
           "relativeWeight": 10,
-          "encounterSharePercent": 10,
+          "encounterSharePercent": 6.17,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -468,17 +471,94 @@
           "minimumLevel": 9,
           "maximumLevel": 12,
           "relativeWeight": 7,
-          "encounterSharePercent": 7,
+          "encounterSharePercent": 4.32,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 299,
+          "name": "Nosepass",
+          "types": [
+            "Rock"
+          ],
+          "rarityTier": "super",
+          "role": "primary",
+          "minimumLevel": 9,
+          "maximumLevel": 12,
+          "relativeWeight": 1,
+          "encounterSharePercent": 0.62,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 399,
+          "name": "Bidoof",
+          "types": [
+            "Normal"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 7,
+          "maximumLevel": 10,
+          "relativeWeight": 20,
+          "encounterSharePercent": 12.35,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 396,
+          "name": "Starly",
+          "types": [
+            "Normal",
+            "Flying"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 7,
+          "maximumLevel": 10,
+          "relativeWeight": 15,
+          "encounterSharePercent": 9.26,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 23,
+          "name": "Ekans",
+          "types": [
+            "Poison"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 8,
+          "maximumLevel": 11,
+          "relativeWeight": 12,
+          "encounterSharePercent": 7.41,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 56,
+          "name": "Mankey",
+          "types": [
+            "Fighting"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 9,
+          "maximumLevel": 12,
+          "relativeWeight": 14,
+          "encounterSharePercent": 8.64,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         }
       ],
       "honeySpawns": [
         {
-          "speciesId": 296,
-          "name": "Makuhita",
+          "speciesId": 74,
+          "name": "Geodude",
           "types": [
-            "Fighting"
+            "Rock",
+            "Ground"
           ],
           "rarityTier": "mega",
           "role": "primary",
@@ -490,16 +570,164 @@
           "futureTeamLevelOneEligible": false
         },
         {
+          "speciesId": 299,
+          "name": "Nosepass",
+          "types": [
+            "Rock"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 9,
+          "maximumLevel": 12,
+          "relativeWeight": 1,
+          "encounterSharePercent": 25,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        }
+      ]
+    },
+    {
+      "tableId": "larsenCave",
+      "title": "Larsen Cave",
+      "mapNames": [
+        "Larsen Cave"
+      ],
+      "maps": [
+        {
+          "mapId": "legacy.pco.map0027",
+          "mapNumber": 27,
+          "name": "Larsen Cave",
+          "encounterTerrain": "Area-wide"
+        }
+      ],
+      "stepEncounterRatePercent": 9,
+      "encounterProfile": "larsen_cave_pre_gym1",
+      "habitatRole": "pre_gym1_larsen_cave",
+      "grindingHub": null,
+      "normalSpawns": [
+        {
+          "speciesId": 41,
+          "name": "Zubat",
+          "types": [
+            "Poison",
+            "Flying"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 6,
+          "maximumLevel": 9,
+          "relativeWeight": 30,
+          "encounterSharePercent": 33.71,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
           "speciesId": 74,
           "name": "Geodude",
           "types": [
             "Rock",
             "Ground"
           ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 6,
+          "maximumLevel": 9,
+          "relativeWeight": 24,
+          "encounterSharePercent": 26.97,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 293,
+          "name": "Whismur",
+          "types": [
+            "Normal"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 6,
+          "maximumLevel": 10,
+          "relativeWeight": 16,
+          "encounterSharePercent": 17.98,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 19,
+          "name": "Rattata",
+          "types": [
+            "Normal"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 7,
+          "maximumLevel": 10,
+          "relativeWeight": 12,
+          "encounterSharePercent": 13.48,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 95,
+          "name": "Onix",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 8,
+          "maximumLevel": 11,
+          "relativeWeight": 6,
+          "encounterSharePercent": 6.74,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 304,
+          "name": "Aron",
+          "types": [
+            "Steel",
+            "Rock"
+          ],
+          "rarityTier": "super",
+          "role": "primary",
+          "minimumLevel": 8,
+          "maximumLevel": 11,
+          "relativeWeight": 1,
+          "encounterSharePercent": 1.12,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        }
+      ],
+      "honeySpawns": [
+        {
+          "speciesId": 95,
+          "name": "Onix",
+          "types": [
+            "Rock",
+            "Ground"
+          ],
+          "rarityTier": "mega",
+          "role": "primary",
+          "minimumLevel": 8,
+          "maximumLevel": 11,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 304,
+          "name": "Aron",
+          "types": [
+            "Steel",
+            "Rock"
+          ],
           "rarityTier": "ultra",
           "role": "primary",
-          "minimumLevel": 9,
-          "maximumLevel": 12,
+          "minimumLevel": 8,
+          "maximumLevel": 11,
           "relativeWeight": 1,
           "encounterSharePercent": 25,
           "method": "Honey",
@@ -544,7 +772,7 @@
           "minimumLevel": 6,
           "maximumLevel": 9,
           "relativeWeight": 26,
-          "encounterSharePercent": 26,
+          "encounterSharePercent": 16.67,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -560,7 +788,7 @@
           "minimumLevel": 6,
           "maximumLevel": 9,
           "relativeWeight": 24,
-          "encounterSharePercent": 24,
+          "encounterSharePercent": 15.38,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -576,7 +804,7 @@
           "minimumLevel": 7,
           "maximumLevel": 10,
           "relativeWeight": 20,
-          "encounterSharePercent": 20,
+          "encounterSharePercent": 12.82,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -592,7 +820,7 @@
           "minimumLevel": 7,
           "maximumLevel": 10,
           "relativeWeight": 14,
-          "encounterSharePercent": 14,
+          "encounterSharePercent": 8.97,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -608,7 +836,7 @@
           "minimumLevel": 8,
           "maximumLevel": 11,
           "relativeWeight": 10,
-          "encounterSharePercent": 10,
+          "encounterSharePercent": 6.41,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -624,7 +852,7 @@
           "minimumLevel": 8,
           "maximumLevel": 11,
           "relativeWeight": 4,
-          "encounterSharePercent": 4,
+          "encounterSharePercent": 2.56,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -640,28 +868,90 @@
           "minimumLevel": 9,
           "maximumLevel": 12,
           "relativeWeight": 2,
-          "encounterSharePercent": 2,
+          "encounterSharePercent": 1.28,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 213,
+          "name": "Shuckle",
+          "types": [
+            "Bug",
+            "Rock"
+          ],
+          "rarityTier": "super",
+          "role": "primary",
+          "minimumLevel": 8,
+          "maximumLevel": 11,
+          "relativeWeight": 1,
+          "encounterSharePercent": 0.64,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 265,
+          "name": "Wurmple",
+          "types": [
+            "Bug"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 6,
+          "maximumLevel": 9,
+          "relativeWeight": 18,
+          "encounterSharePercent": 11.54,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 396,
+          "name": "Starly",
+          "types": [
+            "Normal",
+            "Flying"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 7,
+          "maximumLevel": 10,
+          "relativeWeight": 16,
+          "encounterSharePercent": 10.26,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 420,
+          "name": "Cherubi",
+          "types": [
+            "Grass"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 8,
+          "maximumLevel": 11,
+          "relativeWeight": 12,
+          "encounterSharePercent": 7.69,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 48,
+          "name": "Venonat",
+          "types": [
+            "Bug",
+            "Poison"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 8,
+          "maximumLevel": 11,
+          "relativeWeight": 9,
+          "encounterSharePercent": 5.77,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         }
       ],
       "honeySpawns": [
-        {
-          "speciesId": 165,
-          "name": "Ledyba",
-          "types": [
-            "Bug",
-            "Flying"
-          ],
-          "rarityTier": "mega",
-          "role": "primary",
-          "minimumLevel": 8,
-          "maximumLevel": 11,
-          "relativeWeight": 3,
-          "encounterSharePercent": 75,
-          "method": "Honey",
-          "futureTeamLevelOneEligible": false
-        },
         {
           "speciesId": 198,
           "name": "Murkrow",
@@ -669,10 +959,26 @@
             "Dark",
             "Flying"
           ],
-          "rarityTier": "ultra",
+          "rarityTier": "mega",
           "role": "primary",
           "minimumLevel": 9,
           "maximumLevel": 12,
+          "relativeWeight": 3,
+          "encounterSharePercent": 75,
+          "method": "Honey",
+          "futureTeamLevelOneEligible": false
+        },
+        {
+          "speciesId": 213,
+          "name": "Shuckle",
+          "types": [
+            "Bug",
+            "Rock"
+          ],
+          "rarityTier": "ultra",
+          "role": "primary",
+          "minimumLevel": 8,
+          "maximumLevel": 11,
           "relativeWeight": 1,
           "encounterSharePercent": 25,
           "method": "Honey",
@@ -724,7 +1030,7 @@
           "minimumLevel": 10,
           "maximumLevel": 14,
           "relativeWeight": 30,
-          "encounterSharePercent": 30,
+          "encounterSharePercent": 23.62,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -740,7 +1046,7 @@
           "minimumLevel": 10,
           "maximumLevel": 14,
           "relativeWeight": 30,
-          "encounterSharePercent": 30,
+          "encounterSharePercent": 23.62,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -756,7 +1062,7 @@
           "minimumLevel": 12,
           "maximumLevel": 16,
           "relativeWeight": 18,
-          "encounterSharePercent": 18,
+          "encounterSharePercent": 14.17,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -771,7 +1077,7 @@
           "minimumLevel": 14,
           "maximumLevel": 17,
           "relativeWeight": 8,
-          "encounterSharePercent": 8,
+          "encounterSharePercent": 6.3,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -787,7 +1093,7 @@
           "minimumLevel": 11,
           "maximumLevel": 15,
           "relativeWeight": 6,
-          "encounterSharePercent": 6,
+          "encounterSharePercent": 4.72,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -802,7 +1108,7 @@
           "minimumLevel": 12,
           "maximumLevel": 16,
           "relativeWeight": 5,
-          "encounterSharePercent": 5,
+          "encounterSharePercent": 3.94,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -818,7 +1124,53 @@
           "minimumLevel": 12,
           "maximumLevel": 16,
           "relativeWeight": 3,
-          "encounterSharePercent": 3,
+          "encounterSharePercent": 2.36,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 104,
+          "name": "Cubone",
+          "types": [
+            "Ground"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 11,
+          "maximumLevel": 15,
+          "relativeWeight": 12,
+          "encounterSharePercent": 9.45,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 438,
+          "name": "Bonsly",
+          "types": [
+            "Rock"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 11,
+          "maximumLevel": 15,
+          "relativeWeight": 9,
+          "encounterSharePercent": 7.09,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 436,
+          "name": "Bronzor",
+          "types": [
+            "Steel",
+            "Psychic"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 12,
+          "maximumLevel": 16,
+          "relativeWeight": 6,
+          "encounterSharePercent": 4.72,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         }
@@ -895,7 +1247,7 @@
           "minimumLevel": 27,
           "maximumLevel": 31,
           "relativeWeight": 28,
-          "encounterSharePercent": 28,
+          "encounterSharePercent": 22.4,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -911,7 +1263,7 @@
           "minimumLevel": 27,
           "maximumLevel": 31,
           "relativeWeight": 20,
-          "encounterSharePercent": 20,
+          "encounterSharePercent": 16,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -927,7 +1279,7 @@
           "minimumLevel": 28,
           "maximumLevel": 32,
           "relativeWeight": 18,
-          "encounterSharePercent": 18,
+          "encounterSharePercent": 14.4,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -942,7 +1294,7 @@
           "minimumLevel": 28,
           "maximumLevel": 32,
           "relativeWeight": 12,
-          "encounterSharePercent": 12,
+          "encounterSharePercent": 9.6,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -958,7 +1310,7 @@
           "minimumLevel": 31,
           "maximumLevel": 35,
           "relativeWeight": 8,
-          "encounterSharePercent": 8,
+          "encounterSharePercent": 6.4,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -974,7 +1326,7 @@
           "minimumLevel": 29,
           "maximumLevel": 33,
           "relativeWeight": 5,
-          "encounterSharePercent": 5,
+          "encounterSharePercent": 4,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -989,7 +1341,7 @@
           "minimumLevel": 30,
           "maximumLevel": 34,
           "relativeWeight": 6,
-          "encounterSharePercent": 6,
+          "encounterSharePercent": 4.8,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1005,7 +1357,55 @@
           "minimumLevel": 30,
           "maximumLevel": 34,
           "relativeWeight": 3,
-          "encounterSharePercent": 3,
+          "encounterSharePercent": 2.4,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 305,
+          "name": "Lairon",
+          "types": [
+            "Steel",
+            "Rock"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 28,
+          "maximumLevel": 32,
+          "relativeWeight": 9,
+          "encounterSharePercent": 7.2,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 436,
+          "name": "Bronzor",
+          "types": [
+            "Steel",
+            "Psychic"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 28,
+          "maximumLevel": 32,
+          "relativeWeight": 7,
+          "encounterSharePercent": 5.6,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 208,
+          "name": "Steelix",
+          "types": [
+            "Steel",
+            "Ground"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 31,
+          "maximumLevel": 35,
+          "relativeWeight": 9,
+          "encounterSharePercent": 7.2,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         }
@@ -1112,7 +1512,7 @@
           "minimumLevel": 17,
           "maximumLevel": 21,
           "relativeWeight": 24,
-          "encounterSharePercent": 24,
+          "encounterSharePercent": 17.14,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1128,7 +1528,7 @@
           "minimumLevel": 17,
           "maximumLevel": 21,
           "relativeWeight": 22,
-          "encounterSharePercent": 22,
+          "encounterSharePercent": 15.71,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1144,7 +1544,7 @@
           "minimumLevel": 18,
           "maximumLevel": 22,
           "relativeWeight": 18,
-          "encounterSharePercent": 18,
+          "encounterSharePercent": 12.86,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1159,7 +1559,7 @@
           "minimumLevel": 19,
           "maximumLevel": 23,
           "relativeWeight": 14,
-          "encounterSharePercent": 14,
+          "encounterSharePercent": 10,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1175,7 +1575,7 @@
           "minimumLevel": 19,
           "maximumLevel": 23,
           "relativeWeight": 12,
-          "encounterSharePercent": 12,
+          "encounterSharePercent": 8.57,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1191,7 +1591,7 @@
           "minimumLevel": 21,
           "maximumLevel": 24,
           "relativeWeight": 6,
-          "encounterSharePercent": 6,
+          "encounterSharePercent": 4.29,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1207,7 +1607,53 @@
           "minimumLevel": 22,
           "maximumLevel": 25,
           "relativeWeight": 4,
-          "encounterSharePercent": 4,
+          "encounterSharePercent": 2.86,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 397,
+          "name": "Staravia",
+          "types": [
+            "Normal",
+            "Flying"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 17,
+          "maximumLevel": 21,
+          "relativeWeight": 18,
+          "encounterSharePercent": 12.86,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 66,
+          "name": "Machop",
+          "types": [
+            "Fighting"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 18,
+          "maximumLevel": 22,
+          "relativeWeight": 14,
+          "encounterSharePercent": 10,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 288,
+          "name": "Vigoroth",
+          "types": [
+            "Normal"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 20,
+          "maximumLevel": 23,
+          "relativeWeight": 8,
+          "encounterSharePercent": 5.71,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         }
@@ -1277,7 +1723,7 @@
           "minimumLevel": 18,
           "maximumLevel": 22,
           "relativeWeight": 26,
-          "encounterSharePercent": 26,
+          "encounterSharePercent": 20.8,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1293,7 +1739,7 @@
           "minimumLevel": 18,
           "maximumLevel": 22,
           "relativeWeight": 24,
-          "encounterSharePercent": 24,
+          "encounterSharePercent": 19.2,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1309,7 +1755,7 @@
           "minimumLevel": 18,
           "maximumLevel": 22,
           "relativeWeight": 20,
-          "encounterSharePercent": 20,
+          "encounterSharePercent": 16,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1324,7 +1770,7 @@
           "minimumLevel": 19,
           "maximumLevel": 23,
           "relativeWeight": 14,
-          "encounterSharePercent": 14,
+          "encounterSharePercent": 11.2,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1340,7 +1786,7 @@
           "minimumLevel": 19,
           "maximumLevel": 23,
           "relativeWeight": 11,
-          "encounterSharePercent": 11,
+          "encounterSharePercent": 8.8,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1356,7 +1802,38 @@
           "minimumLevel": 21,
           "maximumLevel": 24,
           "relativeWeight": 5,
-          "encounterSharePercent": 5,
+          "encounterSharePercent": 4,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 92,
+          "name": "Gastly",
+          "types": [
+            "Ghost",
+            "Poison"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 18,
+          "maximumLevel": 22,
+          "relativeWeight": 12,
+          "encounterSharePercent": 9.6,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 353,
+          "name": "Shuppet",
+          "types": [
+            "Ghost"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 19,
+          "maximumLevel": 23,
+          "relativeWeight": 13,
+          "encounterSharePercent": 10.4,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         }
@@ -1433,7 +1910,7 @@
           "minimumLevel": 19,
           "maximumLevel": 23,
           "relativeWeight": 27,
-          "encounterSharePercent": 27,
+          "encounterSharePercent": 23.28,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1449,7 +1926,7 @@
           "minimumLevel": 19,
           "maximumLevel": 23,
           "relativeWeight": 23,
-          "encounterSharePercent": 23,
+          "encounterSharePercent": 19.83,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1465,7 +1942,7 @@
           "minimumLevel": 19,
           "maximumLevel": 24,
           "relativeWeight": 18,
-          "encounterSharePercent": 18,
+          "encounterSharePercent": 15.52,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1481,7 +1958,7 @@
           "minimumLevel": 19,
           "maximumLevel": 24,
           "relativeWeight": 14,
-          "encounterSharePercent": 14,
+          "encounterSharePercent": 12.07,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1496,7 +1973,7 @@
           "minimumLevel": 20,
           "maximumLevel": 25,
           "relativeWeight": 10,
-          "encounterSharePercent": 10,
+          "encounterSharePercent": 8.62,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1512,7 +1989,7 @@
           "minimumLevel": 22,
           "maximumLevel": 26,
           "relativeWeight": 5,
-          "encounterSharePercent": 5,
+          "encounterSharePercent": 4.31,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1528,7 +2005,38 @@
           "minimumLevel": 23,
           "maximumLevel": 26,
           "relativeWeight": 3,
-          "encounterSharePercent": 3,
+          "encounterSharePercent": 2.59,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 353,
+          "name": "Shuppet",
+          "types": [
+            "Ghost"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 19,
+          "maximumLevel": 23,
+          "relativeWeight": 10,
+          "encounterSharePercent": 8.62,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 305,
+          "name": "Lairon",
+          "types": [
+            "Steel",
+            "Rock"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 22,
+          "maximumLevel": 26,
+          "relativeWeight": 6,
+          "encounterSharePercent": 5.17,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         }
@@ -1611,7 +2119,7 @@
           "minimumLevel": 23,
           "maximumLevel": 27,
           "relativeWeight": 24,
-          "encounterSharePercent": 24,
+          "encounterSharePercent": 19.83,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1627,7 +2135,7 @@
           "minimumLevel": 24,
           "maximumLevel": 28,
           "relativeWeight": 22,
-          "encounterSharePercent": 22,
+          "encounterSharePercent": 18.18,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1643,7 +2151,7 @@
           "minimumLevel": 22,
           "maximumLevel": 27,
           "relativeWeight": 18,
-          "encounterSharePercent": 18,
+          "encounterSharePercent": 14.88,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1658,7 +2166,7 @@
           "minimumLevel": 23,
           "maximumLevel": 28,
           "relativeWeight": 14,
-          "encounterSharePercent": 14,
+          "encounterSharePercent": 11.57,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1674,7 +2182,7 @@
           "minimumLevel": 24,
           "maximumLevel": 28,
           "relativeWeight": 9,
-          "encounterSharePercent": 9,
+          "encounterSharePercent": 7.44,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1690,7 +2198,7 @@
           "minimumLevel": 24,
           "maximumLevel": 28,
           "relativeWeight": 8,
-          "encounterSharePercent": 8,
+          "encounterSharePercent": 6.61,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1706,7 +2214,38 @@
           "minimumLevel": 25,
           "maximumLevel": 29,
           "relativeWeight": 5,
-          "encounterSharePercent": 5,
+          "encounterSharePercent": 4.13,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 355,
+          "name": "Duskull",
+          "types": [
+            "Ghost"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 23,
+          "maximumLevel": 27,
+          "relativeWeight": 12,
+          "encounterSharePercent": 9.92,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 93,
+          "name": "Haunter",
+          "types": [
+            "Ghost",
+            "Poison"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 24,
+          "maximumLevel": 28,
+          "relativeWeight": 9,
+          "encounterSharePercent": 7.44,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         }
@@ -1782,7 +2321,7 @@
           "minimumLevel": 22,
           "maximumLevel": 26,
           "relativeWeight": 23,
-          "encounterSharePercent": 23,
+          "encounterSharePercent": 17.42,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1797,7 +2336,7 @@
           "minimumLevel": 22,
           "maximumLevel": 26,
           "relativeWeight": 21,
-          "encounterSharePercent": 21,
+          "encounterSharePercent": 15.91,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1813,7 +2352,7 @@
           "minimumLevel": 23,
           "maximumLevel": 27,
           "relativeWeight": 18,
-          "encounterSharePercent": 18,
+          "encounterSharePercent": 13.64,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1829,7 +2368,7 @@
           "minimumLevel": 23,
           "maximumLevel": 27,
           "relativeWeight": 16,
-          "encounterSharePercent": 16,
+          "encounterSharePercent": 12.12,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1844,7 +2383,7 @@
           "minimumLevel": 24,
           "maximumLevel": 28,
           "relativeWeight": 12,
-          "encounterSharePercent": 12,
+          "encounterSharePercent": 9.09,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1859,7 +2398,7 @@
           "minimumLevel": 25,
           "maximumLevel": 29,
           "relativeWeight": 5,
-          "encounterSharePercent": 5,
+          "encounterSharePercent": 3.79,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1874,7 +2413,52 @@
           "minimumLevel": 25,
           "maximumLevel": 29,
           "relativeWeight": 5,
-          "encounterSharePercent": 5,
+          "encounterSharePercent": 3.79,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 403,
+          "name": "Shinx",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "common",
+          "role": "primary",
+          "minimumLevel": 22,
+          "maximumLevel": 26,
+          "relativeWeight": 16,
+          "encounterSharePercent": 12.12,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 88,
+          "name": "Grimer",
+          "types": [
+            "Poison"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 24,
+          "maximumLevel": 28,
+          "relativeWeight": 10,
+          "encounterSharePercent": 7.58,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 313,
+          "name": "Volbeat",
+          "types": [
+            "Bug"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 25,
+          "maximumLevel": 29,
+          "relativeWeight": 6,
+          "encounterSharePercent": 4.55,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         }
@@ -1942,7 +2526,7 @@
           "minimumLevel": 25,
           "maximumLevel": 30,
           "relativeWeight": 44,
-          "encounterSharePercent": 44,
+          "encounterSharePercent": 35.2,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1958,7 +2542,7 @@
           "minimumLevel": 25,
           "maximumLevel": 30,
           "relativeWeight": 22,
-          "encounterSharePercent": 22,
+          "encounterSharePercent": 17.6,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1974,7 +2558,7 @@
           "minimumLevel": 26,
           "maximumLevel": 31,
           "relativeWeight": 18,
-          "encounterSharePercent": 18,
+          "encounterSharePercent": 14.4,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -1989,7 +2573,7 @@
           "minimumLevel": 27,
           "maximumLevel": 32,
           "relativeWeight": 12,
-          "encounterSharePercent": 12,
+          "encounterSharePercent": 9.6,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2004,7 +2588,38 @@
           "minimumLevel": 30,
           "maximumLevel": 33,
           "relativeWeight": 4,
-          "encounterSharePercent": 4,
+          "encounterSharePercent": 3.2,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 104,
+          "name": "Cubone",
+          "types": [
+            "Ground"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 25,
+          "maximumLevel": 30,
+          "relativeWeight": 12,
+          "encounterSharePercent": 9.6,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 329,
+          "name": "Vibrava",
+          "types": [
+            "Ground",
+            "Dragon"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 27,
+          "maximumLevel": 32,
+          "relativeWeight": 13,
+          "encounterSharePercent": 10.4,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         }
@@ -2098,7 +2713,7 @@
           "minimumLevel": 34,
           "maximumLevel": 39,
           "relativeWeight": 24,
-          "encounterSharePercent": 24,
+          "encounterSharePercent": 21.43,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2114,7 +2729,7 @@
           "minimumLevel": 34,
           "maximumLevel": 39,
           "relativeWeight": 21,
-          "encounterSharePercent": 21,
+          "encounterSharePercent": 18.75,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2130,7 +2745,7 @@
           "minimumLevel": 35,
           "maximumLevel": 40,
           "relativeWeight": 18,
-          "encounterSharePercent": 18,
+          "encounterSharePercent": 16.07,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2146,7 +2761,7 @@
           "minimumLevel": 35,
           "maximumLevel": 40,
           "relativeWeight": 15,
-          "encounterSharePercent": 15,
+          "encounterSharePercent": 13.39,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2161,7 +2776,7 @@
           "minimumLevel": 36,
           "maximumLevel": 41,
           "relativeWeight": 11,
-          "encounterSharePercent": 11,
+          "encounterSharePercent": 9.82,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2177,7 +2792,7 @@
           "minimumLevel": 37,
           "maximumLevel": 42,
           "relativeWeight": 6,
-          "encounterSharePercent": 6,
+          "encounterSharePercent": 5.36,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2192,7 +2807,7 @@
           "minimumLevel": 36,
           "maximumLevel": 41,
           "relativeWeight": 3,
-          "encounterSharePercent": 3,
+          "encounterSharePercent": 2.68,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2208,7 +2823,7 @@
           "minimumLevel": 39,
           "maximumLevel": 43,
           "relativeWeight": 1.5,
-          "encounterSharePercent": 1.5,
+          "encounterSharePercent": 1.34,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2223,7 +2838,37 @@
           "minimumLevel": 40,
           "maximumLevel": 44,
           "relativeWeight": 0.5,
-          "encounterSharePercent": 0.5,
+          "encounterSharePercent": 0.45,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 117,
+          "name": "Seadra",
+          "types": [
+            "Water"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 35,
+          "maximumLevel": 40,
+          "relativeWeight": 9,
+          "encounterSharePercent": 8.04,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 367,
+          "name": "Huntail",
+          "types": [
+            "Water"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 39,
+          "maximumLevel": 43,
+          "relativeWeight": 3,
+          "encounterSharePercent": 2.68,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         }
@@ -2304,7 +2949,7 @@
           "minimumLevel": 36,
           "maximumLevel": 41,
           "relativeWeight": 24,
-          "encounterSharePercent": 24,
+          "encounterSharePercent": 21.43,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2320,7 +2965,7 @@
           "minimumLevel": 36,
           "maximumLevel": 41,
           "relativeWeight": 22,
-          "encounterSharePercent": 22,
+          "encounterSharePercent": 19.64,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2336,7 +2981,7 @@
           "minimumLevel": 37,
           "maximumLevel": 42,
           "relativeWeight": 18,
-          "encounterSharePercent": 18,
+          "encounterSharePercent": 16.07,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2352,7 +2997,7 @@
           "minimumLevel": 37,
           "maximumLevel": 42,
           "relativeWeight": 14,
-          "encounterSharePercent": 14,
+          "encounterSharePercent": 12.5,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2368,7 +3013,7 @@
           "minimumLevel": 38,
           "maximumLevel": 43,
           "relativeWeight": 9,
-          "encounterSharePercent": 9,
+          "encounterSharePercent": 8.04,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2384,7 +3029,7 @@
           "minimumLevel": 38,
           "maximumLevel": 43,
           "relativeWeight": 8,
-          "encounterSharePercent": 8,
+          "encounterSharePercent": 7.14,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2400,7 +3045,7 @@
           "minimumLevel": 40,
           "maximumLevel": 44,
           "relativeWeight": 4,
-          "encounterSharePercent": 4,
+          "encounterSharePercent": 3.57,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2415,7 +3060,38 @@
           "minimumLevel": 41,
           "maximumLevel": 45,
           "relativeWeight": 1,
-          "encounterSharePercent": 1,
+          "encounterSharePercent": 0.89,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 117,
+          "name": "Seadra",
+          "types": [
+            "Water"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 37,
+          "maximumLevel": 42,
+          "relativeWeight": 8,
+          "encounterSharePercent": 7.14,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 340,
+          "name": "Whiscash",
+          "types": [
+            "Water",
+            "Ground"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 40,
+          "maximumLevel": 44,
+          "relativeWeight": 4,
+          "encounterSharePercent": 3.57,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         }
@@ -2496,7 +3172,7 @@
           "minimumLevel": 35,
           "maximumLevel": 40,
           "relativeWeight": 24,
-          "encounterSharePercent": 24,
+          "encounterSharePercent": 19.83,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2511,7 +3187,7 @@
           "minimumLevel": 35,
           "maximumLevel": 40,
           "relativeWeight": 22,
-          "encounterSharePercent": 22,
+          "encounterSharePercent": 18.18,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2526,7 +3202,7 @@
           "minimumLevel": 36,
           "maximumLevel": 41,
           "relativeWeight": 17,
-          "encounterSharePercent": 17,
+          "encounterSharePercent": 14.05,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2542,7 +3218,7 @@
           "minimumLevel": 36,
           "maximumLevel": 41,
           "relativeWeight": 14,
-          "encounterSharePercent": 14,
+          "encounterSharePercent": 11.57,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2557,7 +3233,7 @@
           "minimumLevel": 38,
           "maximumLevel": 43,
           "relativeWeight": 10,
-          "encounterSharePercent": 10,
+          "encounterSharePercent": 8.26,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2572,7 +3248,7 @@
           "minimumLevel": 39,
           "maximumLevel": 44,
           "relativeWeight": 7,
-          "encounterSharePercent": 7,
+          "encounterSharePercent": 5.79,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2587,7 +3263,7 @@
           "minimumLevel": 40,
           "maximumLevel": 45,
           "relativeWeight": 4,
-          "encounterSharePercent": 4,
+          "encounterSharePercent": 3.31,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         },
@@ -2603,7 +3279,53 @@
           "minimumLevel": 41,
           "maximumLevel": 46,
           "relativeWeight": 2,
-          "encounterSharePercent": 2,
+          "encounterSharePercent": 1.65,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 404,
+          "name": "Luxio",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 36,
+          "maximumLevel": 41,
+          "relativeWeight": 9,
+          "encounterSharePercent": 7.44,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 311,
+          "name": "Plusle",
+          "types": [
+            "Electric"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 36,
+          "maximumLevel": 41,
+          "relativeWeight": 8,
+          "encounterSharePercent": 6.61,
+          "method": "Normal encounter",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 479,
+          "name": "Rotom",
+          "types": [
+            "Electric",
+            "Ghost"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 40,
+          "maximumLevel": 45,
+          "relativeWeight": 4,
+          "encounterSharePercent": 3.31,
           "method": "Normal encounter",
           "futureTeamLevelOneEligible": true
         }
@@ -2643,6 +3365,190 @@
       ]
     }
   ],
+  "fishing": {
+    "method": "Fishing",
+    "requirement": "An Old, Good, or Super Rod and a fishable water tile: face open water and cast. The rod tier gates what you can hook — the Old Rod reaches common/uncommon water Pokemon, the Good Rod adds Rare and Super Rare, and the Super Rod adds Mega and Ultra Rare.",
+    "castSuccessPercent": 78,
+    "defaultRodPool": {
+      "tableId": "karelFishing",
+      "title": "Karel Default Rod Pool",
+      "appliesTo": "Casting on open water on any Alpha map whose encounter habitat is not itself a water habitat.",
+      "spawns": [
+        {
+          "speciesId": 129,
+          "name": "Magikarp",
+          "types": [
+            "Water"
+          ],
+          "rarityTier": "common",
+          "role": "fishing",
+          "minimumLevel": 5,
+          "maximumLevel": 10,
+          "relativeWeight": 34,
+          "encounterSharePercent": 29.06,
+          "method": "Fishing",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 60,
+          "name": "Poliwag",
+          "types": [
+            "Water"
+          ],
+          "rarityTier": "common",
+          "role": "fishing",
+          "minimumLevel": 5,
+          "maximumLevel": 10,
+          "relativeWeight": 24,
+          "encounterSharePercent": 20.51,
+          "method": "Fishing",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 98,
+          "name": "Krabby",
+          "types": [
+            "Water"
+          ],
+          "rarityTier": "uncommon",
+          "role": "fishing",
+          "minimumLevel": 6,
+          "maximumLevel": 11,
+          "relativeWeight": 18,
+          "encounterSharePercent": 15.38,
+          "method": "Fishing",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 118,
+          "name": "Goldeen",
+          "types": [
+            "Water"
+          ],
+          "rarityTier": "uncommon",
+          "role": "fishing",
+          "minimumLevel": 7,
+          "maximumLevel": 12,
+          "relativeWeight": 12,
+          "encounterSharePercent": 10.26,
+          "method": "Fishing",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 72,
+          "name": "Tentacool",
+          "types": [
+            "Water",
+            "Poison"
+          ],
+          "rarityTier": "rare",
+          "role": "fishing",
+          "minimumLevel": 8,
+          "maximumLevel": 13,
+          "relativeWeight": 8,
+          "encounterSharePercent": 6.84,
+          "method": "Fishing",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 54,
+          "name": "Psyduck",
+          "types": [
+            "Water"
+          ],
+          "rarityTier": "rare",
+          "role": "fishing",
+          "minimumLevel": 8,
+          "maximumLevel": 13,
+          "relativeWeight": 4,
+          "encounterSharePercent": 3.42,
+          "method": "Fishing",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 456,
+          "name": "Finneon",
+          "types": [
+            "Water"
+          ],
+          "rarityTier": "uncommon",
+          "role": "primary",
+          "minimumLevel": 6,
+          "maximumLevel": 11,
+          "relativeWeight": 8,
+          "encounterSharePercent": 6.84,
+          "method": "Fishing",
+          "futureTeamLevelOneEligible": true
+        },
+        {
+          "speciesId": 79,
+          "name": "Slowpoke",
+          "types": [
+            "Water",
+            "Psychic"
+          ],
+          "rarityTier": "rare",
+          "role": "primary",
+          "minimumLevel": 8,
+          "maximumLevel": 13,
+          "relativeWeight": 9,
+          "encounterSharePercent": 7.69,
+          "method": "Fishing",
+          "futureTeamLevelOneEligible": true
+        }
+      ]
+    },
+    "localWaterPools": [
+      {
+        "tableId": "ocanaMineB2",
+        "title": "Ocana Mine C",
+        "maps": [
+          {
+            "mapId": "legacy.pco.map0066",
+            "mapNumber": 66,
+            "name": "Ocana Mine C"
+          }
+        ],
+        "waterSpeciesCount": 0,
+        "incidentalWaterMatch": true,
+        "note": "Reused as a rod pool only because its habitat label matches the fishing water pattern; its roster holds no Water-type species. This mirrors the current rollFishingEncounter behavior and should be confirmed by the gameplay owner."
+      },
+      {
+        "tableId": "miGordaSeaCave",
+        "title": "Sea Cave / Cave Shuckle",
+        "maps": [
+          {
+            "mapId": "legacy.pco.map0149",
+            "mapNumber": 149,
+            "name": "Sea Cave"
+          },
+          {
+            "mapId": "legacy.pco.map0150",
+            "mapNumber": 150,
+            "name": "Sea Cave"
+          },
+          {
+            "mapId": "legacy.pco.map0151",
+            "mapNumber": 151,
+            "name": "Sea Cave"
+          },
+          {
+            "mapId": "legacy.pco.map0152",
+            "mapNumber": 152,
+            "name": "Sea Cave"
+          },
+          {
+            "mapId": "legacy.pco.map0153",
+            "mapNumber": 153,
+            "name": "Cave Shuckle"
+          }
+        ],
+        "waterSpeciesCount": 10,
+        "incidentalWaterMatch": false,
+        "note": "Casting on water here draws from this habitat's own encounter pool (listed above), not the default rod pool."
+      }
+    ]
+  },
   "species": [
     {
       "speciesId": 10,
@@ -2775,6 +3681,14 @@
           "rarityTier": "common",
           "minimumLevel": 2,
           "maximumLevel": 5
+        },
+        {
+          "tableId": "larsenCave",
+          "area": "Larsen Cave",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 7,
+          "maximumLevel": 10
         }
       ]
     },
@@ -2793,6 +3707,23 @@
           "rarityTier": "common",
           "minimumLevel": 3,
           "maximumLevel": 5
+        }
+      ]
+    },
+    {
+      "speciesId": 23,
+      "name": "Ekans",
+      "types": [
+        "Poison"
+      ],
+      "locations": [
+        {
+          "tableId": "route2",
+          "area": "Route 2 / Route 2 Larsen",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 8,
+          "maximumLevel": 11
         }
       ]
     },
@@ -2837,6 +3768,14 @@
         "Flying"
       ],
       "locations": [
+        {
+          "tableId": "larsenCave",
+          "area": "Larsen Cave",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 6,
+          "maximumLevel": 9
+        },
         {
           "tableId": "ocanaMineB1",
           "area": "Ocana Mine A / Ocana Mine B",
@@ -2984,6 +3923,24 @@
       ]
     },
     {
+      "speciesId": 48,
+      "name": "Venonat",
+      "types": [
+        "Bug",
+        "Poison"
+      ],
+      "locations": [
+        {
+          "tableId": "lupiesForest",
+          "area": "Lupies abandoned / Lupies School Secret S.4",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        }
+      ]
+    },
+    {
       "speciesId": 50,
       "name": "Diglett",
       "types": [
@@ -3050,6 +4007,74 @@
       ]
     },
     {
+      "speciesId": 54,
+      "name": "Psyduck",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "karelFishing",
+          "area": "Karel Default Rod Pool",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 8,
+          "maximumLevel": 13
+        }
+      ]
+    },
+    {
+      "speciesId": 56,
+      "name": "Mankey",
+      "types": [
+        "Fighting"
+      ],
+      "locations": [
+        {
+          "tableId": "route2",
+          "area": "Route 2 / Route 2 Larsen",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 9,
+          "maximumLevel": 12
+        }
+      ]
+    },
+    {
+      "speciesId": 60,
+      "name": "Poliwag",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "karelFishing",
+          "area": "Karel Default Rod Pool",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 5,
+          "maximumLevel": 10
+        }
+      ]
+    },
+    {
+      "speciesId": 66,
+      "name": "Machop",
+      "types": [
+        "Fighting"
+      ],
+      "locations": [
+        {
+          "tableId": "route3Casto",
+          "area": "Route 3 / Casto Cliffs",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 18,
+          "maximumLevel": 22
+        }
+      ]
+    },
+    {
       "speciesId": 72,
       "name": "Tentacool",
       "types": [
@@ -3064,6 +4089,14 @@
           "rarityTier": "common",
           "minimumLevel": 34,
           "maximumLevel": 39
+        },
+        {
+          "tableId": "karelFishing",
+          "area": "Karel Default Rod Pool",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 8,
+          "maximumLevel": 13
         }
       ]
     },
@@ -3087,9 +4120,17 @@
           "tableId": "route2",
           "area": "Route 2 / Route 2 Larsen",
           "method": "Honey",
-          "rarityTier": "ultra",
+          "rarityTier": "mega",
           "minimumLevel": 9,
           "maximumLevel": 12
+        },
+        {
+          "tableId": "larsenCave",
+          "area": "Larsen Cave",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 6,
+          "maximumLevel": 9
         },
         {
           "tableId": "ocanaMineB1",
@@ -3186,6 +4227,24 @@
       ]
     },
     {
+      "speciesId": 79,
+      "name": "Slowpoke",
+      "types": [
+        "Water",
+        "Psychic"
+      ],
+      "locations": [
+        {
+          "tableId": "karelFishing",
+          "area": "Karel Default Rod Pool",
+          "method": "Fishing",
+          "rarityTier": "rare",
+          "minimumLevel": 8,
+          "maximumLevel": 13
+        }
+      ]
+    },
+    {
       "speciesId": 81,
       "name": "Magnemite",
       "types": [
@@ -3244,6 +4303,59 @@
       ]
     },
     {
+      "speciesId": 88,
+      "name": "Grimer",
+      "types": [
+        "Poison"
+      ],
+      "locations": [
+        {
+          "tableId": "route4Pavillion",
+          "area": "Hawso Swamp Forest",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 24,
+          "maximumLevel": 28
+        }
+      ]
+    },
+    {
+      "speciesId": 92,
+      "name": "Gastly",
+      "types": [
+        "Ghost",
+        "Poison"
+      ],
+      "locations": [
+        {
+          "tableId": "caritaCavern",
+          "area": "Carita Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 18,
+          "maximumLevel": 22
+        }
+      ]
+    },
+    {
+      "speciesId": 93,
+      "name": "Haunter",
+      "types": [
+        "Ghost",
+        "Poison"
+      ],
+      "locations": [
+        {
+          "tableId": "castoCavesDeep",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 24,
+          "maximumLevel": 28
+        }
+      ]
+    },
+    {
       "speciesId": 95,
       "name": "Onix",
       "types": [
@@ -3251,6 +4363,22 @@
         "Ground"
       ],
       "locations": [
+        {
+          "tableId": "larsenCave",
+          "area": "Larsen Cave",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        },
+        {
+          "tableId": "larsenCave",
+          "area": "Larsen Cave",
+          "method": "Honey",
+          "rarityTier": "mega",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        },
         {
           "tableId": "ocanaMineB2",
           "area": "Ocana Mine C",
@@ -3294,6 +4422,23 @@
       ]
     },
     {
+      "speciesId": 98,
+      "name": "Krabby",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "karelFishing",
+          "area": "Karel Default Rod Pool",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 6,
+          "maximumLevel": 11
+        }
+      ]
+    },
+    {
       "speciesId": 100,
       "name": "Voltorb",
       "types": [
@@ -3328,6 +4473,31 @@
       ]
     },
     {
+      "speciesId": 104,
+      "name": "Cubone",
+      "types": [
+        "Ground"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB1",
+          "area": "Ocana Mine A / Ocana Mine B",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 11,
+          "maximumLevel": 15
+        },
+        {
+          "tableId": "diglettCave",
+          "area": "Diglett Cave",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 25,
+          "maximumLevel": 30
+        }
+      ]
+    },
+    {
       "speciesId": 111,
       "name": "Rhyhorn",
       "types": [
@@ -3342,6 +4512,48 @@
           "rarityTier": "common",
           "minimumLevel": 28,
           "maximumLevel": 32
+        }
+      ]
+    },
+    {
+      "speciesId": 117,
+      "name": "Seadra",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "miGordaSeaCave",
+          "area": "Sea Cave / Cave Shuckle",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 35,
+          "maximumLevel": 40
+        },
+        {
+          "tableId": "verdentPortCavern",
+          "area": "Verdent Port Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 37,
+          "maximumLevel": 42
+        }
+      ]
+    },
+    {
+      "speciesId": 118,
+      "name": "Goldeen",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "karelFishing",
+          "area": "Karel Default Rod Pool",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 7,
+          "maximumLevel": 12
         }
       ]
     },
@@ -3367,6 +4579,23 @@
           "rarityTier": "mega",
           "minimumLevel": 40,
           "maximumLevel": 45
+        }
+      ]
+    },
+    {
+      "speciesId": 129,
+      "name": "Magikarp",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "karelFishing",
+          "area": "Karel Default Rod Pool",
+          "method": "Fishing",
+          "rarityTier": "common",
+          "minimumLevel": 5,
+          "maximumLevel": 10
         }
       ]
     },
@@ -3401,14 +4630,6 @@
           "area": "Lupies abandoned / Lupies School Secret S.4",
           "method": "Normal encounter",
           "rarityTier": "rare",
-          "minimumLevel": 8,
-          "maximumLevel": 11
-        },
-        {
-          "tableId": "lupiesForest",
-          "area": "Lupies abandoned / Lupies School Secret S.4",
-          "method": "Honey",
-          "rarityTier": "mega",
           "minimumLevel": 8,
           "maximumLevel": 11
         }
@@ -3494,7 +4715,7 @@
           "tableId": "lupiesForest",
           "area": "Lupies abandoned / Lupies School Secret S.4",
           "method": "Honey",
-          "rarityTier": "ultra",
+          "rarityTier": "mega",
           "minimumLevel": 9,
           "maximumLevel": 12
         }
@@ -3527,6 +4748,24 @@
       ]
     },
     {
+      "speciesId": 208,
+      "name": "Steelix",
+      "types": [
+        "Steel",
+        "Ground"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB2",
+          "area": "Ocana Mine C",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 31,
+          "maximumLevel": 35
+        }
+      ]
+    },
+    {
       "speciesId": 213,
       "name": "Shuckle",
       "types": [
@@ -3534,6 +4773,22 @@
         "Rock"
       ],
       "locations": [
+        {
+          "tableId": "lupiesForest",
+          "area": "Lupies abandoned / Lupies School Secret S.4",
+          "method": "Normal encounter",
+          "rarityTier": "super",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        },
+        {
+          "tableId": "lupiesForest",
+          "area": "Lupies abandoned / Lupies School Secret S.4",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        },
         {
           "tableId": "miGordaSeaCave",
           "area": "Sea Cave / Cave Shuckle",
@@ -3588,6 +4843,23 @@
       ]
     },
     {
+      "speciesId": 265,
+      "name": "Wurmple",
+      "types": [
+        "Bug"
+      ],
+      "locations": [
+        {
+          "tableId": "lupiesForest",
+          "area": "Lupies abandoned / Lupies School Secret S.4",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 6,
+          "maximumLevel": 9
+        }
+      ]
+    },
+    {
       "speciesId": 276,
       "name": "Taillow",
       "types": [
@@ -3627,6 +4899,23 @@
           "rarityTier": "common",
           "minimumLevel": 22,
           "maximumLevel": 26
+        }
+      ]
+    },
+    {
+      "speciesId": 288,
+      "name": "Vigoroth",
+      "types": [
+        "Normal"
+      ],
+      "locations": [
+        {
+          "tableId": "route3Casto",
+          "area": "Route 3 / Casto Cliffs",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 20,
+          "maximumLevel": 23
         }
       ]
     },
@@ -3688,6 +4977,14 @@
           "maximumLevel": 11
         },
         {
+          "tableId": "larsenCave",
+          "area": "Larsen Cave",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 6,
+          "maximumLevel": 10
+        },
+        {
           "tableId": "route3Casto",
           "area": "Route 3 / Casto Cliffs",
           "method": "Normal encounter",
@@ -3721,14 +5018,6 @@
           "maximumLevel": 12
         },
         {
-          "tableId": "route2",
-          "area": "Route 2 / Route 2 Larsen",
-          "method": "Honey",
-          "rarityTier": "mega",
-          "minimumLevel": 9,
-          "maximumLevel": 12
-        },
-        {
           "tableId": "route3Casto",
           "area": "Route 3 / Casto Cliffs",
           "method": "Normal encounter",
@@ -3753,6 +5042,22 @@
         "Rock"
       ],
       "locations": [
+        {
+          "tableId": "route2",
+          "area": "Route 2 / Route 2 Larsen",
+          "method": "Normal encounter",
+          "rarityTier": "super",
+          "minimumLevel": 9,
+          "maximumLevel": 12
+        },
+        {
+          "tableId": "route2",
+          "area": "Route 2 / Route 2 Larsen",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 9,
+          "maximumLevel": 12
+        },
         {
           "tableId": "ocanaMineB2",
           "area": "Ocana Mine C",
@@ -3880,6 +5185,22 @@
       ],
       "locations": [
         {
+          "tableId": "larsenCave",
+          "area": "Larsen Cave",
+          "method": "Normal encounter",
+          "rarityTier": "super",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        },
+        {
+          "tableId": "larsenCave",
+          "area": "Larsen Cave",
+          "method": "Honey",
+          "rarityTier": "ultra",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        },
+        {
           "tableId": "caritaCavern",
           "area": "Carita Cavern",
           "method": "Normal encounter",
@@ -3922,6 +5243,32 @@
       ]
     },
     {
+      "speciesId": 305,
+      "name": "Lairon",
+      "types": [
+        "Steel",
+        "Rock"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB2",
+          "area": "Ocana Mine C",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 28,
+          "maximumLevel": 32
+        },
+        {
+          "tableId": "castoCaves",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 22,
+          "maximumLevel": 26
+        }
+      ]
+    },
+    {
       "speciesId": 309,
       "name": "Electrike",
       "types": [
@@ -3935,6 +5282,40 @@
           "rarityTier": "common",
           "minimumLevel": 22,
           "maximumLevel": 26
+        }
+      ]
+    },
+    {
+      "speciesId": 311,
+      "name": "Plusle",
+      "types": [
+        "Electric"
+      ],
+      "locations": [
+        {
+          "tableId": "powerPlant",
+          "area": "Power Plant",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 36,
+          "maximumLevel": 41
+        }
+      ]
+    },
+    {
+      "speciesId": 313,
+      "name": "Volbeat",
+      "types": [
+        "Bug"
+      ],
+      "locations": [
+        {
+          "tableId": "route4Pavillion",
+          "area": "Hawso Swamp Forest",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 25,
+          "maximumLevel": 29
         }
       ]
     },
@@ -4035,6 +5416,24 @@
       ]
     },
     {
+      "speciesId": 329,
+      "name": "Vibrava",
+      "types": [
+        "Ground",
+        "Dragon"
+      ],
+      "locations": [
+        {
+          "tableId": "diglettCave",
+          "area": "Diglett Cave",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 27,
+          "maximumLevel": 32
+        }
+      ]
+    },
+    {
       "speciesId": 333,
       "name": "Swablu",
       "types": [
@@ -4129,6 +5528,24 @@
       ]
     },
     {
+      "speciesId": 340,
+      "name": "Whiscash",
+      "types": [
+        "Water",
+        "Ground"
+      ],
+      "locations": [
+        {
+          "tableId": "verdentPortCavern",
+          "area": "Verdent Port Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 40,
+          "maximumLevel": 44
+        }
+      ]
+    },
+    {
       "speciesId": 341,
       "name": "Corphish",
       "types": [
@@ -4159,6 +5576,48 @@
           "rarityTier": "super",
           "minimumLevel": 36,
           "maximumLevel": 41
+        }
+      ]
+    },
+    {
+      "speciesId": 353,
+      "name": "Shuppet",
+      "types": [
+        "Ghost"
+      ],
+      "locations": [
+        {
+          "tableId": "caritaCavern",
+          "area": "Carita Cavern",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 19,
+          "maximumLevel": 23
+        },
+        {
+          "tableId": "castoCaves",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 19,
+          "maximumLevel": 23
+        }
+      ]
+    },
+    {
+      "speciesId": 355,
+      "name": "Duskull",
+      "types": [
+        "Ghost"
+      ],
+      "locations": [
+        {
+          "tableId": "castoCavesDeep",
+          "area": "Casto Cave",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 23,
+          "maximumLevel": 27
         }
       ]
     },
@@ -4204,6 +5663,23 @@
       ]
     },
     {
+      "speciesId": 367,
+      "name": "Huntail",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "miGordaSeaCave",
+          "area": "Sea Cave / Cave Shuckle",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 39,
+          "maximumLevel": 43
+        }
+      ]
+    },
+    {
       "speciesId": 369,
       "name": "Relicanth",
       "types": [
@@ -4242,6 +5718,196 @@
           "rarityTier": "mega",
           "minimumLevel": 40,
           "maximumLevel": 44
+        }
+      ]
+    },
+    {
+      "speciesId": 396,
+      "name": "Starly",
+      "types": [
+        "Normal",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "route2",
+          "area": "Route 2 / Route 2 Larsen",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 7,
+          "maximumLevel": 10
+        },
+        {
+          "tableId": "lupiesForest",
+          "area": "Lupies abandoned / Lupies School Secret S.4",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 7,
+          "maximumLevel": 10
+        }
+      ]
+    },
+    {
+      "speciesId": 397,
+      "name": "Staravia",
+      "types": [
+        "Normal",
+        "Flying"
+      ],
+      "locations": [
+        {
+          "tableId": "route3Casto",
+          "area": "Route 3 / Casto Cliffs",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 17,
+          "maximumLevel": 21
+        }
+      ]
+    },
+    {
+      "speciesId": 399,
+      "name": "Bidoof",
+      "types": [
+        "Normal"
+      ],
+      "locations": [
+        {
+          "tableId": "route2",
+          "area": "Route 2 / Route 2 Larsen",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 7,
+          "maximumLevel": 10
+        }
+      ]
+    },
+    {
+      "speciesId": 403,
+      "name": "Shinx",
+      "types": [
+        "Electric"
+      ],
+      "locations": [
+        {
+          "tableId": "route4Pavillion",
+          "area": "Hawso Swamp Forest",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 22,
+          "maximumLevel": 26
+        }
+      ]
+    },
+    {
+      "speciesId": 404,
+      "name": "Luxio",
+      "types": [
+        "Electric"
+      ],
+      "locations": [
+        {
+          "tableId": "powerPlant",
+          "area": "Power Plant",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 36,
+          "maximumLevel": 41
+        }
+      ]
+    },
+    {
+      "speciesId": 420,
+      "name": "Cherubi",
+      "types": [
+        "Grass"
+      ],
+      "locations": [
+        {
+          "tableId": "lupiesForest",
+          "area": "Lupies abandoned / Lupies School Secret S.4",
+          "method": "Normal encounter",
+          "rarityTier": "common",
+          "minimumLevel": 8,
+          "maximumLevel": 11
+        }
+      ]
+    },
+    {
+      "speciesId": 436,
+      "name": "Bronzor",
+      "types": [
+        "Steel",
+        "Psychic"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB1",
+          "area": "Ocana Mine A / Ocana Mine B",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 12,
+          "maximumLevel": 16
+        },
+        {
+          "tableId": "ocanaMineB2",
+          "area": "Ocana Mine C",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 28,
+          "maximumLevel": 32
+        }
+      ]
+    },
+    {
+      "speciesId": 438,
+      "name": "Bonsly",
+      "types": [
+        "Rock"
+      ],
+      "locations": [
+        {
+          "tableId": "ocanaMineB1",
+          "area": "Ocana Mine A / Ocana Mine B",
+          "method": "Normal encounter",
+          "rarityTier": "uncommon",
+          "minimumLevel": 11,
+          "maximumLevel": 15
+        }
+      ]
+    },
+    {
+      "speciesId": 456,
+      "name": "Finneon",
+      "types": [
+        "Water"
+      ],
+      "locations": [
+        {
+          "tableId": "karelFishing",
+          "area": "Karel Default Rod Pool",
+          "method": "Fishing",
+          "rarityTier": "uncommon",
+          "minimumLevel": 6,
+          "maximumLevel": 11
+        }
+      ]
+    },
+    {
+      "speciesId": 479,
+      "name": "Rotom",
+      "types": [
+        "Electric",
+        "Ghost"
+      ],
+      "locations": [
+        {
+          "tableId": "powerPlant",
+          "area": "Power Plant",
+          "method": "Normal encounter",
+          "rarityTier": "rare",
+          "minimumLevel": 40,
+          "maximumLevel": 45
         }
       ]
     }

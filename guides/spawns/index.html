@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Alpha Spawn Guide — PokéCyrus Online</title>
-  <meta name="description" content="PokéCyrus Online Alpha Spawn Guide — where to catch every Pokémon across Karel: 56 species over 15 habitats, with encounter rates, level ranges, and Honey spawns." />
+  <meta name="description" content="PokéCyrus Online Alpha Spawn Guide — where to catch every Pokémon across Karel: 92 species over 16 habitats, with encounter rates, level ranges, Honey spawns, and Fishing rod pools." />
   <meta name="theme-color" content="#0c0a0b" />
   <link rel="canonical" href="https://theobscyranarchives.net/guides/spawns" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23e11d2a'/%3E%3Cpath d='M1 16a15 15 0 0 0 30 0z' fill='%23f2f3f5'/%3E%3Crect x='1' y='14.5' width='30' height='3' fill='%23111111'/%3E%3Ccircle cx='16' cy='16' r='4.6' fill='%23ffffff' stroke='%23111111' stroke-width='1.6'/%3E%3C/svg%3E" />
@@ -19,6 +19,12 @@
     td.loc .l { display: block; color: var(--muted); font-size: .84rem; }
     td.loc .l b { color: var(--text); font-weight: 600; }
     .method-honey { color: var(--gold); }
+    .method-fishing { color: #57b6e6; }
+    .fishpool h4 { margin: 1.1rem 0 .35rem; font-size: .95rem; }
+    .fishpool .appliesto { color: var(--dim); font-weight: 400; font-size: .82rem; margin: .1rem 0 .5rem; }
+    .fishpool ul { margin: .3rem 0 0; padding-left: 1.1rem; color: var(--muted); font-size: .9rem; }
+    .fishpool ul li { margin-bottom: .5rem; }
+    .fishpool ul .note { color: var(--dim); font-size: .82rem; }
   </style>
 </head>
 <body>
@@ -43,6 +49,7 @@
       </div>
       <div class="meta-row" style="color:var(--dim); font-size:.82rem; margin-bottom:1rem;" id="count"></div>
 
+      <div id="fishing-view"></div>
       <div id="habitat-view"></div>
       <div id="species-view" style="display:none;"></div>
       <div id="empty" style="display:none; text-align:center; color:var(--muted); padding:2.5rem;"></div>
@@ -53,8 +60,9 @@
   <script>
     (function () {
       var FEED = "/assets/guides/alpha-spawn-guide.json";
-      var habitats = [], species = [], view = "habitat", q = "";
+      var habitats = [], species = [], fishing = null, view = "habitat", q = "";
 
+      var fishEl = document.getElementById("fishing-view");
       var habEl = document.getElementById("habitat-view");
       var spEl = document.getElementById("species-view");
       var countEl = document.getElementById("count");
@@ -78,6 +86,45 @@
             '<td' + (honey ? ' class="method-honey"' : '') + '>' + (honey ? "Honey" : "Normal") + '</td>' +
           '</tr>';
         }).join("");
+      }
+
+      function fishingRows(list) {
+        return (list||[]).map(function (s) {
+          return '<tr>' +
+            '<td class="name">' + esc(s.name) + '</td>' +
+            '<td>' + types(s.types) + '</td>' +
+            '<td>' + lv(s.minimumLevel, s.maximumLevel) + '</td>' +
+            '<td>' + rarity(s.rarityTier) + '</td>' +
+            '<td class="num">' + (s.encounterSharePercent != null ? s.encounterSharePercent + "%" : "—") + '</td>' +
+            '<td class="method-fishing">Fishing</td>' +
+          '</tr>';
+        }).join("");
+      }
+
+      function renderFishing() {
+        if (!fishing) { fishEl.innerHTML = ""; return; }
+        var f = fishing, dp = f.defaultRodPool || {}, pools = f.localWaterPools || [];
+        var poolList = pools.map(function (p) {
+          var maps = (p.maps || []).map(function (m){ return m.name || m; })
+            .filter(function (v, i, a){ return a.indexOf(v) === i; }).join(", ");
+          return '<li><b>' + esc(p.title) + '</b>' +
+            (maps ? ' <span class="note">(' + esc(maps) + ')</span>' : '') +
+            '<br><span class="note">' + esc(p.note || "") + '</span></li>';
+        }).join("");
+        fishEl.innerHTML = '<div class="card habitat fishpool">' +
+          '<div class="hab-top"><h3>🎣 Fishing — Rod Pools</h3>' +
+            '<span class="chip">' + (f.castSuccessPercent != null ? f.castSuccessPercent + "% cast success" : "") + '</span></div>' +
+          '<div class="hab-meta">' + esc(f.requirement || "") + '</div>' +
+          '<h4>Default Rod Pool</h4>' +
+          '<p class="appliesto">' + esc(dp.appliesTo || "") + '</p>' +
+          '<div class="tablewrap"><table class="gtable">' +
+            '<thead><tr><th>Species</th><th>Types</th><th>Level</th><th>Rarity</th>' +
+            '<th class="num" style="text-align:right;">Share</th><th>Method</th></tr></thead>' +
+            '<tbody>' + fishingRows(dp.spawns) + '</tbody></table></div>' +
+          (pools.length ? '<h4>Local Water Pools</h4>' +
+            '<p class="appliesto">In these water habitats, casting draws the habitat\'s own encounter pool (see its habitat card below) instead of the default rod pool:</p>' +
+            '<ul>' + poolList + '</ul>' : '') +
+        '</div>';
       }
 
       function renderHabitats() {
@@ -126,12 +173,13 @@
 
       function render() {
         if (view === "habitat") {
-          habEl.style.display = ""; spEl.style.display = "none"; searchEl.style.display = "none";
+          fishEl.style.display = ""; habEl.style.display = ""; spEl.style.display = "none"; searchEl.style.display = "none";
           emptyEl.style.display = "none";
           countEl.textContent = habitats.length + " habitats · " + species.length + " catchable species";
+          renderFishing();
           renderHabitats();
         } else {
-          habEl.style.display = "none"; spEl.style.display = ""; searchEl.style.display = "";
+          fishEl.style.display = "none"; habEl.style.display = "none"; spEl.style.display = ""; searchEl.style.display = "";
           renderSpecies();
         }
       }
@@ -148,6 +196,7 @@
         .then(function (d) {
           habitats = d.habitats || [];
           species = d.species || [];
+          fishing = d.fishing || null;
           var m = d.mechanics || {};
           document.getElementById("rules").innerHTML =
             "<strong>How to read this.</strong> " +
