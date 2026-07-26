@@ -13,7 +13,9 @@
      ============================================================ */
   var PCO = {
     live: false,
-    launch: "2026-07-26T19:00:00Z",           // soft countdown target (adjustable)
+    signupOpen: false,                       // flip true to open Closed Alpha signup before the countdown ends
+    signupEndpoint: "",                        // POST target for the signup form (e.g. a Formspree/Basin/Getform URL). Empty = not wired yet.
+    launch: "2026-07-26T19:00:00Z",           // countdown target — when Closed Alpha signup opens (adjustable)
     discord: "https://discord.com/invite/rmTHCNPzrq",
     browser: "https://play.theobscyranarchives.net/",
     downloads: [
@@ -84,7 +86,22 @@
     document.body.insertAdjacentHTML("beforeend", footer);
   }
 
-  /* ===== countdown (runs if #countdown is present) ===== */
+  /* ===== Closed Alpha signup gating ===== */
+  function signupIsOpen() {
+    if (PCO.signupOpen) { return true; }
+    var t = new Date(PCO.launch).getTime();
+    return !isNaN(t) && (t - Date.now() <= 0);
+  }
+  function setSignupFormOpen(open) {
+    var btn = document.getElementById("signup-btn");
+    var email = document.getElementById("signup-email");
+    var cap = document.querySelector(".cd-caption");
+    if (btn) { btn.disabled = !open; btn.textContent = open ? "Sign Up" : "Opens Soon"; }
+    if (email) { email.disabled = !open; }
+    if (cap && open) { cap.style.display = "none"; }  // countdown message replaces the caption once open
+  }
+
+  /* ===== countdown to signup opening (runs if #countdown is present) ===== */
   function initCountdown() {
     var wrap = document.getElementById("countdown");
     var live = document.getElementById("cd-live");
@@ -95,10 +112,16 @@
     function pad(n) { return (n < 10 ? "0" : "") + n; }
     function msg(html) { if (wrap) { wrap.style.display = "none"; } if (live) { live.style.display = "block"; live.innerHTML = html; } }
     function tick() {
-      if (PCO.live) { msg('The Alpha is <strong>LIVE</strong> — <a href="/play" style="color:#fff;text-decoration:underline;">choose how to play</a>.'); clearInterval(t); return; }
+      if (signupIsOpen()) {
+        var hasForm = !!document.getElementById("signup");
+        msg('Closed Alpha signup is <strong>OPEN</strong>' +
+          (hasForm ? ' — request your invite below.' : ' — <a href="/" style="color:#fff;text-decoration:underline;">sign up on the home page</a>.'));
+        setSignupFormOpen(true);
+        clearInterval(t);
+        return;
+      }
       var diff = target.getTime() - Date.now();
       if (isNaN(diff)) { return; }
-      if (diff <= 0) { msg("Launching soon — final checks underway."); return; }
       if (wrap) { wrap.style.display = ""; } if (live) { live.style.display = "none"; }
       var s = Math.floor(diff / 1000);
       var d = Math.floor(s / 86400); s -= d * 86400;
@@ -108,6 +131,35 @@
       if (elM) { elM.textContent = pad(m); } if (elS) { elS.textContent = pad(s); }
     }
     var t = setInterval(tick, 1000); tick();
+  }
+
+  /* ===== Closed Alpha signup form (runs if #signup is present) ===== */
+  function initSignup() {
+    var form = document.getElementById("signup");
+    if (!form) { return; }
+    var email = document.getElementById("signup-email");
+    var note = document.getElementById("signup-note");
+    setSignupFormOpen(signupIsOpen());
+    function fail(text) { if (note) { note.textContent = text; note.className = "signup-note err"; } }
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!signupIsOpen()) { return; }
+      var value = (email && email.value || "").trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) { fail("Please enter a valid email address."); return; }
+      if (!PCO.signupEndpoint) { fail("Signup isn’t wired up yet — join our Discord in the meantime."); return; }
+      var btn = document.getElementById("signup-btn");
+      if (btn) { btn.disabled = true; }
+      if (note) { note.textContent = "Sending…"; note.className = "signup-note"; }
+      fetch(PCO.signupEndpoint, {
+        method: "POST",
+        headers: { "Accept": "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify({ email: value, source: "closed-alpha-signup" })
+      }).then(function (r) { if (!r.ok) { throw new Error(r.status); } return r; })
+        .then(function () {
+          form.innerHTML = '<div class="signup-done">You’re on the list! We’ll email your Closed Alpha invite. See you in Karel.</div>';
+        })
+        .catch(function () { if (btn) { btn.disabled = false; } fail("Something went wrong — try again, or join our Discord."); });
+    });
   }
 
   /* ===== play / download buttons (runs if the containers are present) ===== */
@@ -128,7 +180,7 @@
     }
   }
 
-  function start() { injectChrome(); initCountdown(); initPlay(); }
+  function start() { injectChrome(); initCountdown(); initPlay(); initSignup(); }
   if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", start); }
   else { start(); }
 })();
