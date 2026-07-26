@@ -13,7 +13,7 @@
      ============================================================ */
   var PCO = {
     live: false,
-    launch: "2026-07-26T15:00:00Z",           // soft countdown target (adjustable)
+    launch: "2026-07-26T19:00:00Z",           // soft countdown target (adjustable)
     discord: "https://discord.com/invite/rmTHCNPzrq",
     browser: "https://play.theobscyranarchives.net/",
     downloads: [
