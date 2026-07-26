@@ -3,7 +3,7 @@
   "guideId": "pco-nature-guide",
   "title": "PokeCyrus Online Nature Guide",
   "growthModel": "pco-resonance-hybrid-v1",
-  "growthSchemaVersion": 2,
+  "growthSchemaVersion": 3,
   "generatedFrom": [
     "server/data/pokemonGrowth.js"
   ],
