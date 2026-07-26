@@ -14,7 +14,8 @@
   var PCO = {
     live: false,
     signupOpen: false,                       // flip true to open Closed Alpha signup before the countdown ends
-    signupEndpoint: "",                        // POST target for the signup form (e.g. a Formspree/Basin/Getform URL). Empty = not wired yet.
+    signupEndpoint: "https://formspree.io/f/mqerwavg",  // Formspree AJAX endpoint for the Closed Alpha signup form
+
     launch: "2026-07-26T19:00:00Z",           // countdown target — when Closed Alpha signup opens (adjustable)
     discord: "https://discord.com/invite/rmTHCNPzrq",
     browser: "https://play.theobscyranarchives.net/",
@@ -153,7 +154,7 @@
       fetch(PCO.signupEndpoint, {
         method: "POST",
         headers: { "Accept": "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({ email: value, source: "closed-alpha-signup" })
+        body: JSON.stringify({ email: value, source: "closed-alpha-signup", _subject: "PokéCyrus Online — Closed Alpha signup" })
       }).then(function (r) { if (!r.ok) { throw new Error(r.status); } return r; })
         .then(function () {
           form.innerHTML = '<div class="signup-done">You’re on the list! We’ll email your Closed Alpha invite. See you in Karel.</div>';
