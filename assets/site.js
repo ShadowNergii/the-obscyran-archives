@@ -17,11 +17,11 @@
     discord: "https://discord.com/invite/rmTHCNPzrq",
     browser: "https://play.theobscyranarchives.net/",
     downloads: [
-      { label: "Windows",              sub: "Installer (.exe)", url: "https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.0_x64-setup.exe" },
-      { label: "macOS · Apple Silicon", sub: "Apple M-series",  url: "https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.0_aarch64.app.tar.gz" },
-      { label: "macOS · Intel",        sub: "Intel Macs",       url: "https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.0_x64.app.tar.gz" },
-      { label: "Linux · AppImage",     sub: "Portable",         url: "https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.0_amd64.AppImage" },
-      { label: "Linux · .deb",         sub: "Debian / Ubuntu",  url: "https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.0_amd64.deb" }
+      { label: "Windows",              sub: "Installer (.exe)", url: "https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.2_x64-setup.exe" },
+      { label: "macOS · Apple Silicon", sub: "Apple M-series",  url: "https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.2_aarch64.app.tar.gz" },
+      { label: "macOS · Intel",        sub: "Intel Macs",       url: "https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.2_x64.app.tar.gz" },
+      { label: "Linux · AppImage",     sub: "Portable",         url: "https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.2_amd64.AppImage" },
+      { label: "Linux · .deb",         sub: "Debian / Ubuntu",  url: "https://play.theobscyranarchives.net/client/PokeCyrus.Online_0.3.2_amd64.deb" }
     ]
   };
   window.PCO = PCO;
