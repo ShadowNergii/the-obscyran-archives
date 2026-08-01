@@ -8,19 +8,27 @@
      the browser-play link. While false they show "Available at
      Launch" and never expose a client link.
 
-     CD DIRECTIVE (2026-07-26): keep downloads and client links
-     DISABLED. Do NOT set `live: true` until the Creative Director
-     explicitly lifts this — the Closed Alpha is signup-only for now.
+     CD DIRECTIVE: keep downloads and client links DISABLED. Do NOT
+     set `live: true` until the Creative Director explicitly lifts
+     this. Nothing else on the site may expose a client link.
 
-     `signupOpen` and the countdown control the signup form ONLY;
-     they do not touch downloads.
+     The Closed Alpha signup was removed on CD instruction
+     (2026-07-28); `screens` below drives the homepage gallery that
+     replaced it.
      ============================================================ */
   var PCO = {
     live: false,  // HELD false by CD directive — see note above; do not flip without CD sign-off
-    signupOpen: true,                        // OPEN — Closed Alpha signup live (CD, 2026-07-26)
-    signupEndpoint: "https://formspree.io/f/mqerwavg",  // Formspree AJAX endpoint for the Closed Alpha signup form
 
-    launch: "2026-07-26T19:00:00Z",           // countdown target — when Closed Alpha signup opens (adjustable)
+    /* Homepage screenshot gallery. Drop files in assets/screens/ and add an entry
+       here in display order — see assets/screens/README.md. An empty list simply
+       hides the gallery section, so the page never shows an empty frame. */
+    screens: [
+      { file: "01-ocana-town.jpg",     caption: "Ocana Town",              alt: "Ocana Town — Pokemon Center, bank and tree-lined streets" },
+      { file: "02-mi-gorda-coast.jpg", caption: "Mi Gorda Town",           alt: "The Mi Gorda coast — palms, a moored boat and open water" },
+      { file: "03-flora-garden.jpg",   caption: "Route 3 · Flora Garden",  alt: "The Flora Garden on Route 3, a clearing thick with wildflowers" },
+      { file: "04-lupies-forest.jpg",  caption: "Lupies Forest",           alt: "A winding trail through the dense canopy of Lupies Forest" }
+    ],
+
     discord: "https://discord.com/invite/rmTHCNPzrq",
     browser: "https://play.theobscyranarchives.net/",
     downloads: [
@@ -91,86 +99,6 @@
     document.body.insertAdjacentHTML("beforeend", footer);
   }
 
-  /* ===== Closed Alpha signup gating ===== */
-  function signupIsOpen() {
-    if (PCO.signupOpen) { return true; }
-    var t = new Date(PCO.launch).getTime();
-    return !isNaN(t) && (t - Date.now() <= 0);
-  }
-  function setSignupFormOpen(open) {
-    var btn = document.getElementById("signup-btn");
-    var email = document.getElementById("signup-email");
-    var ign = document.getElementById("signup-ign");
-    var cap = document.querySelector(".cd-caption");
-    if (btn) { btn.disabled = !open; btn.textContent = open ? "Sign Up" : "Opens Soon"; }
-    if (email) { email.disabled = !open; }
-    if (ign) { ign.disabled = !open; }
-    if (cap && open) { cap.style.display = "none"; }  // countdown message replaces the caption once open
-  }
-
-  /* ===== countdown to signup opening (runs if #countdown is present) ===== */
-  function initCountdown() {
-    var wrap = document.getElementById("countdown");
-    var live = document.getElementById("cd-live");
-    if (!wrap && !live) { return; }
-    var elD = document.getElementById("cd-days"), elH = document.getElementById("cd-hours"),
-        elM = document.getElementById("cd-mins"), elS = document.getElementById("cd-secs");
-    var target = new Date(PCO.launch);
-    function pad(n) { return (n < 10 ? "0" : "") + n; }
-    function msg(html) { if (wrap) { wrap.style.display = "none"; } if (live) { live.style.display = "block"; live.innerHTML = html; } }
-    function tick() {
-      if (signupIsOpen()) {
-        var hasForm = !!document.getElementById("signup");
-        msg('Closed Alpha signup is <strong>OPEN</strong>' +
-          (hasForm ? ' — request your invite below.' : ' — <a href="/" style="color:#fff;text-decoration:underline;">sign up on the home page</a>.'));
-        setSignupFormOpen(true);
-        clearInterval(t);
-        return;
-      }
-      var diff = target.getTime() - Date.now();
-      if (isNaN(diff)) { return; }
-      if (wrap) { wrap.style.display = ""; } if (live) { live.style.display = "none"; }
-      var s = Math.floor(diff / 1000);
-      var d = Math.floor(s / 86400); s -= d * 86400;
-      var h = Math.floor(s / 3600); s -= h * 3600;
-      var m = Math.floor(s / 60); s -= m * 60;
-      if (elD) { elD.textContent = d; } if (elH) { elH.textContent = pad(h); }
-      if (elM) { elM.textContent = pad(m); } if (elS) { elS.textContent = pad(s); }
-    }
-    var t = setInterval(tick, 1000); tick();
-  }
-
-  /* ===== Closed Alpha signup form (runs if #signup is present) ===== */
-  function initSignup() {
-    var form = document.getElementById("signup");
-    if (!form) { return; }
-    var email = document.getElementById("signup-email");
-    var ign = document.getElementById("signup-ign");
-    var note = document.getElementById("signup-note");
-    setSignupFormOpen(signupIsOpen());
-    function fail(text) { if (note) { note.textContent = text; note.className = "signup-note err"; } }
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!signupIsOpen()) { return; }
-      var value = (email && email.value || "").trim();
-      var ignValue = (ign && ign.value || "").trim();
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) { fail("Please enter a valid email address."); return; }
-      if (!PCO.signupEndpoint) { fail("Signup isn’t wired up yet — join our Discord in the meantime."); return; }
-      var btn = document.getElementById("signup-btn");
-      if (btn) { btn.disabled = true; }
-      if (note) { note.textContent = "Sending…"; note.className = "signup-note"; }
-      fetch(PCO.signupEndpoint, {
-        method: "POST",
-        headers: { "Accept": "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({ email: value, ign: ignValue, source: "closed-alpha-signup", _subject: "PokéCyrus Online — Closed Alpha signup" })
-      }).then(function (r) { if (!r.ok) { throw new Error(r.status); } return r; })
-        .then(function () {
-          form.innerHTML = '<div class="signup-done">You’re on the list! We’ll email your Closed Alpha invite. See you in Karel.</div>';
-        })
-        .catch(function () { if (btn) { btn.disabled = false; } fail("Something went wrong — try again, or join our Discord."); });
-    });
-  }
-
   /* ===== play / download buttons (runs if the containers are present) ===== */
   function initPlay() {
     var browserEl = document.getElementById("play-browser");
@@ -189,7 +117,72 @@
     }
   }
 
-  function start() { injectChrome(); initCountdown(); initPlay(); initSignup(); }
+  /* ===== homepage screenshot gallery (runs if #screens is present) =====
+     Built from PCO.screens. With no entries the section stays hidden, so the
+     page never renders an empty gallery frame. */
+  function initScreens() {
+    var section = document.getElementById("screens");
+    var grid = document.getElementById("screens-grid");
+    if (!section || !grid) { return; }
+    var shots = (PCO.screens || []).filter(function (s) { return s && s.file; });
+    if (!shots.length) { section.style.display = "none"; return; }
+
+    grid.innerHTML = shots.map(function (s, i) {
+      var cap = s.caption || "";
+      var alt = s.alt || cap || "PokeCyrus Online screenshot";
+      return '<figure class="shot">' +
+        '<button type="button" class="shot-btn" data-shot="' + i + '" aria-label="Enlarge: ' + esc(alt) + '">' +
+          '<img src="/assets/screens/' + encodeURIComponent(s.file) + '" alt="' + esc(alt) + '" loading="lazy" decoding="async" />' +
+        '</button>' +
+        (cap ? '<figcaption>' + esc(cap) + '</figcaption>' : '') +
+      '</figure>';
+    }).join("");
+
+    // Lightbox: one element reused, closed on backdrop click or Escape.
+    var box = document.createElement("div");
+    box.className = "lightbox";
+    box.setAttribute("hidden", "");
+    box.innerHTML = '<button type="button" class="lightbox-close" aria-label="Close">&times;</button>' +
+                    '<figure><img alt="" /><figcaption></figcaption></figure>';
+    document.body.appendChild(box);
+    var lbImg = box.querySelector("img"), lbCap = box.querySelector("figcaption");
+    var lastFocus = null;
+
+    function open(i) {
+      var s = shots[i]; if (!s) { return; }
+      lastFocus = document.activeElement;
+      lbImg.src = "/assets/screens/" + encodeURIComponent(s.file);
+      lbImg.alt = s.alt || s.caption || "PokeCyrus Online screenshot";
+      lbCap.textContent = s.caption || "";
+      box.removeAttribute("hidden");
+      document.body.style.overflow = "hidden";
+      box.querySelector(".lightbox-close").focus();
+    }
+    function close() {
+      box.setAttribute("hidden", "");
+      lbImg.src = "";
+      document.body.style.overflow = "";
+      if (lastFocus && lastFocus.focus) { lastFocus.focus(); }
+    }
+    grid.addEventListener("click", function (e) {
+      var btn = e.target.closest ? e.target.closest(".shot-btn") : null;
+      if (btn) { open(Number(btn.getAttribute("data-shot"))); }
+    });
+    box.addEventListener("click", function (e) {
+      if (e.target === box || (e.target.classList && e.target.classList.contains("lightbox-close"))) { close(); }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !box.hasAttribute("hidden")) { close(); }
+    });
+  }
+
+  function esc(v) {
+    return String(v == null ? "" : v)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+
+  function start() { injectChrome(); initPlay(); initScreens(); }
   if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", start); }
   else { start(); }
 })();
