@@ -705,7 +705,7 @@
       "name": "Hardcore",
       "perTenLevels": {
         "hp": 0,
-        "attack": 3,
+        "attack": 4,
         "defense": 0,
         "specialAttack": 0,
         "specialDefense": 0,
@@ -713,7 +713,7 @@
       },
       "level100Total": {
         "hp": 0,
-        "attack": 30,
+        "attack": 40,
         "defense": 0,
         "specialAttack": 0,
         "specialDefense": 0,
@@ -799,19 +799,19 @@
     {
       "name": "Holy",
       "perTenLevels": {
-        "hp": 2,
+        "hp": 4,
         "attack": 0,
-        "defense": 2,
+        "defense": 1,
         "specialAttack": 0,
-        "specialDefense": 2,
+        "specialDefense": 1,
         "speed": 0
       },
       "level100Total": {
-        "hp": 20,
+        "hp": 40,
         "attack": 0,
-        "defense": 20,
+        "defense": 10,
         "specialAttack": 0,
-        "specialDefense": 20,
+        "specialDefense": 10,
         "speed": 0
       }
     },
@@ -1087,7 +1087,7 @@
         "hp": 0,
         "attack": 0,
         "defense": 0,
-        "specialAttack": 3,
+        "specialAttack": 4,
         "specialDefense": 0,
         "speed": 0
       },
@@ -1095,7 +1095,7 @@
         "hp": 0,
         "attack": 0,
         "defense": 0,
-        "specialAttack": 30,
+        "specialAttack": 40,
         "specialDefense": 0,
         "speed": 0
       }
@@ -1241,7 +1241,7 @@
         "defense": 0,
         "specialAttack": 0,
         "specialDefense": 0,
-        "speed": 3
+        "speed": 4
       },
       "level100Total": {
         "hp": 0,
@@ -1249,7 +1249,7 @@
         "defense": 0,
         "specialAttack": 0,
         "specialDefense": 0,
-        "speed": 30
+        "speed": 40
       }
     },
     {
